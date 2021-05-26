@@ -23,7 +23,7 @@ def testing(test_loader, device, model, criterion):
         
         total_loss += loss
 
-    	print("Loss: {:.4f}".format(loss))
+        print("Loss: {:.4f}".format(loss))
     
     return total_loss
 
