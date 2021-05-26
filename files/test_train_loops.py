@@ -9,6 +9,7 @@ import wandb
 def testing(test_loader, device, model, criterion):
     
     total_loss = []
+
     for step, (anchor_img, positive_img, negative_img) in enumerate(tqdm(test_loader, desc="Processing", leave=False)):
         anchor_img = anchor_img.to(device)
         positive_img = positive_img.to(device)
@@ -19,11 +20,9 @@ def testing(test_loader, device, model, criterion):
         negative_out = model(negative_img)
         
         loss = criterion(anchor_out, positive_out, negative_out)
-        loss = loss.cpu().detach().numpy()
+        loss = loss.cpu().detach().tolist()
         
         total_loss += loss
-
-        print("Loss: {:.4f}".format(loss))
     
     return total_loss
 
