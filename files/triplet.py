@@ -1,10 +1,13 @@
 import random
-
 import torch
 from torch import nn, optim
 import torch.nn.functional as F
 from torchvision import transforms
 
+# LOSS
+#################################################################################
+
+# TO DO Loss for testing without mean
 class TripletLoss(nn.Module):
 
     def __init__(self, margin):
@@ -16,7 +19,11 @@ class TripletLoss(nn.Module):
         distance_negative = (anchor - negative).pow(2).sum(1) 
         losses = F.relu(distance_positive - distance_negative + self.margin)
         return losses.mean() if size_average else losses.sum()
-        
+
+
+# TRIPLET GENERATOR
+#################################################################################
+
 class TripletGenerator(nn.Module):
     def __init__(self, Xa_train, Xp_train, batch_size, all_imgs, neg_imgs_idx):
         self.cur_img_index = 0
@@ -25,7 +32,7 @@ class TripletGenerator(nn.Module):
         
         self.imgs = all_imgs
         self.Xa = Xa_train  # Anchors
-        self.Xp = Xp_train
+        self.Xp = Xp_train  # Positives
         self.cur_train_index = 0
         self.num_samples = Xa_train.shape[0]
         self.neg_imgs_idx = neg_imgs_idx
@@ -40,15 +47,13 @@ class TripletGenerator(nn.Module):
                   transforms.ToTensor(),
               ]
           )
-        
-        
+         
         low_index = batch_index * self.batch_size
         high_index = (batch_index + 1) * self.batch_size
 
         imgs_a = self.Xa[low_index:high_index]  # Anchors
         imgs_p = self.Xp[low_index:high_index]  # Positives
         imgs_n = random.sample(self.neg_imgs_idx, imgs_a.shape[0])  # Negatives
-        #imgs_n = torch.tensor(imgs_n)
 
         imgs_a = self.imgs[imgs_a]
         imgs_p = self.imgs[imgs_p]
@@ -59,15 +64,16 @@ class TripletGenerator(nn.Module):
         negatives = torch.zeros((self.batch_size,3,60,60))
 
         for batch in range(self.batch_size):
-          #anchor = imgs[batch]
           anchors[batch]=image_transforms(imgs_a[batch])
           positives[batch]=image_transforms(imgs_p[batch])
           negatives[batch]=image_transforms(imgs_n[batch])
             
-        # We also a null vector as placeholder for output, but it won't be needed:
-        #return (imgs_a, imgs_p, imgs_n)
         return (anchors, positives, negatives)
-        
+    
+    
+# NETWORK
+#################################################################################
+
 class TripletLearner(nn.Module):
     
     def __init__(self):
