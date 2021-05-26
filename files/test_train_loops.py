@@ -43,8 +43,9 @@ def training(model, device, optimizer, criterion, epochs, train_loader, valid_lo
     	running_train_loss = []
     	running_valid_loss = []
 
-        for step, (anchor_img, positive_img, negative_img) in enumerate(tqdm(train_loader, desc="Training", leave=False)):
-            anchor_img = anchor_img.to(device)
+    	for step, (anchor_img, positive_img, negative_img) in enumerate(tqdm(train_loader, desc="Training", leave=False)):
+
+    		anchor_img = anchor_img.to(device)
             positive_img = positive_img.to(device)
             negative_img = negative_img.to(device)
             
