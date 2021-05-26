@@ -1,5 +1,6 @@
 import numpy as np
 from tqdm.notebook import tqdm
+import wandb
 
 
 # TESTING LOOP
@@ -18,10 +19,11 @@ def testing(test_loader, device, model, criterion):
         negative_out = model(negative_img)
         
         loss = criterion(anchor_out, positive_out, negative_out)
+        loss = loss.cpu().detach().numpy()
         
         total_loss += loss
 
-    	print("Loss: {:.4f}".format(np.mean(loss)))
+    	print("Loss: {:.4f}".format(loss))
     
     return total_loss
 
@@ -35,9 +37,12 @@ def training(model, device, optimizer, criterion, epochs, train_loader, valid_lo
     total_valid_loss = []
 
     model.train()
+
     for epoch in tqdm(range(epochs), desc="Epochs"):
-        running_train_loss = []
-        running_valid_loss = []
+
+    	running_train_loss = []
+    	running_valid_loss = []
+
         for step, (anchor_img, positive_img, negative_img) in enumerate(tqdm(train_loader, desc="Training", leave=False)):
             anchor_img = anchor_img.to(device)
             positive_img = positive_img.to(device)
@@ -52,10 +57,14 @@ def training(model, device, optimizer, criterion, epochs, train_loader, valid_lo
             train_loss = criterion(anchor_out, positive_out, negative_out)
             train_loss.backward()
             optimizer.step()
-            
-            running_train_loss.append(train_loss.cpu().detach().numpy())
 
-        for _, (anchor_valid, positive_valid, negative_valid) in enumerate(tqdm(valid_loader, desc="Evaluating", leave=False)):
+            train_loss = train_loss.cpu().detach().numpy()
+
+            wandb.log({"train_loss":train_loss})
+
+            running_train_loss += train_loss
+
+        for step, (anchor_valid, positive_valid, negative_valid) in enumerate(tqdm(valid_loader, desc="Evaluating", leave=False)):
 
             anchor_valid = anchor_valid.to(device)
             positive_valid = positive_valid.to(device)
@@ -66,6 +75,12 @@ def training(model, device, optimizer, criterion, epochs, train_loader, valid_lo
             negative_valid_out = model(negative_valid)
 
             valid_loss = criterion(anchor_valid_out, positive_valid_out, negative_valid_out)
+
+            valid_loss = valid_loss.cpu().detach().numpy()
+
+            wandb.log({"valid_loss":valid_loss})
+
+            running_valid_loss += valid_loss
 
         total_valid_loss.append(np.mean(running_valid_loss))
         total_train_loss.append(np.mean(running_train_loss))
