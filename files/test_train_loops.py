@@ -36,6 +36,9 @@ def training(model, device, optimizer, criterion, epochs, train_loader, valid_lo
     total_train_loss = []
     total_valid_loss = []
 
+    nb_step_train = len(train_loader)
+    nb_step_valid = len(valid_loader)
+
     model.train()
 
     for epoch in tqdm(range(epochs), desc="Epochs"):
@@ -58,12 +61,12 @@ def training(model, device, optimizer, criterion, epochs, train_loader, valid_lo
     		train_loss = criterion(anchor_out, positive_out, negative_out)
     		train_loss.backward()
     		optimizer.step()
+      
+    		train_step = step + nb_step_train * epoch
+            
+    		wandb.log({"training step":train_step, "training loss":train_loss})
 
-    		train_loss = train_loss.cpu().detach().numpy()
-
-    		wandb.log({"train_loss":train_loss})
-
-    		running_train_loss += train_loss
+    		running_train_loss.append(train_loss.cpu().detach().numpy())
 
     	for step, (anchor_valid, positive_valid, negative_valid) in enumerate(tqdm(valid_loader, desc="Evaluating", leave=False)):
 
@@ -77,15 +80,19 @@ def training(model, device, optimizer, criterion, epochs, train_loader, valid_lo
 
             valid_loss = criterion(anchor_valid_out, positive_valid_out, negative_valid_out)
 
-            valid_loss = valid_loss.cpu().detach().numpy()
+            valid_step = step + nb_step_valid * epoch
+            
+            wandb.log({"validation step":valid_step, "validation loss":valid_loss})
 
-            wandb.log({"valid_loss":valid_loss})
+            running_valid_loss.append(valid_loss.cpu().detach().numpy())
+            
+    	mean_train_loss = np.mean(running_train_loss)
+    	mean_valid_loss = np.mean(running_valid_loss)
 
-            running_valid_loss += valid_loss
+    	total_train_loss.append(mean_train_loss)
+    	total_valid_loss.append(mean_valid_loss)
 
-            total_valid_loss.append(np.mean(running_valid_loss))
-            total_train_loss.append(np.mean(running_train_loss))
+    	wandb.log({"epoch":epoch, "mean training loss":mean_train_loss, "mean validation loss":mean_valid_loss})
+    	print("Epochs: {}/{} - Loss: {:.4f}".format(epoch+1, epochs, mean_train_loss))
 
-    	print("Epochs: {}/{} - Loss: {:.4f}".format(epoch+1, epochs, np.mean(running_train_loss)))
-
-    return model, total_train_loss, total_valid_loss
+    return model
