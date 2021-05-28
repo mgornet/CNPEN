@@ -55,7 +55,7 @@ def print_img_category(attribute):
 #################################################################################
 
 def print_pairs(df, xa, xp, id_x):
-    list_paths = df.Path[(df.index==xa[id_x])|(df.index==xp[id_x])].values
+    list_paths = [df.Path.iloc[xa[id_x]], df.Path.iloc[xp[id_x]]]
     fig,ax = plt.subplots(1,2)
     plt.subplot(1,2,1)
     plt.imshow(resize100(imread(PATH+list_paths[0])/255))
