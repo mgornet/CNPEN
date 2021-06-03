@@ -73,15 +73,15 @@ def compute_distances(df, device, model, Xa, Xp, Xn):
     return AP, AN
 
 
-
 # TRIPLET GENERATOR
 #################################################################################
 
 class TripletGenerator(nn.Module):
+
     def __init__(self, Xa_train, Xp_train, batch_size, df, neg_imgs_idx, device, model, margin, transform=False, mining="standard"):
         
         super(TripletGenerator, self).__init__()
-
+        
         self.cur_img_index = 0
         self.cur_img_pos_index = 0
         self.batch_size = batch_size
@@ -112,6 +112,14 @@ class TripletGenerator(nn.Module):
                       transforms.RandomHorizontalFlip(p=0.5)
                   ]
               )
+
+    	else :
+            image_transforms = transforms.Compose(
+                  [
+                      transforms.ToTensor(),
+                  ]
+              )
+
 
     	low_index = batch_index * self.batch_size
     	high_index = (batch_index + 1) * self.batch_size
