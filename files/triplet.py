@@ -1,4 +1,5 @@
 import random
+import numpy as np
 import torch
 from torch import nn, optim
 import torch.nn.functional as F
@@ -32,24 +33,73 @@ class TripletLossRaw(nn.Module):
         losses = F.relu(distance_positive - distance_negative + self.margin)
         return losses
 
+def compute_distances(df, device, model, Xa, Xp, Xn):
+
+    anchors_emb = []
+    positives_emb = []
+    negatives_emb = []
+    
+    for i in range(len(Xa)):
+
+    	anchor = torch.reshape(df.Img.iloc[Xa[i]].to(device).float(), (1,3,60,60))
+    	positive = torch.reshape(df.Img.iloc[Xp[i]].to(device).float(), (1,3,60,60))
+    	negative = torch.reshape(df.Img.iloc[Xn[i]].to(device).float(), (1,3,60,60))
+
+    	anchor_out = model(anchor)
+    	positive_out = model(positive)
+    	negative_out = model(negative)
+
+    	anchors_emb.append(anchor_out)
+    	positives_emb.append(positive_out)
+    	negatives_emb.append(negative_out)
+
+    AP = torch.zeros((len(Xa),len(Xp)))
+    AN = torch.zeros((len(Xa),len(Xn)))
+
+    for i in range(len(Xa)):
+
+    	anchor_emb = anchors_emb[i]
+
+    	for j in range(len(Xp)):
+    		positive_emb = positives_emb[j]
+    		distance_positive = (anchor_emb - positive_emb).pow(2).sum(1)
+    		AP[i,j] = distance_positive
+
+    	for k in range(len(Xn)):
+    		negative_emb = negatives_emb[k]
+    		distance_negative = (anchor_emb - negative_emb).pow(2).sum(1)
+    		AN[i,k] = distance_negative
+
+    return AP, AN
+
 
 # TRIPLET GENERATOR
 #################################################################################
 
 class TripletGenerator(nn.Module):
-    def __init__(self, Xa_train, Xp_train, batch_size, all_imgs, neg_imgs_idx, transform=False):
+
+    def __init__(self, Xa_train, Xp_train, batch_size, df, neg_imgs_idx, device, model, margin, transform=False, mining="standard"):
+        
+        super(TripletGenerator, self).__init__()
+        
         self.cur_img_index = 0
         self.cur_img_pos_index = 0
         self.batch_size = batch_size
         
-        self.imgs = all_imgs
+        self.df = df
+        self.imgs = df.Img.values
         self.Xa = Xa_train  # Anchors
         self.Xp = Xp_train  # Positives
         self.cur_train_index = 0
         self.num_samples = Xa_train.shape[0]
         self.neg_imgs_idx = neg_imgs_idx
 
+        self.device = device
+        self.model = model
+        self.margin = margin
+
         self.transform = transform
+        self.mining = mining
         
     def __len__(self):
         return self.num_samples // self.batch_size
@@ -59,7 +109,6 @@ class TripletGenerator(nn.Module):
     	if self.transform :
             image_transforms = transforms.Compose(
                   [
-                      transforms.ToTensor(),
                       transforms.RandomHorizontalFlip(p=0.5)
                   ]
               )
@@ -71,12 +120,34 @@ class TripletGenerator(nn.Module):
                   ]
               )
 
+
     	low_index = batch_index * self.batch_size
     	high_index = (batch_index + 1) * self.batch_size
 
     	imgs_a = self.Xa[low_index:high_index]  # Anchors
     	imgs_p = self.Xp[low_index:high_index]  # Positives
     	imgs_n = random.sample(self.neg_imgs_idx, imgs_a.shape[0])  # Negatives
+
+    	if self.mining == "semi":
+    		AP, AN = compute_distances(self.df, self.device, self.model, imgs_a, imgs_p, imgs_n)
+    		imgs_n_ordered = list(imgs_n)
+    		for i in range(len(imgs_a)):
+    			satisfy_cond = []
+    			for k in range(len(imgs_n)):
+    				if (AP[i,i]<AN[i,k])&(AN[i,k]<self.margin):
+    					satisfy_cond.append(imgs_n[k])
+    			if len(satisfy_cond)>0 :
+    				imgs_n_ordered[i]=imgs_n[np.argmin(satisfy_cond)]
+    			else :
+    				imgs_n_ordered[i]=imgs_n[i]
+    			imgs_n = imgs_n_ordered
+
+    	elif self.mining == "hard":
+    		AP, AN = compute_distances(self.df, self.device, self.model, imgs_a, imgs_p, imgs_n)
+    		imgs_n_ordered = list(imgs_n)
+    		for i in range(len(imgs_a)):
+    			imgs_n_ordered[i]=imgs_n[torch.argmin(AN[i])]  
+    		imgs_n = imgs_n_ordered
 
     	imgs_a = self.imgs[imgs_a]
     	imgs_p = self.imgs[imgs_p]
@@ -87,9 +158,14 @@ class TripletGenerator(nn.Module):
     	negatives = torch.zeros((self.batch_size,3,60,60))
 
     	for batch in range(self.batch_size):
-    		anchors[batch]=image_transforms(imgs_a[batch])
-    		positives[batch]=image_transforms(imgs_p[batch])
-    		negatives[batch]=image_transforms(imgs_n[batch])
+    		if self.transform :
+	    		anchors[batch]=image_transforms(imgs_a[batch])
+	    		positives[batch]=image_transforms(imgs_p[batch])
+	    		negatives[batch]=image_transforms(imgs_n[batch])
+	    	else :
+	    		anchors[batch]=imgs_a[batch]
+	    		positives[batch]=imgs_p[batch]
+	    		negatives[batch]=imgs_n[batch]
             
     	return (anchors, positives, negatives)
     

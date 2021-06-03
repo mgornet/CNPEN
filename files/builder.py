@@ -7,6 +7,7 @@ import re
 from skimage.io import imread
 from skimage.transform import resize
 import os
+from torchvision import transforms
 
 
 # SOME USEFUL FUNCTIONS
@@ -93,9 +94,15 @@ def create_dataframe():
     for name,classid in name_to_classid.items():
         df['Name'][df['Classid']==classid]=name
 
+    image_transforms = transforms.Compose(
+                  [
+                      transforms.ToTensor(),
+                  ]
+              )
+
     df.insert(3,'Img',np.array)
     for i in range(len(df.Img)):
-        df['Img'].iloc[i]=all_imgs[df['Id'].iloc[i]]
+        df['Img'].iloc[i]=image_transforms(all_imgs[df['Id'].iloc[i]])
 
     print("number of classes: "+str(len(df.Classid.unique())))
 

@@ -8,6 +8,8 @@ from skimage.transform import resize
 # USEFUL FUNCTIONS
 #################################################################################
 
+MEAN = np.array([131.60774134, 105.40847531,  88.49154859])
+
 PATH = "lfw/lfw-deepfunneled/"
 
 def resize100(img):
@@ -49,6 +51,37 @@ def print_img_category(attribute):
         plt.imshow(resize100(imread(PATH+df[df[attribute]==1]['Path'].sample().iloc[0]))/255)
         plt.axis('off')
     plt.show()
+
+def print_from_gen(gen,idx):
+    xa, xp, xn = gen[idx]
+    xa = xa.numpy()
+    xp = xp.numpy()
+    xn = xn.numpy()
+    plt.figure(figsize=(16, 9))
+
+    for i in range(5):
+        x = xa[i].transpose((1, 2, 0))
+        plt.subplot(3, 5, i + 1)
+        plt.title("anchor")
+        plt.imshow((x + MEAN)/255)
+        plt.axis('off')
+
+    for i in range(5):
+        x = xp[i].transpose((1, 2, 0))
+        plt.subplot(3, 5, i + 6)
+        plt.title("positive")
+        plt.imshow((x + MEAN) / 255)
+        plt.axis('off')
+
+    for i in range(5):
+        x = xn[i].transpose((1, 2, 0))
+        plt.subplot(3, 5, i + 11)
+        plt.title("negative")
+        plt.imshow((x + MEAN) / 255)
+        plt.axis('off')
+
+    plt.show()
+
 
 
 # GROUP PRINT
