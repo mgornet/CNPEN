@@ -98,61 +98,66 @@ class TripletGenerator(nn.Module):
         self.transform = transform
         self.mining = mining
 
-        Xa, Xp, Xn = []
+        Xa, Xp, Xn = [],[],[]
 
-    	for classid_unique in df.Classid.unique():
-    		id_imgs = df.index[df.Classid==classid_unique]
-    		if len(id_imgs)>1:
-    			itert = list(itertools.combinations(id_imgs, 2))
-    			random_index = random.randint(0,len(itert)-1)
-    			Xa.append(itert[random_index][0])
-    			Xp.append(itert[random_index][1])
-    			classids_n = list(df.Classid.unique()).remove(classid_unique)
-    			random_index2 = random.randint(0,len(classids_n)-1)
-    			Xn.append(df.index[df.Classid==classids_n[random_index2]])
+        for classid_unique in df.Classid.unique():
+            id_imgs = df.index[df.Classid==classid_unique]
+            if len(id_imgs)>1:
+                itert = list(itertools.combinations(id_imgs, 2))
+                random_index = random.randint(0,len(itert)-1)
+                Xa.append(itert[random_index][0])
+                Xp.append(itert[random_index][1])
+                classids_n = list(df.Classid.unique())
+                classids_n.remove(5)
+                random_index2 = random.randint(0,len(classids_n)-1)
+                classid_n = classids_n[random_index2]
+                id_imgs_n = df.index[df.Classid==classid_n]
+                random_index3 = random.randint(0,len(id_imgs_n)-1)
+                id_img_n = id_imgs_n[random_index3]
+                Xn.append(id_img_n)
 
-    	self.Xa = Xa
-    	self.Xp = Xp
-    	self.Xn = Xn
-        
+        self.Xa = Xa
+        self.Xp = Xp
+        self.Xn = Xn
+
     def __len__(self):
         return self.num_samples // self.batch_size
         
     def __getitem__(self, batch_index):
 
-    	if self.transform :
+        if self.transform :
             image_transforms = transforms.Compose(
                   [
                       transforms.RandomHorizontalFlip(p=0.5)
                   ]
               )
 
-    	low_index = batch_index * self.batch_size
-    	high_index = (batch_index + 1) * self.batch_size
+        low_index = batch_index * self.batch_size
+        high_index = (batch_index + 1) * self.batch_size
 
-    	id_batch_a = self.Xa[low_index:high_index]  # Anchors
-    	id_batch_p = self.Xp[low_index:high_index]  # Positives
-    	id_batch_n = self.Xn[low_index:high_index]  # Negatives
+        id_batch_a = self.Xa[low_index:high_index]  # Anchors
+        id_batch_p = self.Xp[low_index:high_index]  # Positives
+        id_batch_n = self.Xn[low_index:high_index]  # Negatives
 
-    	imgs_a = self.imgs[id_batch_a]
-    	imgs_p = self.imgs[id_batch_p]
-    	imgs_n = self.imgs[id_batch_n]
+        imgs_a = self.imgs[id_batch_a]
+        imgs_p = self.imgs[id_batch_p]
+        imgs_n = self.imgs[id_batch_n]
 
-    	anchors = torch.zeros((self.batch_size,3,60,60))
-    	positives = torch.zeros((self.batch_size,3,60,60))
-    	negatives = torch.zeros((self.batch_size,3,60,60))
+        anchors = torch.zeros((self.batch_size,3,60,60))
+        positives = torch.zeros((self.batch_size,3,60,60))
+        negatives = torch.zeros((self.batch_size,3,60,60))
 
-    	for batch in range(self.batch_size):
-    		if self.transform :
-	    		anchors[batch]=image_transforms(imgs_a[batch])
-	    		positives[batch]=image_transforms(imgs_p[batch])
-	    		negatives[batch]=image_transforms(imgs_n[batch])
-	    	else :
-	    		anchors[batch]=imgs_a[batch]
-	    		positives[batch]=imgs_p[batch]
-	    		negatives[batch]=imgs_n[batch]
-            
-    	return (anchors, positives, negatives)
+        for batch in range(self.batch_size):
+            if self.transform :
+                anchors[batch]=image_transforms(imgs_a[batch])
+                positives[batch]=image_transforms(imgs_p[batch])
+                negatives[batch]=image_transforms(imgs_n[batch])
+            else :
+                anchors[batch]=imgs_a[batch]
+                positives[batch]=imgs_p[batch]
+                negatives[batch]=imgs_n[batch]
+
+        return (anchors, positives, negatives)
     
     
 # NETWORK
