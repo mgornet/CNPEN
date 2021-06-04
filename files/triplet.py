@@ -4,6 +4,7 @@ import torch
 from torch import nn, optim
 import torch.nn.functional as F
 from torchvision import transforms
+import itertools
 
 # LOSS
 #################################################################################
@@ -78,21 +79,17 @@ def compute_distances(df, device, model, Xa, Xp, Xn):
 
 class TripletGenerator(nn.Module):
 
-    def __init__(self, Xa_train, Xp_train, batch_size, df, neg_imgs_idx, device, model, margin, transform=False, mining="standard"):
+    def __init__(self, df, batch_size, device, model, margin, transform=False, mining="standard"):
         
         super(TripletGenerator, self).__init__()
         
-        self.cur_img_index = 0
-        self.cur_img_pos_index = 0
         self.batch_size = batch_size
         
         self.df = df
         self.imgs = df.Img.values
-        self.Xa = Xa_train  # Anchors
-        self.Xp = Xp_train  # Positives
-        self.cur_train_index = 0
-        self.num_samples = Xa_train.shape[0]
-        self.neg_imgs_idx = neg_imgs_idx
+
+        self.classid = df.Classid.unique()
+        self.num_samples = len(df.Classid.unique())
 
         self.device = device
         self.model = model
@@ -100,6 +97,23 @@ class TripletGenerator(nn.Module):
 
         self.transform = transform
         self.mining = mining
+
+        Xa, Xp, Xn = []
+
+    	for classid_unique in df.Classid.unique():
+    		id_imgs = df.index[df.Classid==classid_unique]
+    		if len(id_imgs)>1:
+    			itert = list(itertools.combinations(id_imgs, 2))
+    			random_index = random.randint(0,len(itert)-1)
+    			Xa.append(itert[random_index][0])
+    			Xp.append(itert[random_index][1])
+    			classids_n = list(df.Classid.unique()).remove(classid_unique)
+    			random_index2 = random.randint(0,len(classids_n)-1)
+    			Xn.append(df.index[df.Classid==classids_n[random_index2]])
+
+    	self.Xa = Xa
+    	self.Xp = Xp
+    	self.Xn = Xn
         
     def __len__(self):
         return self.num_samples // self.batch_size
@@ -113,45 +127,16 @@ class TripletGenerator(nn.Module):
                   ]
               )
 
-    	else :
-            image_transforms = transforms.Compose(
-                  [
-                      transforms.ToTensor(),
-                  ]
-              )
-
-
     	low_index = batch_index * self.batch_size
     	high_index = (batch_index + 1) * self.batch_size
 
-    	imgs_a = self.Xa[low_index:high_index]  # Anchors
-    	imgs_p = self.Xp[low_index:high_index]  # Positives
-    	imgs_n = random.sample(self.neg_imgs_idx, imgs_a.shape[0])  # Negatives
+    	id_batch_a = self.Xa[low_index:high_index]  # Anchors
+    	id_batch_p = self.Xp[low_index:high_index]  # Positives
+    	id_batch_n = self.Xn[low_index:high_index]  # Negatives
 
-    	if self.mining == "semi":
-    		AP, AN = compute_distances(self.df, self.device, self.model, imgs_a, imgs_p, imgs_n)
-    		imgs_n_ordered = list(imgs_n)
-    		for i in range(len(imgs_a)):
-    			satisfy_cond = []
-    			for k in range(len(imgs_n)):
-    				if (AP[i,i]<AN[i,k])&(AN[i,k]<self.margin):
-    					satisfy_cond.append(imgs_n[k])
-    			if len(satisfy_cond)>0 :
-    				imgs_n_ordered[i]=imgs_n[np.argmin(satisfy_cond)]
-    			else :
-    				imgs_n_ordered[i]=imgs_n[i]
-    			imgs_n = imgs_n_ordered
-
-    	elif self.mining == "hard":
-    		AP, AN = compute_distances(self.df, self.device, self.model, imgs_a, imgs_p, imgs_n)
-    		imgs_n_ordered = list(imgs_n)
-    		for i in range(len(imgs_a)):
-    			imgs_n_ordered[i]=imgs_n[torch.argmin(AN[i])]  
-    		imgs_n = imgs_n_ordered
-
-    	imgs_a = self.imgs[imgs_a]
-    	imgs_p = self.imgs[imgs_p]
-    	imgs_n = self.imgs[imgs_n]
+    	imgs_a = self.imgs[id_batch_a]
+    	imgs_p = self.imgs[id_batch_p]
+    	imgs_n = self.imgs[id_batch_n]
 
     	anchors = torch.zeros((self.batch_size,3,60,60))
     	positives = torch.zeros((self.batch_size,3,60,60))
