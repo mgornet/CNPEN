@@ -86,7 +86,12 @@ class TripletGenerator(nn.Module):
         self.batch_size = batch_size
         
         self.df = df
-        self.imgs = df.Img.values
+
+        all_imgs = torch.zeros((len(self.df), 3, 60, 60))
+        for i in range(len(self.df)) :
+        	all_imgs[i]=self.df.Img.iloc[i]
+
+        self.imgs = all_imgs
 
         self.classid = df.Classid.unique()
         self.num_samples = len(df.Classid.unique())
@@ -143,21 +148,12 @@ class TripletGenerator(nn.Module):
         imgs_p = self.imgs[id_batch_p]
         imgs_n = self.imgs[id_batch_n]
 
-        anchors = torch.zeros((self.batch_size,3,60,60))
-        positives = torch.zeros((self.batch_size,3,60,60))
-        negatives = torch.zeros((self.batch_size,3,60,60))
+        if self.transform :
+            imgs_a=image_transforms(imgs_a)
+            imgs_p=image_transforms(imgs_p)
+            imgs_n=image_transforms(imgs_n)
 
-        for batch in range(self.batch_size):
-            if self.transform :
-                anchors[batch]=image_transforms(imgs_a[batch])
-                positives[batch]=image_transforms(imgs_p[batch])
-                negatives[batch]=image_transforms(imgs_n[batch])
-            else :
-                anchors[batch]=imgs_a[batch]
-                positives[batch]=imgs_p[batch]
-                negatives[batch]=imgs_n[batch]
-
-        return (anchors, positives, negatives)
+        return (imgs_a, imgs_p, imgs_n)
     
     
 # NETWORK
