@@ -79,7 +79,7 @@ def compute_distances(df, device, model, Xa, Xp, Xn):
 
 class TripletGenerator(nn.Module):
 
-    def __init__(self, df, batch_size, device, model, margin, transform=False, mining="standard"):
+    def __init__(self, df, all_imgs, batch_size, device, model, margin, transform=False, mining="standard"):
         
         super(TripletGenerator, self).__init__()
         
@@ -87,14 +87,10 @@ class TripletGenerator(nn.Module):
         
         self.df = df
 
-        all_imgs = torch.zeros((len(self.df), 3, 60, 60))
-        for i in range(len(self.df)) :
-        	all_imgs[i]=self.df.Img.iloc[i]
-
         self.imgs = all_imgs
 
-        self.classid = df.Classid.unique()
-        self.num_samples = len(df.Classid.unique())
+        self.classid = self.df.Classid.unique()
+        self.num_samples = len(self.df.Classid.value_counts()[self.df.Classid.value_counts().values>1])
 
         self.device = device
         self.model = model
@@ -105,18 +101,21 @@ class TripletGenerator(nn.Module):
 
         Xa, Xp, Xn = [],[],[]
 
-        for classid_unique in df.Classid.unique():
-            id_imgs = df.index[df.Classid==classid_unique]
+        for classid_unique in self.df.Classid.unique():
+            id_imgs = df.index[self.df.Classid==classid_unique]
             if len(id_imgs)>1:
                 itert = list(itertools.combinations(id_imgs, 2))
                 random_index = random.randint(0,len(itert)-1)
                 Xa.append(itert[random_index][0])
                 Xp.append(itert[random_index][1])
-                classids_n = list(df.Classid.unique())
-                classids_n.remove(5)
+                # list of all classids without the one already used by anchor
+                classids_n = list(self.df.Classid.unique())
+                classids_n.remove(classid_unique)
+                # randomly select one identity for the negative image
                 random_index2 = random.randint(0,len(classids_n)-1)
                 classid_n = classids_n[random_index2]
-                id_imgs_n = df.index[df.Classid==classid_n]
+                # select a random image amonst this identity
+                id_imgs_n = self.df.index[df.Classid==classid_n]
                 random_index3 = random.randint(0,len(id_imgs_n)-1)
                 id_img_n = id_imgs_n[random_index3]
                 Xn.append(id_img_n)
@@ -133,7 +132,13 @@ class TripletGenerator(nn.Module):
         if self.transform :
             image_transforms = transforms.Compose(
                   [
-                      transforms.RandomHorizontalFlip(p=0.5)
+                      transforms.RandomHorizontalFlip(p=0.5),
+                      transforms.RandomApply(torch.nn.ModuleList([transforms.ColorJitter(),]), p=0.3),
+                      transforms.RandomPerspective(),
+                      # transforms.RandomCrop(10),
+                      transforms.RandomRotation((-30,30)),
+                      transforms.RandomApply(torch.nn.ModuleList([transforms.GaussianBlur(kernel_size=3),]),p=0.2),
+                      transforms.RandomAdjustSharpness(sharpness_factor=2, p=0.2)
                   ]
               )
 
