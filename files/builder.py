@@ -7,6 +7,7 @@ import re
 from skimage.io import imread
 from skimage.transform import resize
 import os
+import torch
 from torchvision import transforms
 
 
@@ -14,6 +15,8 @@ from torchvision import transforms
 ##################################################################################
 
 PATH = "lfw/lfw-deepfunneled/"
+
+ATTR_FILE = 'lfw_att_73.mat'
 
 def rewrite_names(name_list):
     new_list = []
@@ -26,9 +29,10 @@ def resize100(img):
 
 def open_all_images(id_to_path):
     all_imgs = []
-    for path in id_to_path.values():
-        all_imgs += [np.expand_dims(resize100(imread(PATH+path)),0)]
-    return np.vstack(all_imgs)
+    image_transforms = transforms.Compose([transforms.ToTensor(),])
+    for _,path in id_to_path.items():
+        all_imgs += [image_transforms(resize100(imread(PATH+path))).unsqueeze(0)]
+    return torch.vstack(all_imgs)
 
 
 # BUILD DATAFRAME
@@ -37,74 +41,42 @@ def open_all_images(id_to_path):
 def create_dataframe():
 
     dirs = sorted(os.listdir(PATH))
-    name_to_classid = {d:i for i,d in enumerate(dirs)}
-    classid_to_name = {v:k for k,v in name_to_classid.items()}
-    num_classes = len(name_to_classid)
-    # print("number of total classes: "+str(num_classes))
 
-    # read all directories
-    img_paths = {c:[directory + "/" + img for img in sorted(os.listdir(PATH+directory))] 
-                for directory,c in name_to_classid.items()}
+    classids = pd.Series([classid for classid, name in enumerate(dirs) for _ in sorted(os.listdir(PATH+name))])
+    names = pd.Series([name for _, name in enumerate(dirs) for _ in sorted(os.listdir(PATH+name))])
+    img_paths = pd.Series([name + '/' + img for _, name in enumerate(dirs) for img in sorted(os.listdir(PATH+name))])
+    nb_imgs = len(classids)
+    nb_indiv = len(classids.unique())
 
-    # retrieve all images
-    all_images_path = []
-    for img_list in img_paths.values():
-        all_images_path += img_list
+    print("Number of individuals: ", nb_indiv)
+    print("Number of total images: ", nb_imgs)
 
-    # map to integers
-    path_to_id = {v:k for k,v in enumerate(all_images_path)}
+    df = pd.DataFrame({"Classid":classids, "Name":names, "Path":img_paths})
+
+    path_to_id = {v:k for k,v in enumerate(img_paths)}
     id_to_path = {v:k for k,v in path_to_id.items()}
 
-    # build mappings between images and class
-    classid_to_ids = {k:[path_to_id[path] for path in v] for k,v in img_paths.items()}
-    id_to_classid = {v:c for c,imgs in classid_to_ids.items() for v in imgs}
-
-    classid_to_path = img_paths
-    path_to_classid = {}
-    for key, value in classid_to_path.items():
-        for string in value:
-            path_to_classid.setdefault(string, key)
-
     all_imgs = open_all_images(id_to_path)
-    mean = np.mean(all_imgs, axis=(0,1,2))
+    mean = torch.mean(all_imgs, axis=(0,1,2))
     all_imgs -= mean
-    print("images weigh ", str(round(all_imgs.nbytes / 1e9,2)), "GB")
+    print("images weigh ", str(round(all_imgs.element_size() * all_imgs.nelement() / 1e9,2)), "GB")
 
-    data_dict = mat73.loadmat('lfw_att_73.mat')
+    return df, all_imgs, mean
+
+# MARCHE PAS
+def extend_dataframe(df):
+
+    data_dict = mat73.loadmat(ATTR_FILE)
     data_dict.name = rewrite_names(data_dict.name)
 
-    attributes = ['Path'] + data_dict.AttrName #['Id'] + ['Classid'] + ['Name'] + ['Img'] +
+    for attr in data_dict.AttrName:
+        df[attr]=np.nan
 
-    values = np.zeros((len(data_dict.name),len(data_dict.AttrName)+1),dtype=object)
+    path_to_label = {path:label for path in data_dict.name for label in data_dict.label}
 
-    for i in range(len(data_dict.name)):
-        values[i] = [data_dict.name[i]] + list(data_dict.label[i])
-
-    df = pd.DataFrame(values, columns=attributes)
-
-    df.insert(0,'Id',int)
-    for id,path in id_to_path.items():
-        df['Id'][df['Path']==path]=id
-
-    df.insert(1,'Classid',int)
-    for path,classid in path_to_classid.items():
-        df['Classid'][df['Path']==path]=int(classid)
-
-    df.insert(2,'Name',str)
-    for name,classid in name_to_classid.items():
-        df['Name'][df['Classid']==classid]=name
-
-    image_transforms = transforms.Compose(
-                  [
-                      transforms.ToTensor(),
-                  ]
-              )
-
-    df.insert(3,'Img',np.array)
-    for i in range(len(df.Img)):
-        df['Img'].iloc[i]=image_transforms(all_imgs[df['Id'].iloc[i]])
-
-    print("number of classes: "+str(len(df.Classid.unique())))
+    for path, label in path_to_label.items():
+        for i, attr in zip(range(len(data_dict.AttrName)),data_dict.AttrName):
+            df[attr][df.Path==path]=int(label[i])
 
     return df
 
@@ -150,5 +122,3 @@ def build_negative_pairs(df, classid_range, pairs_num=128):
         
     perm = np.random.permutation(len(listX1))
     return np.array(listX1)[perm], np.array(listX2)[perm]
-
-
