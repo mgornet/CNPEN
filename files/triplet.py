@@ -99,6 +99,18 @@ class TripletGenerator(nn.Module):
         self.transform = transform
         self.mining = mining
 
+        self.apply_augmentation = transforms.Compose(
+              [
+                  transforms.RandomHorizontalFlip(p=0.5),
+                  transforms.RandomApply(torch.nn.ModuleList([transforms.ColorJitter(),]), p=0.3),
+                  transforms.RandomPerspective(),
+                  transforms.RandomCrop(),
+                  transforms.RandomRotation((-30,30)),
+                  transforms.RandomApply(torch.nn.ModuleList([transforms.GaussianBlur(kernel_size=3),]),p=0.2),
+                  transforms.RandomAdjustSharpness(sharpness_factor=2, p=0.2)
+              ]
+          )
+
         Xa, Xp, Xn = [],[],[]
 
         for classid_unique in self.df.Classid.unique():
@@ -129,19 +141,6 @@ class TripletGenerator(nn.Module):
         
     def __getitem__(self, batch_index):
 
-        if self.transform :
-            image_transforms = transforms.Compose(
-                  [
-                      transforms.RandomHorizontalFlip(p=0.5),
-                      transforms.RandomApply(torch.nn.ModuleList([transforms.ColorJitter(),]), p=0.3),
-                      transforms.RandomPerspective(),
-                      # transforms.RandomCrop(10),
-                      transforms.RandomRotation((-30,30)),
-                      transforms.RandomApply(torch.nn.ModuleList([transforms.GaussianBlur(kernel_size=3),]),p=0.2),
-                      transforms.RandomAdjustSharpness(sharpness_factor=2, p=0.2)
-                  ]
-              )
-
         low_index = batch_index * self.batch_size
         high_index = (batch_index + 1) * self.batch_size
 
@@ -154,9 +153,9 @@ class TripletGenerator(nn.Module):
         imgs_n = self.imgs[id_batch_n]
 
         if self.transform :
-            imgs_a=image_transforms(imgs_a)
-            imgs_p=image_transforms(imgs_p)
-            imgs_n=image_transforms(imgs_n)
+            imgs_a=self.apply_augmentation(imgs_a)
+            imgs_p=self.apply_augmentation(imgs_p)
+            imgs_n=self.apply_augmentation(imgs_n)
 
         return (imgs_a, imgs_p, imgs_n)
     
