@@ -89,8 +89,8 @@ class TripletGenerator(nn.Module):
 
         self.imgs = all_imgs
 
-        self.classid = self.df.Classid.unique()
-        self.num_samples = len(self.df.Classid.value_counts()[self.df.Classid.value_counts().values>1])
+        # self.classid = self.df.Classid.unique()
+        self.num_samples = len(df.Classid.value_counts()[df.Classid.value_counts().values>1])
 
         self.device = device
         self.model = model
@@ -102,39 +102,17 @@ class TripletGenerator(nn.Module):
         self.apply_augmentation = transforms.Compose(
               [
                   transforms.RandomHorizontalFlip(p=0.5),
-                  transforms.RandomApply(torch.nn.ModuleList([transforms.ColorJitter(),]), p=0.3),
-                  transforms.RandomPerspective(),
-                  transforms.RandomCrop(),
-                  transforms.RandomRotation((-30,30)),
-                  transforms.RandomApply(torch.nn.ModuleList([transforms.GaussianBlur(kernel_size=3),]),p=0.2),
-                  transforms.RandomAdjustSharpness(sharpness_factor=2, p=0.2)
+                  # transforms.RandomApply(torch.nn.ModuleList([transforms.ColorJitter(),]), p=0.3),
+                  # transforms.RandomPerspective(),
+                  # transforms.RandomCrop(),
+                  transforms.RandomRotation((-10,10)),
+                  # transforms.RandomApply(torch.nn.ModuleList([transforms.GaussianBlur(kernel_size=3),]),p=0.2),
+                  # transforms.RandomAdjustSharpness(sharpness_factor=2, p=0.2)
               ]
           )
 
-        Xa, Xp, Xn = [],[],[]
-
-        for classid_unique in self.df.Classid.unique():
-            id_imgs = df.index[self.df.Classid==classid_unique]
-            if len(id_imgs)>1:
-                itert = list(itertools.combinations(id_imgs, 2))
-                random_index = random.randint(0,len(itert)-1)
-                Xa.append(itert[random_index][0])
-                Xp.append(itert[random_index][1])
-                # list of all classids without the one already used by anchor
-                classids_n = list(self.df.Classid.unique())
-                classids_n.remove(classid_unique)
-                # randomly select one identity for the negative image
-                random_index2 = random.randint(0,len(classids_n)-1)
-                classid_n = classids_n[random_index2]
-                # select a random image amonst this identity
-                id_imgs_n = self.df.index[df.Classid==classid_n]
-                random_index3 = random.randint(0,len(id_imgs_n)-1)
-                id_img_n = id_imgs_n[random_index3]
-                Xn.append(id_img_n)
-
-        self.Xa = Xa
-        self.Xp = Xp
-        self.Xn = Xn
+        self.id_list = list(df.Classid.value_counts()[df.Classid.value_counts().values>1].index)
+        random.shuffle(self.id_list)
 
     def __len__(self):
         return self.num_samples // self.batch_size
@@ -144,13 +122,33 @@ class TripletGenerator(nn.Module):
         low_index = batch_index * self.batch_size
         high_index = (batch_index + 1) * self.batch_size
 
-        id_batch_a = self.Xa[low_index:high_index]  # Anchors
-        id_batch_p = self.Xp[low_index:high_index]  # Positives
-        id_batch_n = self.Xn[low_index:high_index]  # Negatives
+        classid_batch = self.id_list[low_index:high_index]
 
-        imgs_a = self.imgs[id_batch_a]
-        imgs_p = self.imgs[id_batch_p]
-        imgs_n = self.imgs[id_batch_n]
+        Xa = []
+        Xp = []
+        Xn = []
+
+        for classid_unique in classid_batch:
+            id_imgs = self.df.index[self.df.Classid==classid_unique]
+            itert = list(itertools.combinations(id_imgs, 2))
+            random_index = random.randint(0,len(itert)-1)
+            Xa.append(itert[random_index][0])
+            Xp.append(itert[random_index][1])
+            # list of all classids without the one already used by anchor
+            classids_n = list(self.df.Classid.unique())
+            classids_n.remove(classid_unique)
+            # randomly select one identity for the negative image
+            random_index2 = random.randint(0,len(classids_n)-1)
+            classid_n = classids_n[random_index2]
+            # select a random image amonst this identity
+            id_imgs_n = self.df.index[self.df.Classid==classid_n]
+            random_index3 = random.randint(0,len(id_imgs_n)-1)
+            id_img_n = id_imgs_n[random_index3]
+            Xn.append(id_img_n)
+
+        imgs_a = self.imgs[Xa]
+        imgs_p = self.imgs[Xp]
+        imgs_n = self.imgs[Xn]
 
         if self.transform :
             imgs_a=self.apply_augmentation(imgs_a)
