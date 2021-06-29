@@ -26,7 +26,7 @@ def print_img_from_path(path):
 
 
 def print_img_from_id(df, id):
-    path = df.Path[df.index==id].values[0]
+    path = df.Path.iloc[id].values[0]
     plt.imshow(resize100(imread(PATH+path))/255)
     plt.axis('off')
     plt.show()
