@@ -79,7 +79,7 @@ def compute_distances(df, device, model, Xa, Xp, Xn):
 
 class TripletGenerator(nn.Module):
 
-    def __init__(self, df, all_imgs, batch_size, device, model, margin, transform=False, mining="standard"):
+    def __init__(self, df, all_imgs, batch_size, device, model, margin, transform=False, mining="standard", negative=False):
         
         super(TripletGenerator, self).__init__()
         
@@ -89,7 +89,6 @@ class TripletGenerator(nn.Module):
 
         self.imgs = all_imgs
 
-        # self.classid = self.df.Classid.unique()
         self.num_samples = len(df.Classid.value_counts()[df.Classid.value_counts().values>1])
 
         self.device = device
@@ -98,6 +97,7 @@ class TripletGenerator(nn.Module):
 
         self.transform = transform
         self.mining = mining
+        self.negative = negative
 
         self.apply_augmentation = transforms.Compose(
               [
@@ -128,23 +128,31 @@ class TripletGenerator(nn.Module):
         Xp = []
         Xn = []
 
-        for classid_unique in classid_batch:
-            id_imgs = self.df.index[self.df.Classid==classid_unique]
-            itert = list(itertools.combinations(id_imgs, 2))
-            random_index = random.randint(0,len(itert)-1)
-            Xa.append(itert[random_index][0])
-            Xp.append(itert[random_index][1])
-            # list of all classids without the one already used by anchor
-            classids_n = list(self.df.Classid.unique())
-            classids_n.remove(classid_unique)
-            # randomly select one identity for the negative image
-            random_index2 = random.randint(0,len(classids_n)-1)
-            classid_n = classids_n[random_index2]
-            # select a random image amonst this identity
-            id_imgs_n = self.df.index[self.df.Classid==classid_n]
-            random_index3 = random.randint(0,len(id_imgs_n)-1)
-            id_img_n = id_imgs_n[random_index3]
-            Xn.append(id_img_n)
+        if self.negative == True:
+            for classid_unique in classid_batch:
+                random_ids = [random.randint(self.df.index.min(),self.df.index.max()) for _ in range(3)]
+                Xa.append(random_ids[0])
+                Xp.append(random_ids[1])
+                Xn.append(random_ids[2])
+
+        elif self.negative == False:
+            for classid_unique in classid_batch:
+                id_imgs = self.df.index[self.df.Classid==classid_unique]
+                itert = list(itertools.combinations(id_imgs, 2))
+                random_index = random.randint(0,len(itert)-1)
+                Xa.append(itert[random_index][0])
+                Xp.append(itert[random_index][1])
+                # list of all classids without the one already used by anchor
+                classids_n = list(self.df.Classid.unique())
+                classids_n.remove(classid_unique)
+                # randomly select one identity for the negative image
+                random_index2 = random.randint(0,len(classids_n)-1)
+                classid_n = classids_n[random_index2]
+                # select a random image amonst this identity
+                id_imgs_n = self.df.index[self.df.Classid==classid_n]
+                random_index3 = random.randint(0,len(id_imgs_n)-1)
+                id_img_n = id_imgs_n[random_index3]
+                Xn.append(id_img_n)
 
         imgs_a = self.imgs[Xa]
         imgs_p = self.imgs[Xp]
