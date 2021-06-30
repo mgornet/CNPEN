@@ -34,7 +34,7 @@ class TripletLossRaw(nn.Module):
         losses = F.relu(distance_positive - distance_negative + self.margin)
         return losses
 
-def compute_distances(df, device, model, Xa, Xp, Xn):
+def compute_distances(all_imgs, device, model, Xa, Xp, Xn):
 
     anchors_emb = []
     positives_emb = []
@@ -42,9 +42,9 @@ def compute_distances(df, device, model, Xa, Xp, Xn):
     
     for i in range(len(Xa)):
 
-    	anchor = torch.reshape(df.Img.iloc[Xa[i]].to(device).float(), (1,3,60,60))
-    	positive = torch.reshape(df.Img.iloc[Xp[i]].to(device).float(), (1,3,60,60))
-    	negative = torch.reshape(df.Img.iloc[Xn[i]].to(device).float(), (1,3,60,60))
+    	anchor = torch.reshape(all_imgs[Xa[i]].to(device), (1,3,60,60))
+    	positive = torch.reshape(all_imgs[Xp[i]].to(device), (1,3,60,60))
+    	negative = torch.reshape(all_imgs[Xn[i]].to(device), (1,3,60,60))  #.float(), (1,3,60,60))
 
     	anchor_out = model(anchor)
     	positive_out = model(positive)
@@ -153,6 +153,27 @@ class TripletGenerator(nn.Module):
                 random_index3 = random.randint(0,len(id_imgs_n)-1)
                 id_img_n = id_imgs_n[random_index3]
                 Xn.append(id_img_n)
+
+        if self.mining == "semi":
+            AP, AN = compute_distances(self.imgs, self.device, self.model, Xa, Xp, Xn)
+            Xn_ordered = list(Xn)
+            for i in range(len(Xa)):
+                satisfy_cond = []
+                for k in range(len(Xn)):
+                    if (AP[i,i]<AN[i,k])&(AN[i,k]<self.margin):
+                        satisfy_cond.append(Xn[k])
+                if len(satisfy_cond)>0 :
+                    Xn_ordered[i]=Xn[np.argmin(satisfy_cond)]
+                else :
+                    Xn_ordered[i]=Xn[i]
+                Xn = Xn_ordered
+
+        elif self.mining == "hard":
+            AP, AN = compute_distances(self.imgs, self.device, self.model, Xa, Xp, Xn)
+            Xn_ordered = list(Xn)
+            for i in range(len(Xa)):
+                Xn_ordered[i]=Xn[torch.argmin(AN[i])]  
+            Xn = Xn_ordered
 
         imgs_a = self.imgs[Xa]
         imgs_p = self.imgs[Xp]
