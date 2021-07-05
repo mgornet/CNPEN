@@ -84,41 +84,41 @@ def extend_dataframe(df):
 # BUILD PAIRS
 ##################################################################################
 
-def build_pos_pairs_for_id(df, classid, max_num=50):
-    id_imgs = df.index[df.Classid==classid]
-    if len(id_imgs) <= 1:
-        return []
+# def build_pos_pairs_for_id(df, classid, max_num=50):
+#     id_imgs = df.index[df.Classid==classid]
+#     if len(id_imgs) <= 1:
+#         return []
     
-    pos_pairs = list(itertools.combinations(id_imgs, 2))
+#     pos_pairs = list(itertools.combinations(id_imgs, 2))
     
-    random.shuffle(pos_pairs)
-    return pos_pairs[:max_num]
+#     random.shuffle(pos_pairs)
+#     return pos_pairs[:max_num]
 
 
-def build_positive_pairs(df, class_id_range):
-    listX1 = []
-    listX2 = []
+# def build_positive_pairs(df, class_id_range):
+#     listX1 = []
+#     listX2 = []
     
-    for class_id in class_id_range:
-        pos = build_pos_pairs_for_id(df, class_id)
-        for pair in pos:
-            listX1 += [pair[0]]
-            listX2 += [pair[1]]
+#     for class_id in class_id_range:
+#         pos = build_pos_pairs_for_id(df, class_id)
+#         for pair in pos:
+#             listX1 += [pair[0]]
+#             listX2 += [pair[1]]
             
-    perm = np.random.permutation(len(listX1))
-    return np.array(listX1)[perm], np.array(listX2)[perm]
+#     perm = np.random.permutation(len(listX1))
+#     return np.array(listX1)[perm], np.array(listX2)[perm]
 
 
-def build_negative_pairs(df, classid_range, pairs_num=128):
-    listX1 = []
-    listX2 = []
-    classid_range = [i for i in classid_range if df.Classid.isin([i]).any().any()]
-    for i in range(pairs_num):
-        list_classids = random.sample(classid_range, 2)
-        id1 = df.index[df.Classid==list_classids[0]][random.randint(0,len(df.index[df.Classid==list_classids[0]]))-1]
-        id2 = df.index[df.Classid==list_classids[1]][random.randint(0,len(df.index[df.Classid==list_classids[1]]))-1]
-        listX1.append(id1)
-        listX2.append(id2)
+# def build_negative_pairs(df, classid_range, pairs_num=128):
+#     listX1 = []
+#     listX2 = []
+#     classid_range = [i for i in classid_range if df.Classid.isin([i]).any().any()]
+#     for i in range(pairs_num):
+#         list_classids = random.sample(classid_range, 2)
+#         id1 = df.index[df.Classid==list_classids[0]][random.randint(0,len(df.index[df.Classid==list_classids[0]]))-1]
+#         id2 = df.index[df.Classid==list_classids[1]][random.randint(0,len(df.index[df.Classid==list_classids[1]]))-1]
+#         listX1.append(id1)
+#         listX2.append(id2)
         
-    perm = np.random.permutation(len(listX1))
-    return np.array(listX1)[perm], np.array(listX2)[perm]
+#     perm = np.random.permutation(len(listX1))
+#     return np.array(listX1)[perm], np.array(listX2)[perm]

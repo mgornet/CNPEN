@@ -44,13 +44,13 @@ def print_img_from_classid(df, classid):
     else:
         print("This class is not available")
 
-def print_img_category(attribute):
-    fig,ax = plt.subplots(3,4,figsize=(16, 9))
-    for i in range(12):
-        plt.subplot(3,4,i+1)
-        plt.imshow(resize100(imread(PATH+df[df[attribute]==1]['Path'].sample().iloc[0]))/255)
-        plt.axis('off')
-    plt.show()
+# def print_img_category(attribute):
+#     fig,ax = plt.subplots(3,4,figsize=(16, 9))
+#     for i in range(12):
+#         plt.subplot(3,4,i+1)
+#         plt.imshow(resize100(imread(PATH+df[df[attribute]==1]['Path'].sample().iloc[0]))/255)
+#         plt.axis('off')
+#     plt.show()
 
 def print_from_gen(gen,idx):
     xa, xp, xn = gen[idx]
