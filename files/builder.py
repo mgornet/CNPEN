@@ -27,11 +27,14 @@ def rewrite_names(name_list):
 def resize100(img):
     return resize(img, (100, 100), preserve_range=True, mode='reflect', anti_aliasing=True)[20:80,20:80,:]
 
+def load_resize(path):
+    return resize100(imread(PATH+path).astype("float32")/255)
+
 def open_all_images(id_to_path):
     all_imgs = []
     image_transforms = transforms.Compose([transforms.ToTensor(),])
     for _,path in id_to_path.items():
-        all_imgs += [image_transforms(resize100(imread(PATH+path))).unsqueeze(0)]
+        all_imgs += [image_transforms(load_resize(path)).unsqueeze(0)]
     return torch.vstack(all_imgs)
 
 
@@ -53,8 +56,8 @@ def create_dataframe():
 
     df = pd.DataFrame({"Classid":classids, "Name":names, "Path":img_paths})
 
-    path_to_id = {v:k for k,v in enumerate(img_paths)}
-    id_to_path = {v:k for k,v in path_to_id.items()}
+    path_to_id = {path:img_idx for img_idx,path in enumerate(img_paths)}
+    id_to_path = {img_idx:path for path,img_idx in path_to_id.items()}
 
     all_imgs = open_all_images(id_to_path)
     mean = torch.mean(all_imgs, axis=(0,1,2))
