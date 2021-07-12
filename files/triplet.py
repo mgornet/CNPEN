@@ -222,7 +222,8 @@ class TripletGenerator(nn.Module):
             xa, xp = random.choices(id_imgs, k=2)
             Xa.append(xa)
             Xp.append(xp)
-            xn = random.choices(list(self.df.index))
+            # Use k=2, else xn is a list of one elmt
+            xn, _ = random.choices(list(self.df.index),k=2)
             Xn.append(xn)
 
         if self.mining == "semi":
