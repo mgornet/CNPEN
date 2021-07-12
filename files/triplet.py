@@ -218,7 +218,7 @@ class TripletGenerator(nn.Module):
         Xn = []
 
         for classid_unique in classid_batch:
-            id_imgs = self.df.index[self.df.Classid==classid_unique]
+            id_imgs = list(self.df.index[self.df.Classid==classid_unique])
             # choose one img at random inside this classid
             # rq: if k=1 returns a list of one elmt, hence the [0]
             xa = random.choices(id_imgs)[0]
