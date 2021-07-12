@@ -33,12 +33,12 @@ def testing(test_loader, device, model, criterion):
     
     return total_loss
 
-def compute_distances(test_loader, device, model):
+def compute_distances(loader, device, model):
     
     list_distance_pos = []
     list_distance_neg = []
 
-    for step, (anchor_img, positive_img, negative_img) in enumerate(tqdm(test_loader, desc="Processing", leave=False)):
+    for step, (anchor_img, positive_img, negative_img) in enumerate(tqdm(loader, desc="Processing", leave=False)):
         anchor_img = anchor_img.to(device)
         positive_img = positive_img.to(device)
         negative_img = negative_img.to(device)
