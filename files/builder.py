@@ -18,24 +18,59 @@ PATH = "lfw/lfw-deepfunneled/"
 
 ATTR_FILE = 'lfw_att_73.mat'
 
+def from_tensor_to_numpy(t):
+    if len(t.shape)>3 :
+        t = t.detach().clone()[0]
+    else :
+        t = t.detach().clone()
+    n = t.numpy()
+    n = n.transpose((1, 2, 0))
+    return n
+
+def from_numpy_to_tensor(n):
+    image_transforms = transforms.Compose([transforms.ToTensor(),])
+    return image_transforms(n)[None,:]
+
 def rewrite_names(name_list):
     new_list = []
     for stri in name_list:
         new_list.append(re.sub('[\\\\]', '/', stri))
     return(new_list)
 
-def resize100(img):
+def resize_and_crop(img):
     return resize(img, (100, 100), preserve_range=True, mode='reflect', anti_aliasing=True)[20:80,20:80,:]
 
-def load_resize(path):
-    return resize100(imread(PATH+path).astype("float32")/255)
+# def unnormalize_img_from_path(mean, path):
+#     img = open_one_image(path)*255
+#     img += mean
+#     return mean
+
+# def unnormalize_img(mean, x):
+#     if len(x.shape)==3:
+#         mean = mean[0]
+#     img = x * 255
+#     img += mean
+#     return img
+
+def open_one_image_tensor(path):
+    image_transforms = transforms.Compose([transforms.ToTensor(),])
+    return image_transforms(resize_and_crop(imread(PATH+path).astype("float32"))).unsqueeze(0)
+
+def open_one_image_numpy(path):
+    return resize_and_crop(imread(PATH+path).astype("float32")) #.unsqueeze(0)
 
 def open_all_images(id_to_path):
     all_imgs = []
-    image_transforms = transforms.Compose([transforms.ToTensor(),])
     for _,path in id_to_path.items():
-        all_imgs += [image_transforms(load_resize(path)).unsqueeze(0)]
+        all_imgs += [open_one_image_tensor(path)/255]
     return torch.vstack(all_imgs)
+
+# def normalize_all_imgs(imgs):
+#     imgs = imgs.detach().clone()
+#     mean = torch.mean(imgs, axis=(0,2,3))  # axis=(0,1,2))
+#     imgs -= mean[None,:,None,None]
+#     imgs = imgs/255
+#     return imgs, mean[None,:,None,None]
 
 
 # BUILD DATAFRAME
@@ -60,11 +95,13 @@ def create_dataframe():
     id_to_path = {img_idx:path for path,img_idx in path_to_id.items()}
 
     all_imgs = open_all_images(id_to_path)
-    mean = torch.mean(all_imgs, axis=(0,1,2))
-    all_imgs -= mean
-    print("images weigh ", str(round(all_imgs.element_size() * all_imgs.nelement() / 1e9,2)), "GB")
+    # mean = torch.mean(all_imgs, axis=(0,2,3))  # axis=(0,1,2))
+    # all_imgs -= mean
+    # all_imgs = all_imgs/255
 
-    return df, all_imgs, mean
+    print("images weigh ", str(round(all_imgs.element_size() * all_imgs.nelement() / 1e9, 2)), "GB")
+    # all_imgs, mean = normalize_all_imgs(all_imgs)
+    return df, all_imgs #, mean
 
 # MARCHE PAS
 def extend_dataframe(df):

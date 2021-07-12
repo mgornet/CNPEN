@@ -5,6 +5,7 @@ import time
 import torch
 from triplet import TripletGenerator, TripletLearner, TripletLoss, TripletLossRaw
 from torch.utils.data import DataLoader, Dataset
+from triplet import distance
 
 
 # PATH = "./CNPEN/files/"
@@ -31,6 +32,28 @@ def testing(test_loader, device, model, criterion):
         total_loss += loss
     
     return total_loss
+
+def compute_distances(test_loader, device, model):
+    
+    list_distance_pos = []
+    list_distance_neg = []
+
+    for step, (anchor_img, positive_img, negative_img) in enumerate(tqdm(test_loader, desc="Processing", leave=False)):
+        anchor_img = anchor_img.to(device)
+        positive_img = positive_img.to(device)
+        negative_img = negative_img.to(device)
+
+        anchor_out = model(anchor_img)
+        positive_out = model(positive_img)
+        negative_out = model(negative_img)
+        
+        distance_pos = distance(anchor_out, positive_out)
+        distance_neg = distance(anchor_out, negative_out)
+        
+        list_distance_pos += distance_pos
+        list_distance_neg += distance_neg
+    
+    return list_distance_pos, list_distance_neg
 
 
 # TRAINING LOOP

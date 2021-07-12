@@ -21,6 +21,8 @@ class TripletLoss(nn.Module):
         losses = F.relu(distance_positive - distance_negative + self.margin)
         return losses.mean() if size_average else losses.sum()
 
+def distance(a,b):
+	return (a - b).pow(2).sum(1)
 
 class TripletLossRaw(nn.Module):
 
