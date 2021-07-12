@@ -47,8 +47,8 @@ def compute_distances(loader, device, model):
         positive_out = model(positive_img)
         negative_out = model(negative_img)
         
-        distance_pos = distance(anchor_out, positive_out)
-        distance_neg = distance(anchor_out, negative_out)
+        distance_pos = distance(anchor_out, positive_out).cpu().detach().tolist()
+        distance_neg = distance(anchor_out, negative_out).cpu().detach().tolist()
         
         list_distance_pos += distance_pos
         list_distance_neg += distance_neg
