@@ -277,40 +277,61 @@ class TripletLearner(nn.Module):
     forward
     """
 
-    def __init__(self,base_channels=32):
+    def __init__(self,base_channels=16):
         self.base_channels = base_channels
         super(TripletLearner, self).__init__()
         self.conv = nn.Sequential(
+        	# in the case where base_channels=16
+        	# (3,60,60)
             nn.Conv2d(in_channels=3, out_channels=base_channels, kernel_size=3, padding=1),
             nn.ReLU(),
+            # (16,60,60)
             nn.Conv2d(in_channels=base_channels, out_channels=base_channels, kernel_size=3, padding=1),
             nn.ReLU(),
+            # (16,60,60)
             nn.MaxPool2d(kernel_size=2, stride=2),
+            # (16,30,30)
             nn.Conv2d(in_channels=base_channels, out_channels=base_channels*2, kernel_size=3, padding=1),
             nn.ReLU(),
+            # (32,30,30)
             nn.Conv2d(in_channels=base_channels*2, out_channels=base_channels*2, kernel_size=3, padding=1),
             nn.ReLU(),
+            # (32,30,30)
             nn.MaxPool2d(kernel_size=2, stride=2),
+            # (32,15,15)
             nn.Conv2d(in_channels=base_channels*2, out_channels=base_channels*4, kernel_size=3, padding=1),
             nn.ReLU(),
+            # (64,15,15)
             nn.Conv2d(in_channels=base_channels*4, out_channels=base_channels*4, kernel_size=3, padding=1),
             nn.ReLU(),
+            # (64,15,15)
             nn.MaxPool2d(kernel_size=2, stride=2),
+            # (64,7,7)
             nn.Conv2d(in_channels=base_channels*4, out_channels=base_channels*8, kernel_size=3, padding=1),
             nn.ReLU(),
+            # (128,7,7)
             nn.Conv2d(in_channels=base_channels*8, out_channels=base_channels*8, kernel_size=3, padding=1),
             nn.ReLU(),
+            # (64,7,7)
             nn.MaxPool2d(kernel_size=2, stride=2),
+            # (128,3,3)
             nn.Conv2d(in_channels=base_channels*8, out_channels=base_channels*16, kernel_size=3, padding=1),
             nn.ReLU(),
+            # (256,3,3)
             nn.Conv2d(in_channels=base_channels*16, out_channels=base_channels*16, kernel_size=3, padding=1),
             nn.ReLU(),
+            # (256,3,3)
         )
+
+        # (256,3,3)
         self.avg = nn.AvgPool2d(kernel_size=3)
+        # (256,1,1)
         
+        # (1,256)
         self.fc = nn.Sequential(
             nn.Dropout(p=0.2),
             nn.Linear(in_features= base_channels*16, out_features=base_channels*16)
+            # (1,256)
         )
         
     def forward(self, x):
