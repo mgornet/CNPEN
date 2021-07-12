@@ -49,8 +49,8 @@ class TripletLoss(nn.Module):
            Output:
                float (either mean of sum of the losses)"""
 
-        distance_positive = (anchor - positive).pow(2).sum(1) 
-        distance_negative = (anchor - negative).pow(2).sum(1) 
+        distance_positive = (anchor - positive).pow(2).sum(1)
+        distance_negative = (anchor - negative).pow(2).sum(1)
         losses = F.relu(distance_positive - distance_negative + self.margin)
         return losses.mean() if size_average else losses.sum()
 
@@ -80,7 +80,7 @@ class TripletLossRaw(nn.Module):
         self.margin = margin
 
     def forward(self, anchor, positive, negative):
-    	"""Inputs:
+        """Inputs:
                anchor: tensor of the anchor image
                positive: tensor of the positive image
                negative: tensor of the negative image
@@ -112,34 +112,34 @@ def compute_distances(all_imgs, device, model, Xa, Xp, Xn):
     
     for i in range(len(Xa)):
 
-    	anchor = torch.reshape(all_imgs[Xa[i]].to(device), (1,3,60,60))
-    	positive = torch.reshape(all_imgs[Xp[i]].to(device), (1,3,60,60))
-    	negative = torch.reshape(all_imgs[Xn[i]].to(device), (1,3,60,60))  #.float(), (1,3,60,60))
+        anchor = torch.reshape(all_imgs[Xa[i]].to(device), (1,3,60,60))
+        positive = torch.reshape(all_imgs[Xp[i]].to(device), (1,3,60,60))
+        negative = torch.reshape(all_imgs[Xn[i]].to(device), (1,3,60,60))  #.float(), (1,3,60,60))
 
-    	anchor_out = model(anchor)
-    	positive_out = model(positive)
-    	negative_out = model(negative)
+        anchor_out = model(anchor)
+        positive_out = model(positive)
+        negative_out = model(negative)
 
-    	anchors_emb.append(anchor_out)
-    	positives_emb.append(positive_out)
-    	negatives_emb.append(negative_out)
+        anchors_emb.append(anchor_out)
+        positives_emb.append(positive_out)
+        negatives_emb.append(negative_out)
 
     AP = torch.zeros((len(Xa),len(Xp)))
     AN = torch.zeros((len(Xa),len(Xn)))
 
     for i in range(len(Xa)):
 
-    	anchor_emb = anchors_emb[i]
+        anchor_emb = anchors_emb[i]
 
-    	for j in range(len(Xp)):
-    		positive_emb = positives_emb[j]
-    		distance_positive = (anchor_emb - positive_emb).pow(2).sum(1)
-    		AP[i,j] = distance_positive
+        for j in range(len(Xp)):
+            positive_emb = positives_emb[j]
+            distance_positive = (anchor_emb - positive_emb).pow(2).sum(1)
+            AP[i,j] = distance_positive
 
-    	for k in range(len(Xn)):
-    		negative_emb = negatives_emb[k]
-    		distance_negative = (anchor_emb - negative_emb).pow(2).sum(1)
-    		AN[i,k] = distance_negative
+        for k in range(len(Xn)):
+            negative_emb = negatives_emb[k]
+            distance_negative = (anchor_emb - negative_emb).pow(2).sum(1)
+            AN[i,k] = distance_negative
 
     return AP, AN
 
@@ -256,8 +256,7 @@ class TripletGenerator(nn.Module):
             imgs_n=self.apply_augmentation(imgs_n)
 
         return (imgs_a, imgs_p, imgs_n)
-    
-    
+
 # NETWORK
 #################################################################################
 
