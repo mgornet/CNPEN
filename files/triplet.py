@@ -219,11 +219,18 @@ class TripletGenerator(nn.Module):
 
         for classid_unique in classid_batch:
             id_imgs = self.df.index[self.df.Classid==classid_unique]
-            xa, xp = random.choices(id_imgs, k=2)
+            # choose one img at random inside this classid
+            # rq: if k=1 returns a list of one elmt, hence the [0]
+            xa = random.choices(id_imgs)[0]
             Xa.append(xa)
+            # remove it from the list of possible imgs
+            id_imgs.remove(xa)
+            # take another image
+            # rq: if we take xa, xp = random.choices(id_imgs, k=2), we end up with the same imgs sometimes
+            xp = random.choices(id_imgs)[0]
             Xp.append(xp)
-            # Use k=2, else xn is a list of one elmt
-            xn, _ = random.choices(list(self.df.index),k=2)
+            # random img among all
+            xn = random.choices(self.df.index)[0]
             Xn.append(xn)
 
         if self.mining == "semi":
