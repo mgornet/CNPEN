@@ -23,7 +23,7 @@ def print_img(x):
 
 def print_img_from_path(path):
     """Print the image from its path"""
-    x = open_one_image_numpy(path)
+    x = open_one_image_numpy(path)/255
     plt.imshow(x)
     plt.axis('off')
     plt.show()
@@ -32,7 +32,7 @@ def print_img_from_path(path):
 def print_img_from_id(df, id):
     """Print the image from its id in df"""
     path = df.Path.iloc[id].values[0]
-    x = open_one_image_numpy(path)
+    x = open_one_image_numpy(path)/255
     plt.imshow(x)
     plt.axis('off')
     plt.show()
@@ -45,7 +45,7 @@ def print_img_from_classid(df, classid):
         fig,ax = plt.subplots(1,len(list_paths))
         for i in range(len(list_paths)):
             plt.subplot(1,len(list_paths),i+1)
-            x = open_one_image_numpy(list_paths[i])
+            x = open_one_image_numpy(list_paths[i])/255
             plt.imshow(x)
             plt.axis('off')
         plt.show()
@@ -68,21 +68,21 @@ def print_from_gen(gen,idx):
     plt.figure(figsize=(16, 9))
 
     for i in range(5):
-        x = from_tensor_to_numpy(xa[i])
+        x = from_tensor_to_numpy(xa[i])/255
         plt.subplot(3, 5, i + 1)
         plt.title("anchor")
         plt.imshow(x)
         plt.axis('off')
 
     for i in range(5):
-        x = from_tensor_to_numpy(xp[i])
+        x = from_tensor_to_numpy(xp[i])/255
         plt.subplot(3, 5, i + 6)
         plt.title("positive")
         plt.imshow(x)
         plt.axis('off')
 
     for i in range(5):
-        x = from_tensor_to_numpy(xn[i])
+        x = from_tensor_to_numpy(xn[i])/255
         plt.subplot(3, 5, i + 11)
         plt.title("negative")
         plt.imshow(x)
@@ -99,10 +99,10 @@ def print_pairs(df, xa, xp, id_x):
     list_paths = [df.Path.iloc[xa[id_x]], df.Path.iloc[xp[id_x]]]
     fig,ax = plt.subplots(1,2)
     plt.subplot(1,2,1)
-    plt.imshow(open_one_image_numpy(list_paths[0]))
+    plt.imshow(open_one_image_numpy(list_paths[0])/255)
     plt.axis('off')
     plt.subplot(1,2,2)
-    plt.imshow(open_one_image_numpy(list_paths[1]))
+    plt.imshow(open_one_image_numpy(list_paths[1])/255)
     plt.axis('off')
     plt.show()
 
