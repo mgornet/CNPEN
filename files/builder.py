@@ -51,11 +51,11 @@ def resize_and_crop(img):
 def open_one_image_tensor(path):
     """Open an image from its path and return the image in form of a tensor. Image values are in (0,1)."""
     image_transforms = transforms.Compose([transforms.ToTensor(),])
-    return (image_transforms(resize_and_crop(imread(PATH+path).astype("float32"))).unsqueeze(0))/255
+    return (image_transforms(resize_and_crop(imread(PATH+path).astype("float32"))).unsqueeze(0))
 
 def open_one_image_numpy(path):
     """Open an image from its path and return the image in form of a numpy array. Image values are in (0,1)."""
-    return (resize_and_crop(imread(PATH+path).astype("float32")))/255
+    return (resize_and_crop(imread(PATH+path).astype("float32")))
 
 def open_all_images(id_to_path):
     """Open all images from the file
