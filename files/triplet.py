@@ -186,7 +186,8 @@ class TripletGenerator(nn.Module):
         if self.num_samples<batch_size :
         	warnings.warn(
         		f'Batch size number was changed from {batch_size} to '
-        		f'{self.num_samples} because '
+        		f'{self.num_samples} because there are only {self.num_samples}'
+        		f' individuals with more than 2 pictures.'
         	)
         	batch_size=self.num_samples
 
