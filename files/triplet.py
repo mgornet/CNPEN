@@ -5,6 +5,7 @@ from torch import nn, optim
 import torch.nn.functional as F
 from torchvision import transforms
 import itertools
+import warnings
 
 # LOSS
 #################################################################################
@@ -173,13 +174,30 @@ class TripletGenerator(nn.Module):
         
         super(TripletGenerator, self).__init__()
         
-        self.batch_size = batch_size
-        
         self.df = df
 
         self.imgs = all_imgs
 
-        self.num_samples = len(df.Classid.value_counts()[df.Classid.value_counts().values>1])
+        value_count = df.Classid.value_counts()
+        self.id_list = list(value_count[value_count.values>1].index)
+
+        self.num_samples = len(self.id_list)
+
+        if self.num_samples<batch_size :
+        	warnings.warn(
+        		f'Batch size number was changed from {batch_size} to '
+        		f'{self.num_samples} because '
+        	)
+        	batch_size=self.num_samples
+
+        self.batch_size = batch_size
+
+        if self.num_samples % batch_size != 0:
+        	warnings.warn(
+        		f'Number of unique identities with more than 2 pictures '
+        		f'({self.num_samples}) is not divisible by batch_size '
+        		f'({batch_size}). Remainder: {self.num_samples % batch_size}'
+        	)
 
         self.device = device
         self.model = model
@@ -200,8 +218,8 @@ class TripletGenerator(nn.Module):
               ]
           )
 
-        self.id_list = list(df.Classid.value_counts()[df.Classid.value_counts().values>1].index)
         random.shuffle(self.id_list)
+        self.last_batch_index = len(self)-1
 
     def __len__(self):
         return self.num_samples // self.batch_size
@@ -262,6 +280,9 @@ class TripletGenerator(nn.Module):
             imgs_a=self.apply_augmentation(imgs_a)
             imgs_p=self.apply_augmentation(imgs_p)
             imgs_n=self.apply_augmentation(imgs_n)
+
+        if batch_index == self.last_batch_index:
+        	random.shuffle(self.id_list)
 
         return (imgs_a, imgs_p, imgs_n)
 
