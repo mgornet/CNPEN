@@ -219,7 +219,7 @@ class TripletGenerator(nn.Module):
                         transforms.RandomHorizontalFlip(p=0.5),
                         transforms.RandomApply([
                             transforms.RandomCrop(size=56),
-                            transforms.Pad(padding=2)]
+                            transforms.Pad(padding=2)],
                         p=0.5),
                     ]
         )
