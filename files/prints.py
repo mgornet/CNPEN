@@ -95,7 +95,9 @@ def print_from_gen(gen,idx):
 
 def print_from_gen2(gen):
 
-    plt.figure(figsize=(16, 9))
+    x, _, _ = gen[0]
+
+    plt.figure(figsize=(10,10*len(x)*len(gen)))
 
     for k in range(len(gen)+1):
 
@@ -107,18 +109,18 @@ def print_from_gen2(gen):
             positive_numpy = from_tensor_to_numpy(xp[i])/255
             negative_numpy = from_tensor_to_numpy(xn[i])/255
 
-            plt.subplot((len(gen)+1)*len(xa), 3, 1)
-            plt.title("anchor")
+            plt.subplot((len(gen)+1)*len(xa), 3, 3*len(xa)*k+3*i+1)
+#             plt.title("anchor")
             plt.imshow(anchor_numpy)
             plt.axis('off')
 
-            plt.subplot((len(gen)+1)*len(xa), 3, 2)
-            plt.title("positive")
+            plt.subplot((len(gen)+1)*len(xa), 3, 3*len(xa)*k+3*i+2)
+#             plt.title("positive")
             plt.imshow(positive_numpy)
             plt.axis('off')
 
-            plt.subplot((len(gen)+1)*len(xa), 3, 3)
-            plt.title("negative")
+            plt.subplot((len(gen)+1)*len(xa), 3, 3*len(xa)*k+3*i+3)
+#             plt.title("negative")
             plt.imshow(negative_numpy)
             plt.axis('off')
 

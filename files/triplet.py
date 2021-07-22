@@ -214,23 +214,15 @@ class TripletGenerator(nn.Module):
         self.transform = transform
         self.mining = mining
 
+        random_crop = random.randint(0,3)
+
         self.apply_augmentation = transforms.Compose(
-              [
-                  transforms.RandomHorizontalFlip(p=0.5),
-                  # transforms.RandomApply(
-                  #		torch.nn.ModuleList([transforms.ColorJitter(),]), p=0.3
-                  #),
-                  # transforms.RandomPerspective(),
-                  # transforms.RandomCrop(),
-                  transforms.RandomRotation((-10,10)),
-                  # transforms.RandomApply(
-                  #		torch.nn.ModuleList(
-                  #			[transforms.GaussianBlur(kernel_size=3),]
-                  #		),p=0.2
-                  #),
-                  # transforms.RandomAdjustSharpness(sharpness_factor=2, p=0.2)
-              ]
-          )
+                      [
+                          transforms.RandomHorizontalFlip(p=0.5),
+                          transforms.RandomCrop(size=60-2*random_crop),
+                          transforms.Pad(padding=random_crop),
+                      ]
+                  )
 
         random.shuffle(self.id_list)
         self.last_batch_index = len(self)-1
