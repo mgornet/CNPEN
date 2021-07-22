@@ -214,15 +214,15 @@ class TripletGenerator(nn.Module):
         self.transform = transform
         self.mining = mining
 
-        random_crop = random.randint(0,3)
-
         self.apply_augmentation = transforms.Compose(
                       [
-                          transforms.RandomHorizontalFlip(p=0.5),
-                          transforms.RandomCrop(size=60-2*random_crop),
-                          transforms.Pad(padding=random_crop),
-                      ]
-                  )
+                        transforms.RandomHorizontalFlip(p=0.5),
+                        transforms.RandomApply([
+                            transforms.RandomCrop(size=56),
+                            transforms.Pad(padding=2)]
+                        p=0.5),
+                    ]
+        )
 
         random.shuffle(self.id_list)
         self.last_batch_index = len(self)-1
