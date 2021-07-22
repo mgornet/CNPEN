@@ -140,12 +140,23 @@ def print_pairs(df, xa, xp, id_x):
 # HISTOGRAMS
 ###############################################################################
 
-def print_hist(pos_loss, neg_loss):
+def print_hist_dist(pos_dist, neg_dist):
     """Print the loss histogram"""
     fig,ax = plt.subplots(1,1,figsize=(6,3),dpi=100,num=1)
-    bins=np.linspace(0.,1,30)
-    plt.hist(pos_loss,bins=bins,label='positive loss', alpha=0.3)
-    plt.hist(neg_loss,bins=bins,label='negative loss', alpha=0.3)
+    # bins=np.linspace(0.,1,30)
+    plt.title('Histogram of distances')
+    plt.hist(pos_dist,bins=50,label='distance between anchor and positive image', alpha=0.3) # bins=bins
+    plt.hist(neg_dist,bins=50,label='distance between anchor and negative image', alpha=0.3)
+    # plt.xlim([0.,1.])
+    plt.legend()
+    plt.show()
+
+def print_hist_loss(loss):
+    """Print the loss histogram"""
+    fig,ax = plt.subplots(1,1,figsize=(6,3),dpi=100,num=1)
+    # bins=np.linspace(0.,1,30)
+    plt.title('Histogram of the loss')
+    plt.hist(neg_dist,bins=50,label='Triplet Loss')
     # plt.xlim([0.,1.])
     plt.legend()
     plt.show()
