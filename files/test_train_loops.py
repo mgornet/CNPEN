@@ -271,3 +271,5 @@ def adaptative_train_lr(model, device, criterion,
             model, device, optimizer, criterion, epochs,
             train_loader, valid_loader, save_epoch=False
         )
+
+    return model
