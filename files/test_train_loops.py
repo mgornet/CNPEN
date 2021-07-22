@@ -3,6 +3,7 @@ from tqdm.notebook import tqdm
 import wandb
 import time
 import torch
+from torch import optim
 from triplet import TripletGenerator, TripletLearner, \
 TripletLoss, TripletLossRaw
 from torch.utils.data import DataLoader, Dataset
@@ -236,3 +237,37 @@ def adaptative_train(model, device, optimizer, criterion, epochs, df_train,
         torch.save(info_dict, fn)
 
     return model
+
+# def tuning_lr(model, device, criterion, epochs, 
+#     train_loader, valid_loader):
+
+#     lr = 1e-3
+#     optimizer = optim.Adam(model.parameters(), lr=lr)
+
+#     model = training(
+#         model, device, optimizer, criterion, epochs,
+#         train_loader, valid_loader, save_epoch=False
+#     )
+
+def adaptative_train_lr(model, device, criterion,
+    train_loader, valid_loader):
+
+    lr = 1e-3
+    optimizer = optim.Adam(model.parameters(), lr=lr)
+    epochs = 300
+
+    model = training(
+        model, device, optimizer, criterion, epochs,
+        train_loader, valid_loader, save_epoch=False
+    )
+
+    epochs = 100
+    for _ in range(7):
+
+        lr = lr/2
+        optimizer = optim.Adam(model.parameters(), lr=lr)
+
+        model = training(
+            model, device, optimizer, criterion, epochs,
+            train_loader, valid_loader, save_epoch=False
+        )

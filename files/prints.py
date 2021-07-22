@@ -67,28 +67,55 @@ def print_from_gen(gen,idx):
     """Print some images from a generator gen.
     	The function displays the first 5 images in the batch idx"""
 
-    xa, xp, xn = gen[idx]
+    # xa, xp, xn = gen[idx]
+    # plt.figure(figsize=(16, 9))
+
+    # for i in range(5):
+    #     x = from_tensor_to_numpy(xa[i])/255
+    #     plt.subplot(3, 5, i + 1)
+    #     plt.title("anchor")
+    #     plt.imshow(x)
+    #     plt.axis('off')
+
+    # for i in range(5):
+    #     x = from_tensor_to_numpy(xp[i])/255
+    #     plt.subplot(3, 5, i + 6)
+    #     plt.title("positive")
+    #     plt.imshow(x)
+    #     plt.axis('off')
+
+    # for i in range(5):
+    #     x = from_tensor_to_numpy(xn[i])/255
+    #     plt.subplot(3, 5, i + 11)
+    #     plt.title("negative")
+    #     plt.imshow(x)
+    #     plt.axis('off')
+
+    # plt.show()
+
+def print_from_loader(loader):
+
     plt.figure(figsize=(16, 9))
 
-    for i in range(5):
-        x = from_tensor_to_numpy(xa[i])/255
-        plt.subplot(3, 5, i + 1)
+    for step, (anchor_img, positive_img, negative_img) \
+    in enumerate(tqdm(loader, desc="Processing", leave=False)):
+
+        anchor_numpy = from_tensor_to_numpy(anchor_img)/255
+        plt.subplot(len(loader), 3, 1)
         plt.title("anchor")
-        plt.imshow(x)
+        plt.imshow(anchor_numpy)
         plt.axis('off')
 
-    for i in range(5):
-        x = from_tensor_to_numpy(xp[i])/255
-        plt.subplot(3, 5, i + 6)
+        positive_numpy = from_tensor_to_numpy(positive_img)/255
+        plt.subplot(len(loader), 3, 2)
         plt.title("positive")
-        plt.imshow(x)
+        plt.imshow(positive_numpy)
         plt.axis('off')
 
-    for i in range(5):
-        x = from_tensor_to_numpy(xn[i])/255
-        plt.subplot(3, 5, i + 11)
+        negative_numpy = from_tensor_to_numpy(negative_img)/255
+        plt.subplot(len(loader), 3, 3)
         plt.title("negative")
-        plt.imshow(x)
+        plt.imshow(negative_numpy)
         plt.axis('off')
 
     plt.show()
