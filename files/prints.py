@@ -7,16 +7,17 @@ from builder import open_one_image_numpy, from_tensor_to_numpy
 
 
 # USEFUL FUNCTIONS
-#################################################################################
+###############################################################################
 
 PATH = "lfw/lfw-deepfunneled/"
 
 # PRINT FROM DATA
-#################################################################################
+###############################################################################
 
 def print_img(x):
     """Print the image x directly.
-    	For the image to correctly display, x must be a numpy array whose values are in (0,1)"""
+    	For the image to correctly display, x must be a numpy array
+    	whose values are in (0,1)"""
     plt.imshow(x)
     plt.axis('off')
     plt.show()
@@ -52,11 +53,13 @@ def print_img_from_classid(df, classid):
     else:
         print("This class is not available")
 
+# DO NOT WORK
 # def print_img_category(attribute):
 #     fig,ax = plt.subplots(3,4,figsize=(16, 9))
 #     for i in range(12):
 #         plt.subplot(3,4,i+1)
-#         plt.imshow(resize100(imread(PATH+df[df[attribute]==1]['Path'].sample().iloc[0]))/255)
+#         plt.imshow(resize100(imread(
+#			PATH+df[df[attribute]==1]['Path'].sample().iloc[0]))/255)
 #         plt.axis('off')
 #     plt.show()
 
@@ -93,7 +96,7 @@ def print_from_gen(gen,idx):
 
 
 # GROUP PRINT
-#################################################################################
+###############################################################################
 
 def print_pairs(df, xa, xp, id_x):
     list_paths = [df.Path.iloc[xa[id_x]], df.Path.iloc[xp[id_x]]]
@@ -108,7 +111,7 @@ def print_pairs(df, xa, xp, id_x):
 
 
 # HISTOGRAMS
-#################################################################################
+###############################################################################
 
 def print_hist(pos_loss, neg_loss):
     """Print the loss histogram"""

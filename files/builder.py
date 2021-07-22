@@ -12,7 +12,7 @@ from torchvision import transforms
 
 
 # SOME USEFUL FUNCTIONS
-##################################################################################
+###############################################################################
 
 PATH = "lfw/lfw-deepfunneled/"
 
@@ -46,20 +46,27 @@ def rewrite_names(name_list):
 
 def resize_and_crop(img):
     """Resize (100,100) and crop the image (60,60)"""
-    return resize(img, (100, 100), preserve_range=True, mode='reflect', anti_aliasing=True)[20:80,20:80,:]
+    return resize(
+        img, (100, 100),
+        preserve_range=True, mode='reflect', anti_aliasing=True
+    )[20:80,20:80,:]
 
 def open_one_image_tensor(path):
-    """Open an image from its path and return the image in form of a tensor. Image values are in (0,1)."""
+    """Open an image from its path and return the image in form of a tensor.
+    Image values are in (0,1)."""
     image_transforms = transforms.Compose([transforms.ToTensor(),])
-    return (image_transforms(resize_and_crop(imread(PATH+path).astype("float32"))).unsqueeze(0))
+    return (image_transforms(
+            resize_and_crop(imread(PATH+path).astype("float32"))).unsqueeze(0))
 
 def open_one_image_numpy(path):
-    """Open an image from its path and return the image in form of a numpy array. Image values are in (0,1)."""
+    """Open an image from its path and return the image in form of an array.
+    Image values are in (0,1)."""
     return (resize_and_crop(imread(PATH+path).astype("float32")))
 
 def open_all_images(id_to_path):
     """Open all images from the file
-        input: a dictionnary with keys=id of the images, values=path of the images
+        input: a dictionnary with keys=id of the images,
+        values=path of the images
         output: tensor of shape (nb img, 3, 60, 60)"""
     all_imgs = []
     for _,path in id_to_path.items():
@@ -68,18 +75,28 @@ def open_all_images(id_to_path):
 
 
 # BUILD DATAFRAME
-##################################################################################
+###############################################################################
 
 def create_dataframe():
     """Create the dataframe.
-        output: df the dataframe created (with columns id, Classids, Names, Paths)
+        output: df the dataframe created
+                (with columns id, Classids, Names, Paths)
                 all_imgs a tensor of shape (nb img, 3, 60, 60)"""
 
     dirs = sorted(os.listdir(PATH))
 
-    classids = pd.Series([classid for classid, name in enumerate(dirs) for _ in sorted(os.listdir(PATH+name))])
-    names = pd.Series([name for _, name in enumerate(dirs) for _ in sorted(os.listdir(PATH+name))])
-    img_paths = pd.Series([name + '/' + img for _, name in enumerate(dirs) for img in sorted(os.listdir(PATH+name))])
+    classids = pd.Series([
+        classid for classid, name in enumerate(dirs)
+        for _ in sorted(os.listdir(PATH+name))
+    ])
+    names = pd.Series([
+        name for _, name in enumerate(dirs)
+        for _ in sorted(os.listdir(PATH+name))
+    ])
+    img_paths = pd.Series([
+        name + '/' + img for _, name in enumerate(dirs)
+        for img in sorted(os.listdir(PATH+name))
+    ])
     nb_imgs = len(classids)
     nb_indiv = len(classids.unique())
 
@@ -93,7 +110,9 @@ def create_dataframe():
 
     all_imgs = open_all_images(id_to_path)
 
-    print("images weigh ", str(round(all_imgs.element_size() * all_imgs.nelement() / 1e9, 2)), "GB")
+    print("images weigh ",
+        str(round(all_imgs.element_size() * all_imgs.nelement() / 1e9, 2)),
+        "GB")
 
     return df, all_imgs
 
@@ -106,7 +125,9 @@ def extend_dataframe(df):
     for attr in data_dict.AttrName:
         df[attr]=np.nan
 
-    path_to_label = {path:label for path in data_dict.name for label in data_dict.label}
+    path_to_label = {
+        path:label for path in data_dict.name for label in data_dict.label
+    }
 
     for path, label in path_to_label.items():
         for i, attr in zip(range(len(data_dict.AttrName)),data_dict.AttrName):
@@ -116,7 +137,7 @@ def extend_dataframe(df):
 
 
 # BUILD PAIRS
-##################################################################################
+###############################################################################
 
 # def build_pos_pairs_for_id(df, classid, max_num=50):
 #     id_imgs = df.index[df.Classid==classid]
