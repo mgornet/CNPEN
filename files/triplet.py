@@ -217,9 +217,9 @@ class TripletGenerator(nn.Module):
         self.apply_augmentation = transforms.Compose(
                       [
                         transforms.RandomHorizontalFlip(p=0.5),
-                        transforms.RandomApply([
-                            transforms.RandomResizedCrop(size=60, scale=(0.95,0.95))],
-                        p=0.5),
+                        # transforms.RandomApply([
+                        #     transforms.RandomResizedCrop(size=60, scale=(0.95,0.95))],
+                        # p=0.5),
                     ]
         )
 
