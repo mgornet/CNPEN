@@ -217,9 +217,10 @@ class TripletGenerator(nn.Module):
         self.apply_augmentation = transforms.Compose(
                       [
                         transforms.RandomHorizontalFlip(p=0.5),
-                        # transforms.RandomApply([
-                        #     transforms.RandomResizedCrop(size=60, scale=(0.95,0.95))],
-                        # p=0.5),
+                        transforms.RandomApply([
+                            transforms.RandomResizedCrop(size=60, scale=(0.8,0.8))],
+                        p=0.5),
+                        transforms.RandomRotation((-5,5)),
                     ]
         )
 
@@ -292,7 +293,7 @@ class TripletGenerator(nn.Module):
             imgs_n=self.apply_augmentation(imgs_n)
 
         if batch_index == self.last_batch_index:
-        	random.shuffle(self.id_list)
+            random.shuffle(self.id_list)
 
         return (imgs_a, imgs_p, imgs_n)
 

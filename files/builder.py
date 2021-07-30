@@ -129,11 +129,25 @@ def extend_dataframe(df):
         path:label for path in data_dict.name for label in data_dict.label
     }
 
-    for path, label in path_to_label.items():
-        for i, attr in zip(range(len(data_dict.AttrName)),data_dict.AttrName):
-            df[attr][df.Path==path]=int(label[i])
+    diff = list(set(df.Path) -  set(data_dict.name))
 
-    return df
+    a = np.empty(len(data_dict.AttrName))
+    a[:] = np.nan
+
+    for path in diff :
+        path_to_label[path]=a
+
+    df2 = pd.DataFrame.from_dict(
+        path_to_label, orient='index'
+    ).sorte_index()
+
+    df_values = pd.DataFrame(
+        df2.values, columns=data_dict.AttrName
+    )
+
+    df_final = pd.concat([df, df_values], axis=1)
+
+    return df_final
 
 
 # BUILD PAIRS
