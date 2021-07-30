@@ -139,7 +139,7 @@ def extend_dataframe(df):
 
     df2 = pd.DataFrame.from_dict(
         path_to_label, orient='index'
-    ).sorte_index()
+    ).sort_index()
 
     df_values = pd.DataFrame(
         df2.values, columns=data_dict.AttrName
