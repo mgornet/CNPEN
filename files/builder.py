@@ -138,8 +138,10 @@ def extend_dataframe(df):
         path_to_label[path]=a
 
     df2 = pd.DataFrame.from_dict(
-        path_to_label, orient='index'
-    ).sort_index()
+        path_to_label, orient='index', columns=data_dict.AttrName
+    )
+
+    df2 = df2.sort_index()
 
     df_values = pd.DataFrame(
         df2.values, columns=data_dict.AttrName
