@@ -122,9 +122,6 @@ def extend_dataframe(df):
     data_dict = mat73.loadmat(ATTR_FILE)
     data_dict.name = rewrite_names(data_dict.name)
 
-    for attr in data_dict.AttrName:
-        df[attr]=np.nan
-
     path_to_label = {
         path:label for path in data_dict.name for label in data_dict.label
     }
