@@ -16,8 +16,8 @@ PATH = "lfw/lfw-deepfunneled/"
 
 def print_img(x):
     """Print the image x directly.
-    	For the image to correctly display, x must be a numpy array
-    	whose values are in (0,1)"""
+        For the image to correctly display, x must be a numpy array
+        whose values are in (0,1)"""
     plt.imshow(x)
     plt.axis('off')
     plt.show()
@@ -162,7 +162,7 @@ def print_from_loader(loader):
 ###############################################################################
 
 def print_pair(img1, img2):
-	"""Print a pair of two images"""
+    """Print a pair of two images"""
     fig,ax = plt.subplots(1,2)
     plt.subplot(1,2,1)
     plt.imshow(from_tensor_to_numpy(img1)/255)
