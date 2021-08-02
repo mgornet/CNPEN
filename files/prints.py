@@ -54,14 +54,16 @@ def print_img_from_classid(df, classid):
         print("This class is not available")
 
 # DO NOT WORK
-# def print_img_category(attribute):
-#     fig,ax = plt.subplots(3,4,figsize=(16, 9))
-#     for i in range(12):
-#         plt.subplot(3,4,i+1)
-#         plt.imshow(resize100(imread(
-#			PATH+df[df[attribute]==1]['Path'].sample().iloc[0]))/255)
-#         plt.axis('off')
-#     plt.show()
+def print_img_category(all_imgs, df, attribute):
+    fig,ax = plt.subplots(3,4,figsize=(16, 9))
+    for i in range(12):
+        plt.subplot(3,4,i+1)
+        df[df[attribute]==1.].index.sample()
+        img = all_imgs[]
+        plt.imshow(resize100(imread(
+            PATH+df[df[attribute]==1]['Path'].sample().iloc[0]))/255)
+        plt.axis('off')
+    plt.show()
 
 def print_from_gen(gen,idx):
     """Print some images from a generator gen.
@@ -159,14 +161,14 @@ def print_from_loader(loader):
 # GROUP PRINT
 ###############################################################################
 
-def print_pairs(df, xa, xp, id_x):
-    list_paths = [df.Path.iloc[xa[id_x]], df.Path.iloc[xp[id_x]]]
+def print_pair(img1, img2):
+	"""Print a pair of two images"""
     fig,ax = plt.subplots(1,2)
     plt.subplot(1,2,1)
-    plt.imshow(open_one_image_numpy(list_paths[0])/255)
+    plt.imshow(from_tensor_to_numpy(img1)/255)
     plt.axis('off')
     plt.subplot(1,2,2)
-    plt.imshow(open_one_image_numpy(list_paths[1])/255)
+    plt.imshow(from_tensor_to_numpy(img2)/255)
     plt.axis('off')
     plt.show()
 
@@ -175,22 +177,37 @@ def print_pairs(df, xa, xp, id_x):
 ###############################################################################
 
 def print_hist_dist(pos_dist, neg_dist):
-    """Print the loss histogram"""
+    """Print the distance histogram"""
     fig,ax = plt.subplots(1,1,figsize=(6,3),dpi=100,num=1)
-    # bins=np.linspace(0.,1,30)
+    bins=np.linspace(0.,10.,50)
     plt.title('Histogram of distances')
-    plt.hist(pos_dist,bins=50,label='distance between anchor and positive image', alpha=0.3) # bins=bins
-    plt.hist(neg_dist,bins=50,label='distance between anchor and negative image', alpha=0.3)
+    plt.hist(pos_dist,bins=bins,
+        label='distance between anchor and positive image', alpha=0.3)
+    plt.hist(neg_dist,bins=bins,
+        label='distance between anchor and negative image', alpha=0.3)
     # plt.xlim([0.,1.])
+    plt.legend()
+    plt.show()
+
+def print_hist_dist_zoom(pos_dist, neg_dist):
+    """Print the distance histogram with a zoom on the 0-2  x window"""
+    fig,ax = plt.subplots(1,1,figsize=(6,3),dpi=100,num=1)
+    bins=np.linspace(0.,2.,50)
+    plt.title('Histogram of distances')
+    plt.hist(pos_dist,bins=bins,
+        label='distance between anchor and positive image', alpha=0.3)
+    plt.hist(neg_dist,bins=bins,
+        label='distance between anchor and negative image', alpha=0.3)
+    plt.xlim([0.,2.])
     plt.legend()
     plt.show()
 
 def print_hist_loss(loss):
     """Print the loss histogram"""
     fig,ax = plt.subplots(1,1,figsize=(6,3),dpi=100,num=1)
-    # bins=np.linspace(0.,1,30)
+    bins=np.linspace(0.,5.,30)
     plt.title('Histogram of the loss')
-    plt.hist(neg_dist,bins=50,label='Triplet Loss')
+    plt.hist(loss,bins=50,label='Triplet Loss')
     # plt.xlim([0.,1.])
     plt.legend()
     plt.show()
