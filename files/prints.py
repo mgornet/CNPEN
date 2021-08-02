@@ -54,16 +54,16 @@ def print_img_from_classid(df, classid):
         print("This class is not available")
 
 # DO NOT WORK
-def print_img_category(all_imgs, df, attribute):
-    fig,ax = plt.subplots(3,4,figsize=(16, 9))
-    for i in range(12):
-        plt.subplot(3,4,i+1)
-        df[df[attribute]==1.].index.sample()
-        img = all_imgs[]
-        plt.imshow(resize100(imread(
-            PATH+df[df[attribute]==1]['Path'].sample().iloc[0]))/255)
-        plt.axis('off')
-    plt.show()
+# def print_img_category(all_imgs, df, attribute):
+#     fig,ax = plt.subplots(3,4,figsize=(16, 9))
+#     for i in range(12):
+#         plt.subplot(3,4,i+1)
+#         df[df[attribute]==1.].index.sample()
+#         img = all_imgs[]
+#         plt.imshow(resize100(imread(
+#             PATH+df[df[attribute]==1]['Path'].sample().iloc[0]))/255)
+#         plt.axis('off')
+#     plt.show()
 
 def print_from_gen(gen,idx):
     """Print some images from a generator gen.
