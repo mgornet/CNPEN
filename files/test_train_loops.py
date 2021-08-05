@@ -250,9 +250,8 @@ def adaptative_train(model, device, optimizer, criterion, epochs, df_train,
 #     )
 
 def adaptative_train_lr(model, device, criterion,
-    train_loader, valid_loader):
+    train_loader, valid_loader, lr=1e-3):
 
-    lr = 1e-3
     optimizer = optim.Adam(model.parameters(), lr=lr)
     epochs = 300
 
