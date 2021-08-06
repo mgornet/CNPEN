@@ -63,7 +63,7 @@ def compute_distances(loader, device, model):
 # TRAINING LOOP
 ###############################################################################
 
-def training(model, device, optimizer, criterion, epochs, 
+def training(model, device, optimizer, scheduler, criterion, epochs, 
     train_loader, valid_loader, save_epoch=True):
 
     total_train_loss = []
@@ -125,6 +125,8 @@ def training(model, device, optimizer, criterion, epochs,
 
             running_valid_loss.append(valid_loss.cpu().detach().numpy())
 
+        scheduler.step()
+
         mean_train_loss = np.mean(running_train_loss)
         mean_valid_loss = np.mean(running_valid_loss)
 
@@ -140,7 +142,7 @@ def training(model, device, optimizer, criterion, epochs,
             epoch+1, epochs, mean_train_loss))
 
         # save training checkpoint
-        if save_epoch :
+        if save_epoch and epoch%100==0 :
             dt = time.strftime("%Y_%m_%d-%H_%M_%S")
             fn = "./Log" + str(dt) + str("-") + str(epoch) + "_checkpoint.pt"
 
@@ -249,26 +251,26 @@ def adaptative_train(model, device, optimizer, criterion, epochs, df_train,
 #         train_loader, valid_loader, save_epoch=False
 #     )
 
-def adaptative_train_lr(model, device, criterion,
-    train_loader, valid_loader, lr=1e-3):
+# def adaptative_train_lr(model, device, criterion,
+#     train_loader, valid_loader, lr=1e-3):
 
-    optimizer = optim.Adam(model.parameters(), lr=lr)
-    epochs = 300
+#     optimizer = optim.Adam(model.parameters(), lr=lr)
+#     epochs = 300
 
-    model = training(
-        model, device, optimizer, criterion, epochs,
-        train_loader, valid_loader, save_epoch=False
-    )
+#     model = training(
+#         model, device, optimizer, criterion, epochs,
+#         train_loader, valid_loader, save_epoch=False
+#     )
 
-    epochs = 100
-    for _ in range(7):
+#     epochs = 100
+#     for _ in range(7):
 
-        lr = lr/2
-        optimizer = optim.Adam(model.parameters(), lr=lr)
+#         lr = lr/2
+#         optimizer = optim.Adam(model.parameters(), lr=lr)
 
-        model = training(
-            model, device, optimizer, criterion, epochs,
-            train_loader, valid_loader, save_epoch=False
-        )
+#         model = training(
+#             model, device, optimizer, criterion, epochs,
+#             train_loader, valid_loader, save_epoch=False
+#         )
 
-    return model
+#     return model
