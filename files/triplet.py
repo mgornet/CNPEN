@@ -256,6 +256,9 @@ class TripletGenerator(nn.Module):
             Xp.append(xp)
             # random img among all
             xn = random.choices(self.df.index)[0]
+            # TO DO check xn classid diff from xa classid if not try again
+            while self.df.iloc[xn].Classid == self.df.iloc[xa].Classid:
+                xn = random.choices(self.df.index)[0]
             Xn.append(xn)
 
         if self.mining == "semi":
