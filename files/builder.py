@@ -127,7 +127,7 @@ def extend_dataframe(df):
     data_dict['name'] = rewrite_names(data_dict['name'])
 
     path_to_label = {
-        path:label for path in data_dict['name'] for label in data_dict['label']
+        path:label for path,label in zip(data_dict['name'], data_dict['label'])
     }
 
     df2 = pd.DataFrame.from_dict(
