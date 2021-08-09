@@ -321,8 +321,10 @@ class TripletLearner(nn.Module):
     forward
     """
 
-    def __init__(self,base_channels=32):
+    def __init__(self, base_channels=32, dropout=0.2):
         self.base_channels = base_channels
+        self.dropout = dropout
+
         super(TripletLearner, self).__init__()
         self.conv = nn.Sequential(
             # in the case where base_channels=16
@@ -393,7 +395,7 @@ class TripletLearner(nn.Module):
         
         # (1,256)
         self.fc = nn.Sequential(
-            nn.Dropout(p=0.2),
+            nn.Dropout(p=dropout),
             nn.Linear(in_features= base_channels*16,
                 out_features=base_channels*16)
             # (1,256)
