@@ -120,31 +120,17 @@ def create_dataframe():
 def extend_dataframe(df):
 
     data_dict = mat73.loadmat(ATTR_FILE)
-    data_dict.name = rewrite_names(data_dict.name)
+    data_dict['name'] = rewrite_names(data_dict['name'])
 
     path_to_label = {
         path:label for path in data_dict.name for label in data_dict.label
     }
 
-    diff = list(set(df.Path) -  set(data_dict.name))
-
-    a = np.empty(len(data_dict.AttrName))
-    a[:] = np.nan
-
-    for path in diff :
-        path_to_label[path]=a
-
     df2 = pd.DataFrame.from_dict(
-        path_to_label, orient='index', columns=data_dict.AttrName
+        path_to_label, orient='index', columns=data_dict['AttrName']
     )
 
-    df2 = df2.sort_index()
-
-    df_values = pd.DataFrame(
-        df2.values, columns=data_dict.AttrName
-    )
-
-    df_final = pd.concat([df, df_values], axis=1)
+    df_final = df_init.join(df2, on='Path')
 
     return df_final
 
