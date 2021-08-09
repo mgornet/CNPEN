@@ -117,6 +117,11 @@ def create_dataframe():
     return df, all_imgs
 
 def extend_dataframe(df):
+    """Extend the dataframe.
+        output: df_final the dataframe extended with all the attributes
+                (with columns id, Classids, Names, Paths as df +
+                all the attributes columns)
+                Where the attributes are not defined, NaN appear"""
 
     data_dict = mat73.loadmat(ATTR_FILE)
     data_dict['name'] = rewrite_names(data_dict['name'])
@@ -129,7 +134,7 @@ def extend_dataframe(df):
         path_to_label, orient='index', columns=data_dict['AttrName']
     )
 
-    df_final = df_init.join(df2, on='Path')
+    df_final = df.join(df2, on='Path')
 
     return df_final
 
