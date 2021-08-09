@@ -220,7 +220,7 @@ class TripletGenerator(nn.Module):
                         transforms.RandomApply([
                             transforms.RandomResizedCrop(size=60, scale=(0.8,0.8), ratio=(1.,1.))],
                         p=0.5),
-                        transforms.ColorJitter(brightness=0.25, contrast=0.25, saturation=0.25),
+                        # transforms.ColorJitter(brightness=0.25, contrast=0.25, saturation=0.25),
                         transforms.RandomRotation((-5,5)),
                     ]
         )
