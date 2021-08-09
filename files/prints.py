@@ -53,13 +53,12 @@ def print_img_from_classid(df, classid):
     else:
         print("This class is not available")
 
-# DO NOT WORK
 def print_img_category(all_imgs, df, attribute):
     fig,ax = plt.subplots(3,4,figsize=(16, 9))
     idx = df[df[attribute]==1.].sample(12).index
     for i in range(12):
         plt.subplot(3,4,i+1)
-        img = from_tensor_to_numpy(all_imgs[idx[i]])/255
+        img = from_tensor_to_numpy(all_imgs[idx[i]])
         plt.imshow(img)
         plt.axis('off')
     plt.show()
@@ -72,21 +71,21 @@ def print_from_gen(gen,idx):
     plt.figure(figsize=(16, 9))
 
     for i in range(5):
-        x = from_tensor_to_numpy(xa[i])/255
+        x = from_tensor_to_numpy(xa[i])
         plt.subplot(3, 5, i + 1)
         plt.title("anchor")
         plt.imshow(x)
         plt.axis('off')
 
     for i in range(5):
-        x = from_tensor_to_numpy(xp[i])/255
+        x = from_tensor_to_numpy(xp[i])
         plt.subplot(3, 5, i + 6)
         plt.title("positive")
         plt.imshow(x)
         plt.axis('off')
 
     for i in range(5):
-        x = from_tensor_to_numpy(xn[i])/255
+        x = from_tensor_to_numpy(xn[i])
         plt.subplot(3, 5, i + 11)
         plt.title("negative")
         plt.imshow(x)
@@ -106,9 +105,9 @@ def print_from_gen2(gen):
 
         for i in range(len(xa)):
         	
-            anchor_numpy = from_tensor_to_numpy(xa[i])/255
-            positive_numpy = from_tensor_to_numpy(xp[i])/255
-            negative_numpy = from_tensor_to_numpy(xn[i])/255
+            anchor_numpy = from_tensor_to_numpy(xa[i])
+            positive_numpy = from_tensor_to_numpy(xp[i])
+            negative_numpy = from_tensor_to_numpy(xn[i])
 
             plt.subplot((len(gen)+1)*len(xa), 3, 3*len(xa)*k+3*i+1)
 #             plt.title("anchor")
@@ -135,19 +134,19 @@ def print_from_loader(loader):
     for step, (anchor_img, positive_img, negative_img) \
     in enumerate(tqdm(loader, desc="Processing", leave=False)):
 
-        anchor_numpy = from_tensor_to_numpy(anchor_img)/255
+        anchor_numpy = from_tensor_to_numpy(anchor_img)
         plt.subplot(len(loader), 3, 1)
         plt.title("anchor")
         plt.imshow(anchor_numpy)
         plt.axis('off')
 
-        positive_numpy = from_tensor_to_numpy(positive_img)/255
+        positive_numpy = from_tensor_to_numpy(positive_img)
         plt.subplot(len(loader), 3, 2)
         plt.title("positive")
         plt.imshow(positive_numpy)
         plt.axis('off')
 
-        negative_numpy = from_tensor_to_numpy(negative_img)/255
+        negative_numpy = from_tensor_to_numpy(negative_img)
         plt.subplot(len(loader), 3, 3)
         plt.title("negative")
         plt.imshow(negative_numpy)
@@ -164,10 +163,10 @@ def print_pair(img1, img2):
     """Print a pair of two images"""
     fig,ax = plt.subplots(1,2)
     plt.subplot(1,2,1)
-    plt.imshow(from_tensor_to_numpy(img1)/255)
+    plt.imshow(from_tensor_to_numpy(img1))
     plt.axis('off')
     plt.subplot(1,2,2)
-    plt.imshow(from_tensor_to_numpy(img2)/255)
+    plt.imshow(from_tensor_to_numpy(img2))
     plt.axis('off')
     plt.show()
 

@@ -114,7 +114,7 @@ def create_dataframe():
         str(round(all_imgs.element_size() * all_imgs.nelement() / 1e9, 2)),
         "GB")
 
-    return df, all_imgs
+    return df, all_imgs/255
 
 def extend_dataframe(df):
     """Extend the dataframe.
