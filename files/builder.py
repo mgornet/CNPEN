@@ -116,14 +116,13 @@ def create_dataframe():
 
     return df, all_imgs
 
-# MARCHE PAS
 def extend_dataframe(df):
 
     data_dict = mat73.loadmat(ATTR_FILE)
     data_dict['name'] = rewrite_names(data_dict['name'])
 
     path_to_label = {
-        path:label for path in data_dict.name for label in data_dict.label
+        path:label for path in data_dict['name'] for label in data_dict['label']
     }
 
     df2 = pd.DataFrame.from_dict(
