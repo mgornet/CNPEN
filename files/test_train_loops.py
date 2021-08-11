@@ -103,7 +103,7 @@ def training(model, device, optimizer, scheduler, criterion, epochs,
             running_train_loss.append(train_loss.cpu().detach().numpy())
 
         valid_list = list(valid_loader)
-        for _ in range(4):
+        for _ in range(2):
             new_valid = list(valid_loader)
             valid_list[0][0] = torch.cat((valid_list[0][0],new_valid[0][0]), axis=0)
             valid_list[0][1] = torch.cat((valid_list[0][1],new_valid[0][1]), axis=0)
