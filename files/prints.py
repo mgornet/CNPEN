@@ -189,16 +189,17 @@ def print_hist_dist(pos_dist, neg_dist):
     plt.legend()
     plt.show()
 
-def print_hist_dist_zoom(pos_dist, neg_dist):
-    """Print the distance histogram with a zoom on the 0-2  x window"""
+def print_hist_dist_zoom(pos_dist, neg_dist, zoom=2.):
+    """Print the loss histogram"""
+    maxi=zoom
     fig,ax = plt.subplots(1,1,figsize=(6,3),dpi=100,num=1)
-    bins=np.linspace(0.,2.,50)
+    bins=np.linspace(0.,maxi,70)
     plt.title('Histogram of distances')
     plt.hist(pos_dist,bins=bins,
-        label='Anchor and Positive', alpha=0.3)
+             label='Anchor and Positive', alpha=0.3)
     plt.hist(neg_dist,bins=bins,
-        label='Anchor and Negative', alpha=0.3)
-    plt.xlim([0.,2.])
+             label='Anchor and Negative', alpha=0.3)
+    plt.xlim([0.,maxi])
     ax.set_xlabel('Distance')
     ax.set_ylabel('Number of instances')
     plt.legend()
