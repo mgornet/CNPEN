@@ -104,9 +104,10 @@ def training(model, device, optimizer, scheduler, criterion, epochs,
 
         valid_list = list(valid_loader)
         for _ in range(2):
-            valid_list[0][0] = torch.cat((valid_list[0][0],list(valid_loader)[0][0]), axis=0)
-            valid_list[0][1] = torch.cat((valid_list[0][1],list(valid_loader)[0][1]), axis=0)
-            valid_list[0][2] = torch.cat((valid_list[0][2],list(valid_loader)[0][2]), axis=0)
+        	new_valid = list(valid_loader)
+            valid_list[0][0] = torch.cat((valid_list[0][0],new_valid[0][0]), axis=0)
+            valid_list[0][1] = torch.cat((valid_list[0][1],new_valid[0][1]), axis=0)
+            valid_list[0][2] = torch.cat((valid_list[0][2],new_valid[0][2]), axis=0)
 
         for step, (anchor_valid, positive_valid, negative_valid) \
         in enumerate(tqdm(valid_list, desc="Evaluating", leave=False)):
