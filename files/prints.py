@@ -180,10 +180,12 @@ def print_hist_dist(pos_dist, neg_dist):
     bins=np.linspace(0.,10.,50)
     plt.title('Histogram of distances')
     plt.hist(pos_dist,bins=bins,
-        label='distance between anchor and positive image', alpha=0.3)
+        label='Anchor and Positive', alpha=0.3)
     plt.hist(neg_dist,bins=bins,
-        label='distance between anchor and negative image', alpha=0.3)
+        label='Anchor and Negative', alpha=0.3)
     # plt.xlim([0.,1.])
+    ax.set_xlabel('Distance')
+    ax.set_ylabel('Number of instances')
     plt.legend()
     plt.show()
 
@@ -193,10 +195,12 @@ def print_hist_dist_zoom(pos_dist, neg_dist):
     bins=np.linspace(0.,2.,50)
     plt.title('Histogram of distances')
     plt.hist(pos_dist,bins=bins,
-        label='distance between anchor and positive image', alpha=0.3)
+        label='Anchor and Positive', alpha=0.3)
     plt.hist(neg_dist,bins=bins,
-        label='distance between anchor and negative image', alpha=0.3)
+        label='Anchor and Negative', alpha=0.3)
     plt.xlim([0.,2.])
+    ax.set_xlabel('Distance')
+    ax.set_ylabel('Number of instances')
     plt.legend()
     plt.show()
 
@@ -206,6 +210,7 @@ def print_hist_loss(loss):
     bins=np.linspace(0.,5.,30)
     plt.title('Histogram of the loss')
     plt.hist(loss,bins=50,label='Triplet Loss')
-    # plt.xlim([0.,1.])
+    ax.set_xlabel('Loss')
+    ax.set_ylabel('Number of instances')
     plt.legend()
     plt.show()
