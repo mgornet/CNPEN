@@ -218,10 +218,12 @@ class TripletGenerator(nn.Module):
                       [
                         transforms.RandomHorizontalFlip(p=0.5),
                         transforms.RandomApply([
-                            transforms.RandomResizedCrop(size=60, scale=(0.8,0.8), ratio=(1.,1.))],
+                            transforms.RandomRotation((-5,5)),]
+                        p=0.5),
+                        transforms.RandomApply([
+                            transforms.RandomResizedCrop(size=60, scale=(0.8,1.), ratio=(1.,1.))],
                         p=0.5),
                         # transforms.ColorJitter(brightness=0.25, contrast=0.25, saturation=0.25),
-                        transforms.RandomRotation((-5,5)),
                     ]
         )
 
@@ -321,7 +323,7 @@ class TripletLearner(nn.Module):
     forward
     """
 
-    def __init__(self, base_channels=32, dropout=0.2):
+    def __init__(self, base_channels=32, dropout=0):
         self.base_channels = base_channels
         self.dropout = dropout
 

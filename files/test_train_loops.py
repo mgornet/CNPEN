@@ -16,7 +16,7 @@ from triplet import distance
 ###############################################################################
 
 def testing(test_loader, device, model, criterion):
-    
+
     total_loss = []
 
     for step, (anchor_img, positive_img, negative_img) \
@@ -36,10 +36,14 @@ def testing(test_loader, device, model, criterion):
     
     return total_loss
 
-def compute_distances(loader, device, model):
+def compute_distances(loader, device, model, enable_img_save=False):
     
     list_distance_pos = []
     list_distance_neg = []
+
+    anchors = []
+    positives = []
+    negatives = []
 
     for step, (anchor_img, positive_img, negative_img) \
     in enumerate(tqdm(loader, desc="Processing", leave=False)):
@@ -56,8 +60,14 @@ def compute_distances(loader, device, model):
         
         list_distance_pos += dist_pos
         list_distance_neg += dist_neg
+
+        if enable_img_save :
+
+            anchors.append(anchor_img)
+            positives.append(positive_img)
+            negatives.append(positive_img)
     
-    return list_distance_pos, list_distance_neg
+    return list_distance_pos, list_distance_neg, (anchors,positives,negatives)
 
 
 # TRAINING LOOP
@@ -102,12 +112,9 @@ def training(model, device, optimizer, scheduler, criterion, epochs,
 
             running_train_loss.append(train_loss.cpu().detach().numpy())
 
-        valid_list = list(valid_loader)
-        for _ in range(2):
-            new_valid = list(valid_loader)
-            valid_list[0][0] = torch.cat((valid_list[0][0],new_valid[0][0]), axis=0)
-            valid_list[0][1] = torch.cat((valid_list[0][1],new_valid[0][1]), axis=0)
-            valid_list[0][2] = torch.cat((valid_list[0][2],new_valid[0][2]), axis=0)
+        valid_list = []
+        for _ in range(10):
+            valid_list.extend(list(valid_loader))
 
         for step, (anchor_valid, positive_valid, negative_valid) \
         in enumerate(tqdm(valid_list, desc="Evaluating", leave=False)):

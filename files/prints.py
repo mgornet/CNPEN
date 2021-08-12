@@ -65,7 +65,7 @@ def print_img_category(all_imgs, df, attribute):
 
 def print_from_gen(gen,idx):
     """Print some images from a generator gen.
-    	The function displays the first 5 images in the batch idx"""
+        The function displays the first 5 images in the batch idx"""
 
     xa, xp, xn = gen[idx]
     plt.figure(figsize=(16, 9))
@@ -104,7 +104,7 @@ def print_from_gen2(gen):
         xa, xp, xn = gen[k]
 
         for i in range(len(xa)):
-        	
+
             anchor_numpy = from_tensor_to_numpy(xa[i]/255)
             positive_numpy = from_tensor_to_numpy(xp[i]/255)
             negative_numpy = from_tensor_to_numpy(xn[i]/255)
