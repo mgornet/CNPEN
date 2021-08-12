@@ -153,6 +153,19 @@ def compute_distances(all_imgs, device, model, Xa, Xp, Xn):
 # TRIPLET GENERATOR
 ###############################################################################
 
+AUGMENT = transforms.Compose(
+    [
+        transforms.RandomHorizontalFlip(p=0.5),
+        transforms.RandomApply([
+            transforms.RandomRotation((-5,5))],
+        p=0.95),
+        transforms.RandomApply([
+            transforms.RandomResizedCrop(size=60, scale=(0.7,0.95), ratio=(1.,1.))],
+        p=0.95),
+        # transforms.ColorJitter(brightness=0.25, contrast=0.25, saturation=0.25),
+    ]
+)
+
 class TripletGenerator(nn.Module):
 
     """
@@ -177,7 +190,7 @@ class TripletGenerator(nn.Module):
 
     def __init__(
         self, df, all_imgs, batch_size, device, model, margin,
-        transform=False, mining="standard"):
+        transform=False, apply_augmentation=AUGMENT, mining="standard"):
         
         super(TripletGenerator, self).__init__()
         
@@ -214,18 +227,7 @@ class TripletGenerator(nn.Module):
         self.transform = transform
         self.mining = mining
 
-        self.apply_augmentation = transforms.Compose(
-                      [
-                        transforms.RandomHorizontalFlip(p=0.5),
-                        transforms.RandomApply([
-                            transforms.RandomRotation((-5,5))],
-                        p=0.5),
-                        transforms.RandomApply([
-                            transforms.RandomResizedCrop(size=60, scale=(0.8,1.), ratio=(1.,1.))],
-                        p=0.5),
-                        # transforms.ColorJitter(brightness=0.25, contrast=0.25, saturation=0.25),
-                    ]
-        )
+        self.apply_augmentation = apply_augmentation
 
         random.shuffle(self.id_list)
         self.last_batch_index = len(self)-1
