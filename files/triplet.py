@@ -258,7 +258,7 @@ class TripletGenerator(nn.Module):
             # random img among all
             xn = random.choices(self.df.index)[0]
             # TO DO check xn classid diff from xa classid if not try again
-            while self.df[self.df.index==xn].Classid.values == self.df[self.df.index==xa].Classid.values:
+            while self.df.loc[xn].Classid == self.df.loc[xa].Classid:
                 xn = random.choices(self.df.index)[0]
             Xn.append(xn)
 
