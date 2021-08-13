@@ -6,7 +6,7 @@ import torch.nn.functional as F
 from torchvision import transforms
 import itertools
 import warnings
-torch.multiprocessing.set_start_method('spawn') # to prevent error when using semi or hard mining
+# torch.multiprocessing.set_start_method('spawn') # to prevent error when using semi or hard mining --> empêche l'entrainement de se lancer, patine
 
 # LOSS
 ###############################################################################
