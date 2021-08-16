@@ -223,7 +223,7 @@ def print_roc(fpr, tpr, roc_auc):
     plt.figure()
     lw=2
     plt.plot(fpr, tpr, color="darkorange", lw=lw,
-    	label="ROC curve (area = %0.2f)" % roc_auc)
+        label="ROC curve (area = %0.2f)" % roc_auc)
     plt.plot([0,1],[0,1], color="navy",lw=lw, linestyle="--")
     plt.xlim([0.,1.])
     plt.ylim([0.,1.])
@@ -234,9 +234,9 @@ def print_roc(fpr, tpr, roc_auc):
     plt.show()
 
 def print_logistic_regression(pos_dist, neg_dist,
-	y_pred_proba_logistic, threshold, maxi=2.):
-	"""Print the curves from logistic regression above the histogram
-	and show threshold"""
+    y_pred_proba_logistic, threshold, maxi=2.):
+    """Print the curves from logistic regression above the histogram
+    and show threshold"""
     fig,ax1 = plt.subplots(1,1,figsize=(10,5),dpi=100,num=1)
     bins=np.linspace(0.,maxi,70)
     plt.title('Histogram of distances and logistic regression')
@@ -249,9 +249,9 @@ def print_logistic_regression(pos_dist, neg_dist,
     ax1.set_ylabel('Number of instances')
     ax2 = ax1.twinx()
     ax2.plot(X,y_pred_proba_logistic[:,0],'.',
-    	color='orange',label='proba y=0')
+        color='orange',label='proba y=0')
     ax2.plot(X,y_pred_proba_logistic[:,1],'.',
-    	color='green', label='proba y=1')
+        color='green', label='proba y=1')
     ax2.set_ylabel('Probability')
     ax2.vlines(threshold, ymin=0, ymax=1, color='red', linestyles='--',
                lw=2, label=f'Threshold: {round(threshold,2)}')
