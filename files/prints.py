@@ -251,6 +251,7 @@ def print_logistic_regression(pos_dist, neg_dist,
     y_pred_proba_logistic, threshold, maxi=2.):
     """Print the curves from logistic regression above the histogram
     and show threshold"""
+    X = pos_dist + neg_dist
     fig,ax1 = plt.subplots(1,1,figsize=(10,5),dpi=100,num=1)
     bins=np.linspace(0.,maxi,70)
     plt.title('Histogram of distances and logistic regression')
