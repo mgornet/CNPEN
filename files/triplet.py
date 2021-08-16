@@ -59,8 +59,11 @@ class TripletLoss(nn.Module):
         return losses.mean() if size_average else losses.sum()
 
 def distance(a,b):
-    """Compute the euclidian distance between two embeddings"""
+    """Compute the euclidian distance between embeddings"""
     return (a - b).pow(2).sum(1)
+
+def distance_vectors(a,b):
+    return (a - b).pow(2).sum()
 
 class TripletLossRaw(nn.Module):
 
