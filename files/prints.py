@@ -233,6 +233,20 @@ def print_roc(fpr, tpr, roc_auc):
     plt.legend(loc="lower right")
     plt.show()
 
+def print_prec_recall(precision, recall, auc):
+    plt.figure()
+    lw=2
+    plt.plot(recall, precision, color="darkorange",
+        lw=lw, label="Precision-Recall curve (auc = %0.2f)" % auc)
+    plt.axhline(y=0.5, xmin=0.0, xmax=1., color="navy", linestyle="--", lw=lw)
+    plt.ylim([0.5,1.])
+    plt.xlim([0.,1.])
+    plt.xlabel("Recall")
+    plt.ylabel("Precision")
+    plt.title("Precision-Recall curve")
+    plt.legend(loc="lower right")
+    plt.show()
+
 def print_logistic_regression(pos_dist, neg_dist,
     y_pred_proba_logistic, threshold, maxi=2.):
     """Print the curves from logistic regression above the histogram
