@@ -80,3 +80,51 @@ def triplet_acc(loader, device, model):
 
 # FAIRNESS
 ###############################################################################
+
+def build_df_fairness(all_imgs, df, gen, epochs, device, model):
+
+    id_a_list, id_p_list, id_n_list = [], [], []
+    pos_dist_list, neg_dist_list = [], []
+
+    for _, epoch in enumerate(tqdm(range(epochs),desc="Epoch", leave=False)):
+        for _, n_batch in enumerate(tqdm(range(len(gen)),desc="N Batch", leave=False)):
+
+            id_a, id_p, id_n = gen[n_batch]
+
+            id_a_list.extend(id_a)
+            id_p_list.extend(id_p)
+            id_n_list.extend(id_n)
+
+            anchor_img = all_imgs[id_a].to(device)
+            positive_img = all_imgs[id_p].to(device)
+            negative_img = all_imgs[id_n].to(device)
+
+            anchor_out = model(anchor_img)
+            positive_out = model(positive_img)
+            negative_out = model(negative_img)
+
+            pos_dist_list.extend(distance(anchor_out,positive_out).cpu().detach().tolist())     
+            neg_dist_list.extend(distance(anchor_out,negative_out).cpu().detach().tolist())
+
+    dist_list = pos_dist_list + neg_dist_list
+    A_list = id_a_list + id_a_list
+    B_list = id_p_list + id_n_list
+
+    y_pos = [1 for _ in range(len(pos_dist_list))]
+    y_neg = [0 for _ in range(len(neg_dist_list))]
+    y = y_pos + y_neg
+
+    A_Male, B_Male = [], []
+    A_White, B_White = [], [] 
+
+    for id_A, id_B in zip(A_list, B_list):
+        A = df.loc[id_A]
+        B = df.loc[id_B]
+        A_Male.append(A.Male)
+        B_Male.append(B.Male)
+        A_White.append(A.White)
+        B_White.append(B.White)
+
+    df_fairness = pd.DataFrame(list(zip(A_list, B_list, y, dist_list, A_Male, B_Male, A_White, B_White)), columns = ['id_A', 'id_B', 'y_true', 'Distance', 'A_Male', 'B_Male', 'A_White', 'B_White'])
+
+    return df_fairness
