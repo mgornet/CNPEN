@@ -228,6 +228,7 @@ class TripletGenerator(nn.Module):
 
         self.transform = transform
         self.mining = mining
+        self.return_id = return_id
 
         self.apply_augmentation = apply_augmentation
 
@@ -305,7 +306,7 @@ class TripletGenerator(nn.Module):
         if batch_index == self.last_batch_index:
             random.shuffle(self.id_list)
 
-        if return_id :
+        if self.return_id :
             return (Xa, Xp, Xn)
 
         return (imgs_a, imgs_p, imgs_n)
