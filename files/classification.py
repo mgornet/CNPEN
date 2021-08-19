@@ -1,6 +1,6 @@
 import numpy as np
+import pandas as pd
 from tqdm.notebook import tqdm
-import time
 import torch
 from triplet import distance, distance_vectors
 
