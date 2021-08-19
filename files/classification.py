@@ -5,7 +5,7 @@ import torch
 from triplet import distance, distance_vectors
 
 
-# TESTING LOOP
+# CLASSIFICATION & PREDICTIONS
 ###############################################################################
 
 def authentification_img(img1, img2, device, model, threshold, verbose=False):
@@ -77,3 +77,6 @@ def triplet_acc(loader, device, model):
             total_count += 1
 
     return count_satisfy_condition/total_count
+
+# FAIRNESS
+###############################################################################

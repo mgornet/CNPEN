@@ -192,7 +192,7 @@ class TripletGenerator(nn.Module):
 
     def __init__(
         self, df, all_imgs, batch_size, device, model, margin,
-        transform=False, apply_augmentation=AUGMENT, mining="standard"):
+        transform=False, apply_augmentation=AUGMENT, mining="standard", return_id=False):
         
         super(TripletGenerator, self).__init__()
         
@@ -304,6 +304,9 @@ class TripletGenerator(nn.Module):
 
         if batch_index == self.last_batch_index:
             random.shuffle(self.id_list)
+
+        if return_id :
+            return (Xa, Xp, Xn)
 
         return (imgs_a, imgs_p, imgs_n)
 
