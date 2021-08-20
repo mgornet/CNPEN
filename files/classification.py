@@ -81,7 +81,7 @@ def triplet_acc(loader, device, model):
 # FAIRNESS
 ###############################################################################
 
-def build_df_fairness(all_imgs, df, gen, epochs, device, model threshold):
+def build_df_fairness(all_imgs, df, gen, epochs, device, model, threshold):
 
     id_a_list, id_p_list, id_n_list = [], [], []
     pos_dist_list, neg_dist_list = [], []
