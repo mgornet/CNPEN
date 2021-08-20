@@ -29,6 +29,8 @@ def print_img_from_path(path):
     plt.axis('off')
     plt.show()
 
+# GROUP PRINT
+###############################################################################
 
 def print_img_from_id(df, id):
     """Print the image from its id in df"""
@@ -53,9 +55,12 @@ def print_img_from_classid(df, classid):
     else:
         print("This class is not available")
 
-def print_img_category(all_imgs, df, attribute):
+def print_img_category(all_imgs, df, attribute, inverse=False):
     fig,ax = plt.subplots(3,4,figsize=(16, 9))
-    idx = df[df[attribute]==1.].sample(12).index
+    if inverse :
+        idx = df[df[attribute]==0].sample(12).index
+    else :
+        idx = df[df[attribute]==1.].sample(12).index
     for i in range(12):
         plt.subplot(3,4,i+1)
         img = from_tensor_to_numpy(all_imgs[idx[i]]/255)
@@ -153,11 +158,6 @@ def print_from_loader(loader):
         plt.axis('off')
 
     plt.show()
-
-
-
-# GROUP PRINT
-###############################################################################
 
 def print_pair(img1, img2):
     """Print a pair of two images"""
