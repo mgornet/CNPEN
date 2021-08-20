@@ -119,7 +119,7 @@ def build_df_fairness(all_imgs, df, gen, epochs, device, model, threshold):
     y_neg = [0 for _ in range(len(neg_dist_list))]
     y_true = y_pos + y_neg
 
-    y_pred = [int(dist_list[i]<THRESHOLD) for i in range(len(dist_list))]
+    y_pred = [int(dist_list[i]<threshold) for i in range(len(dist_list))]
 
     A_Male, B_Male = [], []
     A_White, B_White = [], [] 
