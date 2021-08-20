@@ -81,13 +81,13 @@ def triplet_acc(loader, device, model):
 # FAIRNESS
 ###############################################################################
 
-def build_df_fairness(all_imgs, df, gen, epochs, device, model):
+def build_df_fairness(all_imgs, df, gen, epochs, device, model threshold):
 
     id_a_list, id_p_list, id_n_list = [], [], []
     pos_dist_list, neg_dist_list = [], []
 
     for _, epoch in enumerate(tqdm(range(epochs),desc="Epoch", leave=False)):
-        for _, n_batch in enumerate(tqdm(range(len(gen)),desc="N Batch", leave=False)):
+        for n_batch in range(len(gen)):
 
             id_a, id_p, id_n = gen[n_batch]
 
@@ -103,16 +103,23 @@ def build_df_fairness(all_imgs, df, gen, epochs, device, model):
             positive_out = model(positive_img)
             negative_out = model(negative_img)
 
-            pos_dist_list.extend(distance(anchor_out,positive_out).cpu().detach().tolist())     
-            neg_dist_list.extend(distance(anchor_out,negative_out).cpu().detach().tolist())
+            pos_dist_list.extend(
+                distance(anchor_out,positive_out).cpu().detach().tolist()
+            )     
+            neg_dist_list.extend(
+                distance(anchor_out,negative_out).cpu().detach().tolist()
+            )
 
     dist_list = pos_dist_list + neg_dist_list
+
     A_list = id_a_list + id_a_list
     B_list = id_p_list + id_n_list
 
     y_pos = [1 for _ in range(len(pos_dist_list))]
     y_neg = [0 for _ in range(len(neg_dist_list))]
-    y = y_pos + y_neg
+    y_true = y_pos + y_neg
+
+    y_pred = [int(dist_list[i]) for i in range(len(dist_list))]
 
     A_Male, B_Male = [], []
     A_White, B_White = [], [] 
@@ -125,6 +132,10 @@ def build_df_fairness(all_imgs, df, gen, epochs, device, model):
         A_White.append(A.White)
         B_White.append(B.White)
 
-    df_fairness = pd.DataFrame(list(zip(A_list, B_list, y, dist_list, A_Male, B_Male, A_White, B_White)), columns = ['id_A', 'id_B', 'y_true', 'Distance', 'A_Male', 'B_Male', 'A_White', 'B_White'])
+    df_fairness = pd.DataFrame(
+        list(zip(A_list, B_list, y_true, y_pred, dist_list, \
+            A_Male, B_Male, A_White, B_White)), \
+            columns = ['id_A', 'id_B', 'y_true', 'y_pred', 'Distance', \
+            'A_Male', 'B_Male', 'A_White', 'B_White'])
 
     return df_fairness
