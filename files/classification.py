@@ -138,4 +138,42 @@ def build_df_fairness(all_imgs, df, gen, epochs, device, model, threshold):
             columns = ['id_A', 'id_B', 'y_true', 'y_pred', 'Distance', \
             'A_Male', 'B_Male', 'A_White', 'B_White'])
 
+    # add somme dummy variables
+    df_fairness['A_WhiteMale'] = df_fairness['A_White'] * \
+        df_fairness['A_Male']
+    df_fairness['B_WhiteMale'] = df_fairness['B_White'] * \
+        df_fairness['B_Male']
+    df_fairness['AB_WhiteMale'] = df_fairness['A_WhiteMale'] * \
+        df_fairness['B_WhiteMale']
+    df_fairness['AB_NoWhiteMale'] = ((df_fairness['A_WhiteMale']==0) \
+        & (df_fairness['B_WhiteMale']==0)).astype(float)
+    df_fairness['correct_predict'] = \
+        (df_fairness['y_true'] == df_fairness['y_pred']).astype(float)
+
     return df_fairness
+
+def bootstrap(df, agg_func, num_bootstraps=1000, percentiles=[5,25,50,75,95]):
+
+    results = []
+    rng = np.random.default_rng()
+    for i in range(num_bootstraps):
+        indices = rng.integers(0,len(df),len(df))
+        resampled_df = df.iloc[indices]
+        results.append(agg_func(resampled_df))
+    return np.percentile(results, percentiles)
+
+def triplet_acc_fairness(df_fairness):
+
+    count_satisfy_condition=0
+    total_count=0
+
+    demi_len_df = len(df_fairness)//2
+
+    for i in range(demi_len_df):
+        dist_pos = df_fairness.iloc[i].Distance
+        dist_neg = df_fairness.iloc[i+demi_len_df].Distance
+        if dist_pos < dist_neg :
+            count_satisfy_condition+=1
+        total_count+=1
+
+    return count_satisfy_condition/total_count
