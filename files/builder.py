@@ -63,14 +63,14 @@ def open_one_image_numpy(path, PATH=PATH):
     Image values are in (0,1)."""
     return (resize_and_crop(imread(PATH+path).astype("float32")))
 
-def open_all_images(id_to_path):
+def open_all_images(id_to_path, PATH=PATH):
     """Open all images from the file
         input: a dictionnary with keys=id of the images,
         values=path of the images
         output: tensor of shape (nb img, 3, 60, 60)"""
     all_imgs = []
     for _,path in id_to_path.items():
-        all_imgs += [open_one_image_tensor(path)]
+        all_imgs += [open_one_image_tensor(path, PATH=PATH)]
     return torch.vstack(all_imgs)
 
 
@@ -108,7 +108,7 @@ def create_dataframe(PATH=PATH):
     path_to_id = {path:img_idx for img_idx,path in enumerate(img_paths)}
     id_to_path = {img_idx:path for path,img_idx in path_to_id.items()}
 
-    all_imgs = open_all_images(id_to_path)
+    all_imgs = open_all_images(id_to_path, PATH=PATH)
 
     print("images weigh ",
         str(round(all_imgs.element_size() * all_imgs.nelement() / 1e9, 2)),
