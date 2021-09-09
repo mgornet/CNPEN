@@ -77,7 +77,7 @@ def open_all_images(id_to_path):
 # BUILD DATAFRAME
 ###############################################################################
 
-def create_dataframe():
+def create_dataframe(PATH=PATH):
     """Create the dataframe.
         output: df the dataframe created
                 (with columns id, Classids, Names, Paths)
