@@ -8,10 +8,16 @@ I thus developped a simple program to train and test a facial recognition algori
 
 Clone the repository on your own laptop or export it on a remote server (Google Colab, Kaggle Kernel etc).
 
-Launch the training via the notebook xxx. You will get a file of your model parameters.
+Launch the training via the notebook "train". You can download a file of your model parameters at the end.
 
-## 2. Test our model
+## 2. Determine the best threshold for your model
 
-Run the notebook xxx and observe the results. You can make your own tests depending on what issue you want to study.
+Run the notebook "determine_threshold" to visualize the different thresholds that can be used for your model. You can upload your own model at the beginning of the notebook or use a pretrained model.
 
-## 3. Improve your model
+## 3. Test your model
+
+Run the notebook "various_tests" and observe the results. You can make your own tests depending on what you want to study. You can upload your own model at the beginning of the notebook or use a pretrained model.
+
+## 3. Check the fairness of your model
+
+Run the notebook "fairness study" to look at some metrics showing how fair is your model. You can upload your own model at the beginning of the notebook or use a pretrained model.
