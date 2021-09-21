@@ -131,12 +131,28 @@ def build_df_fairness(all_imgs, df, gen, epochs, device, model, threshold):
         B_Male.append(B.Male)
         A_White.append(A.White)
         B_White.append(B.White)
+        A_Black.append(A.Black)
+        B_Black.append(B.Black)
+        A_Asian.append(A.Asian)
+        B_Asian.append(B.Asian)
+        A_Indian.append(A.Indian)
+        B_Indian.append(B.Indian)
+        A_Youth.append(A.Youth)
+        B_Youth.append(B.Youth)
+        A_Senior.append(A.Senior)
+        B_Senior.append(B.Senior)
+        A_Sunglasses.append(A.Sunglasses)
+        B_Sunglasses.append(B.Sunglasses)
 
     df_fairness = pd.DataFrame(
-        list(zip(A_list, B_list, y_true, y_pred, dist_list, \
-            A_Male, B_Male, A_White, B_White)), \
+        list(zip(A_list, B_list, y_true, y_pred, dist_list, A_Male, B_Male,\
+            A_White, B_White, A_Black, B_Black, A_Asian, B_Asian, A_Indian, \
+            B_Indian, A_Youth, B_Youth, A_Senior, B_Senior, A_Sunglasses,\
+            B_Sunglasses)), \
             columns = ['id_A', 'id_B', 'y_true', 'y_pred', 'Distance', \
-            'A_Male', 'B_Male', 'A_White', 'B_White'])
+            'A_Male', 'B_Male', 'A_White', 'B_White', 'A_Black', 'B_Black',\
+            'A_Asian', 'B_Asian', 'A_Indian', 'B_Indian', 'A_Youth', 'B_Youth',\
+            'A_Senior', 'B_Senior', 'A_Sunglasses', 'B_Sunglasses'])
 
     # add somme dummy variables
     df_fairness['A_WhiteMale'] = df_fairness['A_White'] * \
