@@ -122,7 +122,13 @@ def build_df_fairness(all_imgs, df, gen, epochs, device, model, threshold):
     y_pred = [int(dist_list[i]<threshold) for i in range(len(dist_list))]
 
     A_Male, B_Male = [], []
-    A_White, B_White = [], [] 
+    A_White, B_White = [], []
+    A_Black, B_Black = [], []
+    A_Asian, B_Asian = [], []
+    A_Indian, B_Indian = [], []
+    A_Youth, B_Youth = [], []
+    A_Senior, B_Senior = [], []
+    A_Sunglasses, B_Sunglasses = [], []
 
     for id_A, id_B in zip(A_list, B_list):
         A = df.loc[id_A]
