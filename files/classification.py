@@ -121,6 +121,8 @@ def build_df_fairness(all_imgs, df, gen, epochs, device, model, threshold):
 
     y_pred = [int(dist_list[i]<threshold) for i in range(len(dist_list))]
 
+    list_pairs = [i for i in range(len(y_pos))] + [i for i in range(len(y_neg))]
+
     A_Male, B_Male = [], []
     A_White, B_White = [], []
     A_Black, B_Black = [], []
@@ -151,11 +153,11 @@ def build_df_fairness(all_imgs, df, gen, epochs, device, model, threshold):
         B_Sunglasses.append(B.Sunglasses)
 
     df_fairness = pd.DataFrame(
-        list(zip(A_list, B_list, y_true, y_pred, dist_list, A_Male, B_Male,\
+        list(zip(A_list, B_list, list_pairs, y_true, y_pred, dist_list, A_Male, B_Male,\
             A_White, B_White, A_Black, B_Black, A_Asian, B_Asian, A_Indian, \
             B_Indian, A_Youth, B_Youth, A_Senior, B_Senior, A_Sunglasses,\
             B_Sunglasses)), \
-            columns = ['id_A', 'id_B', 'y_true', 'y_pred', 'Distance', \
+            columns = ['id_A', 'id_B', 'pair', 'y_true', 'y_pred', 'Distance', \
             'A_Male', 'B_Male', 'A_White', 'B_White', 'A_Black', 'B_Black',\
             'A_Asian', 'B_Asian', 'A_Indian', 'B_Indian', 'A_Youth', 'B_Youth',\
             'A_Senior', 'B_Senior', 'A_Sunglasses', 'B_Sunglasses'])
@@ -184,16 +186,16 @@ def bootstrap(df, agg_func, num_bootstraps=1000, percentiles=[5,25,50,75,95]):
         results.append(agg_func(resampled_df))
     return np.percentile(results, percentiles)
 
-def triplet_acc_fairness(df_fairness):
+def triplet_acc_fairness(df):
 
     count_satisfy_condition=0
     total_count=0
 
-    demi_len_df = len(df_fairness)//2
+    demi_len_df = len(df)//2
 
     for i in range(demi_len_df):
-        dist_pos = df_fairness.iloc[i].Distance
-        dist_neg = df_fairness.iloc[i+demi_len_df].Distance
+        dist_pos = df.iloc[i].Distance
+        dist_neg = df.iloc[i+demi_len_df].Distance
         if dist_pos < dist_neg :
             count_satisfy_condition+=1
         total_count+=1
