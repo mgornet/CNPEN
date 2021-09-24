@@ -201,3 +201,21 @@ def triplet_acc_fairness(df):
         total_count+=1
 
     return count_satisfy_condition/total_count
+
+def triplet_acc_for_bootstrap(df):
+
+    count_satisfy_condition=0
+    total_count=0
+
+    demi_len_df = len(df)//2
+
+    for id_pair in df.pair.unique():
+        df_pair=df[df.pair==id_pair]
+        if len(df_pair)==2:
+            dist_pos = df_pair[df_pair.y_true==1].Distance.values
+            dist_neg = df_pair[df_pair.y_true==0].Distance.values
+            if dist_pos < dist_neg :
+                count_satisfy_condition+=1
+            total_count+=1
+
+    return count_satisfy_condition/total_count
