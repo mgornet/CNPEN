@@ -210,10 +210,11 @@ def triplet_acc_for_bootstrap(df):
     demi_len_df = len(df)//2
 
     for id_pair in df.pair.unique():
-        df_pair=df[df.pair==id_pair]
-        if len(df_pair)==2:
-            dist_pos = df_pair[df_pair.y_true==1].Distance.values
-            dist_neg = df_pair[df_pair.y_true==0].Distance.values
+        pair_pos = df[(df.pair==id_pair) & (df.y_true==1)]
+        pair_neg = df[(df.pair==id_pair) & (df.y_true==0)]
+        if (len(pair_pos)==1) & (len(pair_neg)==1):
+            dist_pos = pair_pos.Distance.values
+            dist_neg = pair_neg.Distance.values
             if dist_pos < dist_neg :
                 count_satisfy_condition+=1
             total_count+=1
