@@ -191,7 +191,7 @@ def bootstrap_by_pairs(df, agg_func, num_bootstraps=1000, percentiles=[5,25,50,7
     results = []
     rng = np.random.default_rng()
     for i in range(num_bootstraps):
-        pairs = rng.integers(0,df_fairness.pair.max(),len(df))
+        pairs = rng.integers(0,df.pair.max(),len(df))
         resampled_df = df[df["pair"].isin(pairs)]
         results.append(agg_func(resampled_df))
     return np.percentile(results, percentiles)
