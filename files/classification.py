@@ -186,6 +186,16 @@ def bootstrap(df, agg_func, num_bootstraps=1000, percentiles=[5,25,50,75,95]):
         results.append(agg_func(resampled_df))
     return np.percentile(results, percentiles)
 
+def bootstrap_by_pairs(df, agg_func, num_bootstraps=1000, percentiles=[5,25,50,75,95]):
+
+    results = []
+    rng = np.random.default_rng()
+    for i in range(num_bootstraps):
+        pairs = rng.integers(0,df_fairness.pair.max(),len(df))
+        resampled_df = df[df["pair"].isin(pairs)]
+        results.append(agg_func(resampled_df))
+    return np.percentile(results, percentiles)
+
 def triplet_acc_fairness(df):
 
     count_satisfy_condition=0
@@ -202,21 +212,19 @@ def triplet_acc_fairness(df):
 
     return count_satisfy_condition/total_count
 
-def triplet_acc_for_bootstrap(df):
+# def triplet_acc_for_bootstrap(df):
 
-    count_satisfy_condition=0
-    total_count=0
+#     count_satisfy_condition=0
+#     total_count=0
 
-    demi_len_df = len(df)//2
+#     for id_pair in df.pair.unique():
+#         pair_pos = df[(df.pair==id_pair) & (df.y_true==1)]
+#         pair_neg = df[(df.pair==id_pair) & (df.y_true==0)]
+#         if (len(pair_pos)==1) & (len(pair_neg)==1):
+#             dist_pos = pair_pos.Distance.values
+#             dist_neg = pair_neg.Distance.values
+#             if dist_pos < dist_neg :
+#                 count_satisfy_condition+=1
+#             total_count+=1
 
-    for id_pair in df.pair.unique():
-        pair_pos = df[(df.pair==id_pair) & (df.y_true==1)]
-        pair_neg = df[(df.pair==id_pair) & (df.y_true==0)]
-        if (len(pair_pos)==1) & (len(pair_neg)==1):
-            dist_pos = pair_pos.Distance.values
-            dist_neg = pair_neg.Distance.values
-            if dist_pos < dist_neg :
-                count_satisfy_condition+=1
-            total_count+=1
-
-    return count_satisfy_condition/total_count
+#     return count_satisfy_condition/total_count
