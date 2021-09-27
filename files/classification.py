@@ -210,6 +210,9 @@ def triplet_acc_fairness(df):
             count_satisfy_condition+=1
         total_count+=1
 
+    if total_count==0:
+        return 0
+
     return count_satisfy_condition/total_count
 
 # def triplet_acc_for_bootstrap(df):
