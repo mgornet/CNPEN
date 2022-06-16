@@ -1,0 +1,27 @@
+
+Epochs: 1/1000 - Loss: 0.5077
+Epochs: 2/1000 - Loss: 0.4932
+Epochs: 3/1000 - Loss: 0.4766
+Epochs: 4/1000 - Loss: 0.4913
+Epochs: 5/1000 - Loss: 0.4109
+Epochs: 6/1000 - Loss: 0.4086
+Epochs: 7/1000 - Loss: 0.3684
+Epochs: 8/1000 - Loss: 0.3933
+Epochs: 9/1000 - Loss: 0.3925
+Epochs: 10/1000 - Loss: 0.3515
+Epochs: 11/1000 - Loss: 0.3636
+Epochs: 12/1000 - Loss: 0.3676
+Epochs: 13/1000 - Loss: 0.3676
+Epochs: 14/1000 - Loss: 0.3298
+Epochs: 15/1000 - Loss: 0.3188
+Epochs: 16/1000 - Loss: 0.3207
+Epochs: 17/1000 - Loss: 0.3406
+Epochs: 18/1000 - Loss: 0.3496
+Epochs: 19/1000 - Loss: 0.3415
+Epochs: 20/1000 - Loss: 0.3318
+Epochs: 21/1000 - Loss: 0.3295
+Exception ignored in: <function _releaseLock at 0x7f1d43528430>
+Traceback (most recent call last):
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/logging/__init__.py", line 227, in _releaseLock
+    def _releaseLock():
+KeyboardInterrupt:

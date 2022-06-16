@@ -1,0 +1,146 @@
+
+Epochs: 1/1000 - Loss: 0.1949
+Epochs: 2/1000 - Loss: 0.2053
+Epochs: 3/1000 - Loss: 0.1999
+Epochs: 4/1000 - Loss: 0.2093
+Epochs: 5/1000 - Loss: 0.2000
+Epochs: 6/1000 - Loss: 0.2000
+Epochs: 7/1000 - Loss: 0.1933
+Epochs: 8/1000 - Loss: 0.2851
+Epochs: 9/1000 - Loss: 0.1974
+Epochs: 10/1000 - Loss: 0.1906
+Epochs: 11/1000 - Loss: 0.1906
+Epochs: 12/1000 - Loss: 0.1575
+Epochs: 13/1000 - Loss: 0.1575
+Epochs: 14/1000 - Loss: 0.1357
+Epochs: 15/1000 - Loss: 0.1318
+Epochs: 16/1000 - Loss: 0.1313
+Epochs: 17/1000 - Loss: 0.1365
+Epochs: 18/1000 - Loss: 0.1301
+Epochs: 19/1000 - Loss: 0.1287
+Epochs: 20/1000 - Loss: 0.1297
+Epochs: 21/1000 - Loss: 0.1263
+Epochs: 22/1000 - Loss: 0.1223
+Epochs: 23/1000 - Loss: 0.1269
+Epochs: 24/1000 - Loss: 0.1165
+Epochs: 25/1000 - Loss: 0.1239
+Epochs: 26/1000 - Loss: 0.1237
+Epochs: 27/1000 - Loss: 0.1206
+Epochs: 28/1000 - Loss: 0.1073
+Epochs: 29/1000 - Loss: 0.1112
+Epochs: 30/1000 - Loss: 0.1076
+Epochs: 31/1000 - Loss: 0.1046
+Epochs: 32/1000 - Loss: 0.1024
+Epochs: 33/1000 - Loss: 0.1084
+Epochs: 34/1000 - Loss: 0.0932
+Epochs: 35/1000 - Loss: 0.1032
+Epochs: 36/1000 - Loss: 0.0944
+Epochs: 37/1000 - Loss: 0.0952
+Epochs: 38/1000 - Loss: 0.0920
+Epochs: 39/1000 - Loss: 0.0925
+Epochs: 40/1000 - Loss: 0.1006
+Epochs: 41/1000 - Loss: 0.0828
+Epochs: 42/1000 - Loss: 0.0866
+Epochs: 43/1000 - Loss: 0.0745
+Epochs: 44/1000 - Loss: 0.0886
+Epochs: 45/1000 - Loss: 0.0753
+Epochs: 46/1000 - Loss: 0.0882
+Epochs: 47/1000 - Loss: 0.0798
+Epochs: 48/1000 - Loss: 0.0798
+Epochs: 49/1000 - Loss: 0.0756
+Epochs: 50/1000 - Loss: 0.0853
+Epochs: 51/1000 - Loss: 0.0778
+Epochs: 52/1000 - Loss: 0.0823
+Epochs: 53/1000 - Loss: 0.0849
+Epochs: 54/1000 - Loss: 0.0711
+Epochs: 55/1000 - Loss: 0.0664
+Epochs: 56/1000 - Loss: 0.0646
+Epochs: 57/1000 - Loss: 0.0655
+Epochs: 58/1000 - Loss: 0.0657
+Epochs: 59/1000 - Loss: 0.0734
+Epochs: 60/1000 - Loss: 0.0634
+Epochs: 61/1000 - Loss: 0.0626
+Epochs: 62/1000 - Loss: 0.0718
+Epochs: 63/1000 - Loss: 0.0719
+Epochs: 64/1000 - Loss: 0.0616
+Epochs: 65/1000 - Loss: 0.0594
+Epochs: 66/1000 - Loss: 0.0610
+Epochs: 67/1000 - Loss: 0.0599
+Epochs: 68/1000 - Loss: 0.0606
+Epochs: 69/1000 - Loss: 0.0529
+Epochs: 70/1000 - Loss: 0.0443
+Epochs: 71/1000 - Loss: 0.0487
+Epochs: 72/1000 - Loss: 0.0464
+Epochs: 73/1000 - Loss: 0.0483
+Epochs: 74/1000 - Loss: 0.0557
+Epochs: 75/1000 - Loss: 0.0512
+Epochs: 76/1000 - Loss: 0.0474
+Epochs: 77/1000 - Loss: 0.0444
+Epochs: 78/1000 - Loss: 0.0481
+Epochs: 79/1000 - Loss: 0.0496
+Epochs: 80/1000 - Loss: 0.0513
+Epochs: 81/1000 - Loss: 0.0473
+Epochs: 82/1000 - Loss: 0.0497
+Epochs: 83/1000 - Loss: 0.0481
+Epochs: 84/1000 - Loss: 0.0418
+Epochs: 85/1000 - Loss: 0.0420
+Epochs: 86/1000 - Loss: 0.0374
+Epochs: 87/1000 - Loss: 0.0380
+Epochs: 88/1000 - Loss: 0.0414
+Epochs: 89/1000 - Loss: 0.0470
+Epochs: 90/1000 - Loss: 0.0423
+Epochs: 91/1000 - Loss: 0.0408
+Exception ignored in: <function _releaseLock at 0x7efcda96f430>
+Traceback (most recent call last):
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/logging/__init__.py", line 227, in _releaseLock
+    def _releaseLock():
+KeyboardInterrupt:
+Process wandb_internal:
+Traceback (most recent call last):
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/wandb/sdk/internal/internal.py", line 162, in wandb_internal
+    thread.join()
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/threading.py", line 1053, in join
+    self._wait_for_tstate_lock()
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/threading.py", line 1073, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+KeyboardInterrupt
+KeyboardInterrupt
+Exception in thread ChkStopThr:
+Traceback (most recent call last):
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 170, in check_status
+    status_response = self._interface.communicate_stop_status()
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/wandb/sdk/interface/interface.py", line 114, in communicate_stop_status
+    resp = self._communicate_stop_status(status)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/wandb/sdk/interface/interface_shared.py", line 394, in _communicate_stop_status
+    resp = self._communicate(req, local=True)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/wandb/sdk/interface/interface_shared.py", line 225, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/wandb/sdk/interface/interface_shared.py", line 230, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+Exception in thread NetStatThr:
+Traceback (most recent call last):
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 152, in check_network_status
+    status_response = self._interface.communicate_network_status()
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/wandb/sdk/interface/interface.py", line 125, in communicate_network_status
+    resp = self._communicate_network_status(status)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/wandb/sdk/interface/interface_shared.py", line 404, in _communicate_network_status
+    resp = self._communicate(req, local=True)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/wandb/sdk/interface/interface_shared.py", line 225, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/wandb/sdk/interface/interface_shared.py", line 230, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+Error in callback <function _WandbInit._resume_backend at 0x7efb882b8d30> (for pre_run_cell):

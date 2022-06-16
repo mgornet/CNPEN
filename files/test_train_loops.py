@@ -9,6 +9,12 @@ TripletLoss, TripletLossRaw
 from torch.utils.data import DataLoader, Dataset
 from triplet import distance
 
+seed = 121
+np.random.seed(seed)
+torch.manual_seed(seed)
+torch.cuda.manual_seed(seed)
+torch.backends.cudnn.deterministic = True
+
 
 # PATH = "./CNPEN/files/"
 

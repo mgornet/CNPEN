@@ -1,0 +1,166 @@
+Starting training...
+Epochs:   0%|          | 0/1000 [00:00<?, ?it/s]
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 1/1000 - Loss: 0.1949
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 2/1000 - Loss: 0.2053
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 3/1000 - Loss: 0.1999
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 4/1000 - Loss: 0.2093
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 5/1000 - Loss: 0.2000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 6/1000 - Loss: 0.2000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 7/1000 - Loss: 0.1933
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 8/1000 - Loss: 0.2851
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 9/1000 - Loss: 0.1974
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 10/1000 - Loss: 0.1906
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 11/1000 - Loss: 0.1906
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 12/1000 - Loss: 0.1575
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 13/1000 - Loss: 0.1575
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 14/1000 - Loss: 0.1357
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 15/1000 - Loss: 0.1318
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 16/1000 - Loss: 0.1313
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 17/1000 - Loss: 0.1365
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 18/1000 - Loss: 0.1301
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 19/1000 - Loss: 0.1287
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 20/1000 - Loss: 0.1297
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 21/1000 - Loss: 0.1263
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 22/1000 - Loss: 0.1223
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 23/1000 - Loss: 0.1269
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 24/1000 - Loss: 0.1165
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 25/1000 - Loss: 0.1239
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 26/1000 - Loss: 0.1237
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 27/1000 - Loss: 0.1206
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 28/1000 - Loss: 0.1073
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 29/1000 - Loss: 0.1112
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 30/1000 - Loss: 0.1076
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 31/1000 - Loss: 0.1046
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 32/1000 - Loss: 0.1024
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 33/1000 - Loss: 0.1084
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 34/1000 - Loss: 0.0932
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 35/1000 - Loss: 0.1032
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 36/1000 - Loss: 0.0944
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 37/1000 - Loss: 0.0952
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 38/1000 - Loss: 0.0920
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 39/1000 - Loss: 0.0925
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 40/1000 - Loss: 0.1006
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 41/1000 - Loss: 0.0828
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 42/1000 - Loss: 0.0866
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 43/1000 - Loss: 0.0745
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 44/1000 - Loss: 0.0886
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 45/1000 - Loss: 0.0753
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Exception ignored in: <function _releaseLock at 0x7f64f4d42ca0>
+Traceback (most recent call last):
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/logging/__init__.py", line 227, in _releaseLock
+    def _releaseLock():
+KeyboardInterrupt:
+Traceback (most recent call last):
+  File "/home/mgornet/Bureau/Code/CNPEN/train.py", line 187, in <module>
+    model = training(model, device, optimizer, scheduler, criterion, epochs, train_loader, valid_loader, save_epoch=False)
+  File "/home/mgornet/Bureau/Code/CNPEN/files/test_train_loops.py", line 123, in training
+    valid_list.extend(list(valid_loader))
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 530, in __next__
+    data = self._next_data()
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1207, in _next_data
+    idx, data = self._get_data()
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1173, in _get_data
+    success, data = self._try_get_data()
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1011, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/multiprocessing/queues.py", line 113, in get
+    if not self._poll(timeout):
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/multiprocessing/connection.py", line 262, in poll
+    return self._poll(timeout)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/multiprocessing/connection.py", line 429, in _poll
+    r = wait([self], timeout)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)

@@ -4,6 +4,12 @@ from tqdm.notebook import tqdm
 import torch
 from triplet import distance, distance_vectors
 
+seed = 121
+np.random.seed(seed)
+torch.manual_seed(seed)
+torch.cuda.manual_seed(seed)
+torch.backends.cudnn.deterministic = True
+
 
 # CLASSIFICATION & PREDICTIONS
 ###############################################################################

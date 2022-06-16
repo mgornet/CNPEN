@@ -1,0 +1,45 @@
+
+Epochs: 1/1000 - Loss: 0.2527
+Epochs: 2/1000 - Loss: 0.1991
+Epochs: 3/1000 - Loss: 0.1670
+Epochs: 4/1000 - Loss: 0.1504
+Epochs: 5/1000 - Loss: 0.1378
+Epochs: 6/1000 - Loss: 0.1401
+Epochs: 7/1000 - Loss: 0.1385
+Epochs: 8/1000 - Loss: 0.1346
+Epochs: 9/1000 - Loss: 0.1376
+Epochs: 10/1000 - Loss: 0.1400
+Epochs: 11/1000 - Loss: 0.1235
+Epochs: 12/1000 - Loss: 0.1210
+Epochs: 13/1000 - Loss: 0.1204
+Epochs: 14/1000 - Loss: 0.1218
+Epochs: 15/1000 - Loss: 0.1210
+Epochs: 16/1000 - Loss: 0.1160
+Epochs: 17/1000 - Loss: 0.1219
+Epochs: 18/1000 - Loss: 0.1210
+Epochs: 19/1000 - Loss: 0.1204
+Epochs: 20/1000 - Loss: 0.1149
+Epochs: 21/1000 - Loss: 0.1073
+Epochs: 22/1000 - Loss: 0.1080
+Exception ignored in: <function _releaseLock at 0x7f95f489a430>
+Traceback (most recent call last):
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/logging/__init__.py", line 227, in _releaseLock
+    def _releaseLock():
+KeyboardInterrupt:
+Exception in thread NetStatThr:
+Traceback (most recent call last):
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 152, in check_network_status
+    status_response = self._interface.communicate_network_status()
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/wandb/sdk/interface/interface.py", line 125, in communicate_network_status
+    resp = self._communicate_network_status(status)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/wandb/sdk/interface/interface_shared.py", line 404, in _communicate_network_status
+    resp = self._communicate(req, local=True)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/wandb/sdk/interface/interface_shared.py", line 225, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/wandb/sdk/interface/interface_shared.py", line 230, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown

@@ -8,6 +8,13 @@ import itertools
 import warnings
 # torch.multiprocessing.set_start_method('spawn') # to prevent error when using semi or hard mining --> empêche l'entrainement de se lancer, patine
 
+seed = 121
+random.seed(seed)
+np.random.seed(seed)
+torch.manual_seed(seed)
+torch.cuda.manual_seed(seed)
+torch.backends.cudnn.deterministic = True
+
 # LOSS
 ###############################################################################
 

@@ -5,6 +5,9 @@ from skimage.io import imread
 from skimage.transform import resize
 from builder import open_one_image_numpy, from_tensor_to_numpy
 
+seed = 121
+np.random.seed(seed)
+
 
 # USEFUL FUNCTIONS
 ###############################################################################
