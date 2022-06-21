@@ -1,0 +1,24 @@
+{
+    "os": "Linux-5.14.0-1042-oem-x86_64-with-glibc2.31",
+    "python": "3.9.12",
+    "heartbeatAt": "2022-06-20T15:28:43.541200",
+    "startedAt": "2022-06-20T15:28:41.738550",
+    "docker": null,
+    "gpu": "NVIDIA RTX A4000 Laptop GPU",
+    "gpu_count": 1,
+    "cpu_count": 16,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/mgornet/Bureau/Code/CNPEN/train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": "https://github.com/mgornet/CNPEN",
+        "commit": "babd54a59799588b6b85393ee56d3bb62e7c67c3"
+    },
+    "email": "melanie.gornet@gmail.com",
+    "root": "/home/mgornet/Bureau/Code/CNPEN",
+    "host": "mgornet-Precision-7560",
+    "username": "mgornet",
+    "executable": "/home/mgornet/anaconda3/envs/face_reco/bin/python"
+}

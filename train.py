@@ -142,13 +142,13 @@ print("Model initialized")
 lr = 1e-3/2 #1e-3
 # optimizer = optim.Adam(model.parameters(), lr=lr)
 optimizer = optim.Adam(model.parameters(), lr=lr)
-scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=[300,400,500,600,700,800,900], gamma=0.5) #milestones=[100,200,300,400]
+scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=[150,200,250,300,350,400,450], gamma=0.5) #milestones=[100,200,300,400]
 
-margin = 0.2
+margin = 0.5
 criterion = TripletLoss(margin)
 criterion_test = TripletLossRaw(margin)
 
-epochs = 1000
+epochs = 500
 
 print(f"Parameters init: batch_size={BATCH_SIZE}, lr_init={lr}, margin={margin}, nb_epochs={epochs}")
 
@@ -166,13 +166,13 @@ print("Dataloaders initialized")
 wandb.login()
 
 wandb.init(project="triplet_faces",
-           name="base_model",
+           name="margin05",
            config={"seed" : seed,
                   "batch_size": BATCH_SIZE,
                   "margin": margin,
                   "nb epochs": epochs,
                   "learning_rate" : lr,
-                  "scheduler" : scheduler,
+                  "scheduler" : [scheduler.milestones,scheduler.gamma],
                   "optimizer" : optimizer,
 #                   "criterion" : "euclidean square",
                   "dataset": "LFW",
