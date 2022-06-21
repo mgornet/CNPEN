@@ -1,0 +1,54 @@
+2022-06-21 15:41:27,479 INFO    MainThread:1031658 [wandb_setup.py:_flush():75] Loading settings from /home/mgornet/.config/wandb/settings
+2022-06-21 15:41:27,479 INFO    MainThread:1031658 [wandb_setup.py:_flush():75] Loading settings from /home/mgornet/Bureau/Code/CNPEN/files/wandb/settings
+2022-06-21 15:41:27,479 INFO    MainThread:1031658 [wandb_setup.py:_flush():75] Loading settings from environment variables: {}
+2022-06-21 15:41:27,479 INFO    MainThread:1031658 [wandb_setup.py:_flush():75] Inferring run settings from compute environment: {'program_relpath': 'train.py', 'program': '/home/mgornet/Bureau/Code/CNPEN/train.py'}
+2022-06-21 15:41:27,479 INFO    MainThread:1031658 [wandb_init.py:_log_setup():438] Logging user logs to /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220621_154127-1ddl7u3i/logs/debug.log
+2022-06-21 15:41:27,480 INFO    MainThread:1031658 [wandb_init.py:_log_setup():439] Logging internal logs to /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220621_154127-1ddl7u3i/logs/debug-internal.log
+2022-06-21 15:41:27,480 INFO    MainThread:1031658 [wandb_init.py:init():472] calling init triggers
+2022-06-21 15:41:27,480 INFO    MainThread:1031658 [wandb_init.py:init():475] wandb.init called with sweep_config: {}
+config: {'seed': 121, 'batch_size': 128, 'margin': 0.2, 'nb epochs': 500, 'learning_rate': 0.0005, 'scheduler': [Counter({150: 1, 200: 1, 250: 1, 300: 1, 350: 1, 400: 1, 450: 1}), 0.5], 'optimizer': Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    initial_lr: 0.0005
+    lr: 0.0005
+    maximize: False
+    weight_decay: 0
+), 'dataset': 'LFW', 'network_base_channels': 32, 'augment': True, 'augmentation': Compose(
+    RandomHorizontalFlip(p=0.5)
+    RandomApply(
+    p=0.9
+    RandomResizedCrop(size=(60, 60), scale=(0.8, 1.0), ratio=(0.95, 1.05), interpolation=bilinear)
+)
+    RandomApply(
+    p=0.5
+    Compose(
+    Normalize(mean=[0, 0, 0], std=[255, 255, 255])
+    ColorJitter(brightness=[0.5, 1.5], contrast=[0.9, 1.1], saturation=[0.9, 1.1], hue=None)
+    Normalize(mean=[0, 0, 0], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+)
+    RandomApply(
+    p=0.7
+    RandomRotation(degrees=[-5.0, 5.0], interpolation=nearest, expand=False, fill=0)
+)
+), 'dropout': 0, 'mining': 'standard'}
+2022-06-21 15:41:27,480 INFO    MainThread:1031658 [wandb_init.py:init():525] starting backend
+2022-06-21 15:41:27,480 INFO    MainThread:1031658 [backend.py:_multiprocessing_setup():99] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2022-06-21 15:41:27,529 INFO    MainThread:1031658 [backend.py:ensure_launched():219] starting backend process...
+2022-06-21 15:41:27,557 INFO    MainThread:1031658 [backend.py:ensure_launched():224] started backend process with pid: 1031694
+2022-06-21 15:41:27,558 INFO    MainThread:1031658 [wandb_init.py:init():534] backend started and connected
+2022-06-21 15:41:27,562 INFO    MainThread:1031658 [wandb_init.py:init():598] updated telemetry
+2022-06-21 15:41:27,612 INFO    MainThread:1031658 [wandb_init.py:init():629] communicating run to backend with 30 second timeout
+2022-06-21 15:41:28,292 INFO    MainThread:1031658 [wandb_run.py:_on_init():1922] communicating current version
+2022-06-21 15:41:28,355 INFO    MainThread:1031658 [wandb_run.py:_on_init():1926] got version response upgrade_message: "wandb version 0.12.18 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2022-06-21 15:41:28,355 INFO    MainThread:1031658 [wandb_init.py:init():660] starting run threads in backend
+2022-06-21 15:41:29,924 INFO    MainThread:1031658 [wandb_run.py:_console_start():1896] atexit reg
+2022-06-21 15:41:29,925 INFO    MainThread:1031658 [wandb_run.py:_redirect():1769] redirect: SettingsConsole.REDIRECT
+2022-06-21 15:41:29,925 INFO    MainThread:1031658 [wandb_run.py:_redirect():1774] Redirecting console.
+2022-06-21 15:41:29,926 INFO    MainThread:1031658 [wandb_run.py:_redirect():1830] Redirects installed.
+2022-06-21 15:41:29,926 INFO    MainThread:1031658 [wandb_init.py:init():685] run started, returning control to user process
+2022-06-21 15:48:56,467 INFO    MainThread:1031658 [wandb_run.py:_atexit_cleanup():1865] got exitcode: 255
+2022-06-21 15:48:56,476 INFO    MainThread:1031658 [wandb_run.py:_restore():1837] restore

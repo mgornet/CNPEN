@@ -164,6 +164,25 @@ def compute_distances(all_imgs, device, model, Xa, Xp, Xn):
 # TRIPLET GENERATOR
 ###############################################################################
 
+# AUGMENT = transforms.Compose([
+#     transforms.RandomHorizontalFlip(p=0.5),
+#     transforms.RandomApply([
+#         transforms.RandomResizedCrop(size=60, scale=(0.8,1.), \
+#             ratio=(0.95,1.05))],
+#     p=0.9),
+#     transforms.RandomApply([
+#         transforms.Compose([
+#             transforms.Normalize(mean=[0,0,0],std=[255,255,255]),
+#             transforms.ColorJitter(brightness=0.1, contrast=0.1, \
+#                 saturation=0.1),
+#             transforms.Normalize(mean=[0,0,0],std=[1/255,1/255,1/255])
+#         ]),],
+#     p=0.1),
+#     transforms.RandomApply([
+#         transforms.RandomRotation((-5,5))],
+#     p=0.7),
+# ])
+
 AUGMENT = transforms.Compose([
     transforms.RandomHorizontalFlip(p=0.5),
     transforms.RandomApply([
@@ -174,10 +193,10 @@ AUGMENT = transforms.Compose([
         transforms.Compose([
             transforms.Normalize(mean=[0,0,0],std=[255,255,255]),
             transforms.ColorJitter(brightness=0.1, contrast=0.1, \
-                saturation=0.1),
+                saturation=0.5),
             transforms.Normalize(mean=[0,0,0],std=[1/255,1/255,1/255])
         ]),],
-    p=0.1),
+    p=0.2),
     transforms.RandomApply([
         transforms.RandomRotation((-5,5))],
     p=0.7),
