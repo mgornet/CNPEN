@@ -53,8 +53,8 @@ from test_train_loops import training, testing, adaptative_train, compute_distan
 from classification import authentification_img, predict, triplet_acc,\
 build_df_fairness, triplet_acc_fairness, bootstrap, bootstrap_by_pairs
 
-import warnings
-warnings.filterwarnings("ignore")
+# import warnings
+# warnings.filterwarnings("ignore")
 
 seed = 121
 random.seed(seed)
@@ -113,7 +113,7 @@ margin = 0.2
 # Load models
 
 model_base = TripletLearner(base_channels=32)
-model_base.load_state_dict(torch.load("../models/in_article/base_model.pth",map_location=torch.device('cpu')))
+model_base.load_state_dict(torch.load("../files/base_121.pth",map_location=torch.device('cpu'))) #../models/in_article/base_model
 model_base = model_base.to(device)
 model_base.eval()
 
@@ -227,7 +227,7 @@ def results(df_fairness, analysis):
         print(f"Non Male - FNR: {a} ({b}-{c})")
         print("\n")
         
-    if analysis == "color":
+    elif analysis == "color":
         
         print("White - accuracy: ", np.round_(bootstrap(df_fairness[(df_fairness['A_White']==1)&(df_fairness['B_White']==1)], \
             agg_func=lambda df: df['correct_predict'].mean(), num_bootstraps=10000, percentiles=[5,50,95]), 3))
@@ -277,27 +277,27 @@ def results(df_fairness, analysis):
     else:
         print("Please select a correct analysis")
 
-    
-print("Margin 1")
-results(df_fairness_margin1, "gender")
+print("\n")   
+# print("Margin 1")
+# results(df_fairness_margin1, "gender")
 
-print("Margin 0.5")
-results(df_fairness_margin05, "gender")
-
-print("Margin 0.2")
-results(df_fairness_margin02, "gender")
-
-print("Margin 0.1")
-results(df_fairness_margin01, "gender")
-
-print("Margin 1")
-results(df_fairness_margin1, "color")
-
-print("Margin 0.5")
-results(df_fairness_margin05, "color")
+# print("Margin 0.5")
+# results(df_fairness_margin05, "gender")
 
 print("Margin 0.2")
-results(df_fairness_margin02, "color")
+results(df_fairness_base, "gender")
 
-print("Margin 0.1")
-results(df_fairness_margin01, "color")
+# print("Margin 0.1")
+# results(df_fairness_margin01, "gender")
+
+# print("Margin 1")
+# results(df_fairness_margin1, "color")
+
+# print("Margin 0.5")
+# results(df_fairness_margin05, "color")
+
+print("Margin 0.2")
+results(df_fairness_base, "color")
+
+# print("Margin 0.1")
+# results(df_fairness_margin01, "color")

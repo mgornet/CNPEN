@@ -1,0 +1,83 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.12.14
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.9.12
+    start_time: 1655889891
+    t:
+      1:
+      - 1
+      - 5
+      - 41
+      - 53
+      - 55
+      2:
+      - 1
+      - 5
+      - 41
+      - 53
+      - 55
+      3:
+      - 2
+      - 13
+      - 16
+      4: 3.9.12
+      5: 0.12.14
+      8:
+      - 5
+augment:
+  desc: null
+  value: true
+augmentation:
+  desc: null
+  value: "Compose(\n    RandomHorizontalFlip(p=0.5)\n    RandomApply(\n    p=0.9\n\
+    \    RandomResizedCrop(size=(60, 60), scale=(0.8, 1.0), ratio=(0.95, 1.05), interpolation=bilinear)\n\
+    )\n    RandomApply(\n    p=0.1\n    Compose(\n    Normalize(mean=[0, 0, 0], std=[255,\
+    \ 255, 255])\n    ColorJitter(brightness=[0.95, 1.05], contrast=[0.95, 1.05],\
+    \ saturation=[0.95, 1.05], hue=None)\n    Normalize(mean=[0, 0, 0], std=[0.00392156862745098,\
+    \ 0.00392156862745098, 0.00392156862745098])\n)\n)\n    RandomApply(\n    p=0.7\n\
+    \    RandomRotation(degrees=[-5.0, 5.0], interpolation=nearest, expand=False,\
+    \ fill=0)\n)\n)"
+batch_size:
+  desc: null
+  value: 128
+dataset:
+  desc: null
+  value: LFW
+dropout:
+  desc: null
+  value: 0
+learning_rate:
+  desc: null
+  value: 0.0005
+margin:
+  desc: null
+  value: 0.2
+mining:
+  desc: null
+  value: standard
+nb epochs:
+  desc: null
+  value: 500
+network_base_channels:
+  desc: null
+  value: 32
+optimizer:
+  desc: null
+  value: "Adam (\nParameter Group 0\n    amsgrad: False\n    betas: (0.9, 0.999)\n\
+    \    eps: 1e-08\n    initial_lr: 0.0005\n    lr: 0.0005\n    maximize: False\n\
+    \    weight_decay: 0\n)"
+scheduler:
+  desc: null
+  value:
+  - '300': 1
+    '400': 1
+  - 0.5
+seed:
+  desc: null
+  value: 121

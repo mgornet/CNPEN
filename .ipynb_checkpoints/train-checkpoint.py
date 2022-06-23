@@ -142,7 +142,7 @@ print("Model initialized")
 lr = 1e-3/2 #1e-3
 # optimizer = optim.Adam(model.parameters(), lr=lr)
 optimizer = optim.Adam(model.parameters(), lr=lr)
-scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=[150,200,250,300,350,400,450], gamma=0.5) #milestones=[100,200,300,400]
+scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=[100,200,300,400], gamma=0.5) #milestones=[100,200,300,400] [150,200,250,300,350,400,450]
 
 margin = 0.2
 criterion = TripletLoss(margin)
@@ -166,7 +166,7 @@ print("Dataloaders initialized")
 wandb.login()
 
 wandb.init(project="triplet_faces",
-           name="jitter_saturation",
+           name="base_121_schedule100_lr3",
            config={"seed" : seed,
                   "batch_size": BATCH_SIZE,
                   "margin": margin,

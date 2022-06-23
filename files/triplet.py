@@ -193,10 +193,10 @@ AUGMENT = transforms.Compose([
         transforms.Compose([
             transforms.Normalize(mean=[0,0,0],std=[255,255,255]),
             transforms.ColorJitter(brightness=0.1, contrast=0.1, \
-                saturation=0.5),
+                saturation=0.1),
             transforms.Normalize(mean=[0,0,0],std=[1/255,1/255,1/255])
         ]),],
-    p=0.2),
+    p=0.1),
     transforms.RandomApply([
         transforms.RandomRotation((-5,5))],
     p=0.7),
@@ -344,6 +344,102 @@ class TripletGenerator(nn.Module):
             return (Xa, Xp, Xn)
 
         return (imgs_a, imgs_p, imgs_n)
+    
+    
+class RandomTripletGenerator(nn.Module):
+
+    """
+    A class to represent the triplet generator.
+    Here the images are sampled randomly and not for all classid
+
+    Attributes
+    ----------
+    batch_size: int. Size of the batch
+    df: pandas dataframe
+    imgs: tensor of images
+    num_samples: number of classid with more than one image
+    device: cpu or gpu
+    model: TripletLearner model
+    margin: float 
+    tranform: bool. If true, apply augmentation
+    mining: str. "standard", "semi" or "hard"
+    apply augmentation: transform function
+
+    Methods
+    -------
+    """
+
+    def __init__(
+        self, df, all_imgs, batch_size, device, model, margin,
+        transform=False, apply_augmentation=AUGMENT, mining="standard", return_id=False):
+        
+        super(TripletGenerator, self).__init__()
+        
+        self.df = df
+
+        self.imgs = all_imgs
+
+        value_count = df.Classid.value_counts()
+        self.id_list = list(value_count[value_count.values>1].index)
+
+        self.num_samples = len(self.id_list)
+
+        if self.num_samples<batch_size :
+            warnings.warn(
+                f'Batch size number was changed from {batch_size} to '
+                f'{self.num_samples} because there are only {self.num_samples}'
+                f' individuals with more than 2 pictures.'
+            )
+            batch_size=self.num_samples
+
+        self.batch_size = batch_size
+
+        if self.num_samples % batch_size != 0:
+            warnings.warn(
+                f'Number of unique identities with more than 2 pictures '
+                f'({self.num_samples}) is not divisible by batch_size '
+                f'({batch_size}). Remainder: {self.num_samples % batch_size}'
+            )
+
+        self.device = device
+        self.model = model
+        self.margin = margin
+
+        self.transform = transform
+        self.mining = mining
+        self.return_id = return_id
+
+        self.apply_augmentation = apply_augmentation
+
+        random.shuffle(self.id_list)
+        self.last_batch_index = len(self)-1
+
+    def __len__(self):
+        return self.num_samples // self.batch_size
+        
+    def __getitem__(self, batch_index):
+
+        low_index = batch_index * self.batch_size
+        high_index = (batch_index + 1) * self.batch_size
+
+        imgs_a = self.Xa[low_index:high_index]  # Anchors
+        imgs_p = self.Xp[low_index:high_index]  # Positives
+        imgs_n = random.sample(self.neg_imgs_idx, imgs_a.shape[0])  # Negatives
+
+        imgs_a = self.imgs[imgs_a]
+        imgs_p = self.imgs[imgs_p]
+        imgs_n = self.imgs[imgs_n]
+
+        anchors = torch.zeros((self.batch_size,3,60,60))
+        positives = torch.zeros((self.batch_size,3,60,60))
+        negatives = torch.zeros((self.batch_size,3,60,60))
+
+        for batch in range(self.batch_size):
+            anchors[batch] = self.apply_augmentation(imgs_a[batch])
+            positives[batch] = self.apply_augmentation(imgs_p[batch])
+            negatives[batch] = self.apply_augmentation(imgs_n[batch])
+            
+        return (anchors, positives, negatives)
 
 # NETWORK
 ###############################################################################
