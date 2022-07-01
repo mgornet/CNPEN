@@ -1,0 +1,1 @@
+{"training step": 8999, "training loss": 0.10058026015758514, "_timestamp": 1655992457, "_runtime": 6559, "_step": 99999, "validation step": 9080, "validation loss": 2.1026039123535156, "epoch": 999, "mean training loss": 0.05554473400115967, "mean validation loss": 0.2821483910083771, "_wandb": {"runtime": 6560}}

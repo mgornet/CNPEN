@@ -186,7 +186,7 @@ def compute_distances(all_imgs, device, model, Xa, Xp, Xn):
 AUGMENT = transforms.Compose([
     transforms.RandomHorizontalFlip(p=0.5),
     transforms.RandomApply([
-        transforms.RandomResizedCrop(size=60, scale=(0.8,1.), \
+        transforms.RandomResizedCrop(size=60, scale=(0.7,0.9), \
             ratio=(0.95,1.05))],
     p=0.9),
     transforms.RandomApply([

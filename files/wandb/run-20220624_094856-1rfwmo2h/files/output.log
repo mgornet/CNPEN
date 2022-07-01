@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/home/mgornet/Bureau/Code/CNPEN/train.py", line 187, in <module>
+    model = training(model, device, optimizer, scheduler, criterion, epochs, train_loader, valid_loader, save_epoch=False)
+  File "/home/mgornet/Bureau/Code/CNPEN/files/test_train_loops.py", line 107, in training
+    anchor_out = model(anchor_img)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/mgornet/Bureau/Code/CNPEN/files/triplet.py", line 545, in forward
+    x = self.conv(x)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/torch/nn/modules/conv.py", line 447, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/torch/nn/modules/conv.py", line 443, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: CUDA out of memory. Tried to allocate 58.00 MiB (GPU 0; 7.80 GiB total capacity; 34.80 MiB already allocated; 41.25 MiB free; 44.00 MiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+Starting training...
+Epochs:   0%|          | 0/1000 [00:00<?, ?it/s]
+Training:   0%|          | 0/9 [00:00<?, ?it/s]

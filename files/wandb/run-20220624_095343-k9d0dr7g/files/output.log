@@ -1,0 +1,92 @@
+Starting training...
+Epochs:   0%|          | 0/1000 [00:00<?, ?it/s]
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 1/1000 - Loss: 1.5716
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 2/1000 - Loss: 1.0011
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 3/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 4/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 5/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 6/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 7/1000 - Loss: 0.9998
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 8/1000 - Loss: 1.1170
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 9/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 10/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 11/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 12/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 13/1000 - Loss: 1.0001
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 14/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 15/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 16/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 17/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 18/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 19/1000 - Loss: 1.0001
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 20/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 21/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 22/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 23/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 24/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 25/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 26/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 27/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 28/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 29/1000 - Loss: 1.0000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 30/1000 - Loss: 0.9991

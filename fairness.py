@@ -98,8 +98,9 @@ split_train_test = int(num_classes * 0.8)
 indiv_max = df.Classid.max()
 
 df_train = df[df.Classid<split_train_valid]
-df_valid = df[(df.Classid>=split_train_valid)&(df.Classid<split_train_test)]
-df_test = df[df.Classid>=split_train_test]
+df_valid = df[(df.Classid>=split_train_valid)]#&(df.Classid<split_train_test)]
+# df_test = df[df.Classid>=split_train_test]
+df_test = df_valid
 
 BATCH_SIZE = 128 # 128
 BATCH_VALID_SIZE = 128 #128 #8
@@ -109,28 +110,6 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 margin = 0.2
 # criterion = TripletLoss(margin)
 # criterion_test = TripletLossRaw(margin)
-
-# Load models
-
-model_base = TripletLearner(base_channels=32)
-model_base.load_state_dict(torch.load("../files/base_121.pth",map_location=torch.device('cpu'))) #../models/in_article/base_model
-model_base = model_base.to(device)
-model_base.eval()
-
-model_margin1 = TripletLearner(base_channels=32)
-model_margin1.load_state_dict(torch.load("../models/in_article/margin1.pth",map_location=torch.device('cpu')))
-model_margin1 = model_margin1.to(device)
-model_margin1.eval()
-
-model_margin05 = TripletLearner(base_channels=32)
-model_margin05.load_state_dict(torch.load("../models/in_article/margin05.pth",map_location=torch.device('cpu')))
-model_margin05 = model_margin05.to(device)
-model_margin05.eval()
-
-model_margin01 = TripletLearner(base_channels=32)
-model_margin01.load_state_dict(torch.load("../models/in_article/margin01.pth",map_location=torch.device('cpu')))
-model_margin01 = model_margin01.to(device)
-model_margin01.eval()
 
 # Build THRESHOLD (for details, see the notebook "determine_threshold")
 def build_threshold(df_valid, all_imgs, device, model, margin, verbose=False):
@@ -160,34 +139,72 @@ def build_threshold(df_valid, all_imgs, device, model, margin, verbose=False):
         print("Threshold with logistic regression:", threshold)
 
     return threshold
+
+# Load models
+
+model_base = TripletLearner(base_channels=32)
+model_base.load_state_dict(torch.load("../models/in_article/base_121_600.pth",map_location=torch.device('cpu'))) #../models/in_article/base_model
+model_base = model_base.to(device)
+model_base.eval()
+
+model_margin1 = TripletLearner(base_channels=32)
+model_margin1.load_state_dict(torch.load("../models/in_article/margin1_1000epochs.pth",map_location=torch.device('cpu')))
+model_margin1 = model_margin1.to(device)
+model_margin1.eval()
+
+model_margin05 = TripletLearner(base_channels=32)
+model_margin05.load_state_dict(torch.load("../models/in_article/margin05.pth",map_location=torch.device('cpu')))
+model_margin05 = model_margin05.to(device)
+model_margin05.eval()
+
+model_margin01 = TripletLearner(base_channels=32)
+model_margin01.load_state_dict(torch.load("../models/in_article/margin01.pth",map_location=torch.device('cpu')))
+model_margin01 = model_margin01.to(device)
+model_margin01.eval()
+
+model_jitterbrightness = TripletLearner(base_channels=32)
+model_jitterbrightness.load_state_dict(torch.load("../models/in_article/high_brightness_600.pth",map_location=torch.device('cpu'))) #../models/in_article/base_model
+model_jitterbrightness = model_base.to(device)
+model_jitterbrightness.eval()
+
+# Create generator and df_fairness
     
 gen_base = TripletGenerator(df_test, all_imgs, BATCH_TEST_SIZE, device, model_base, margin, return_id=True)
-threshold_base  = build_threshold(df_valid, all_imgs, device, model_base, margin)
+threshold_base  = build_threshold(df_valid, all_imgs, device, model_base, margin, True)
 tic = perf_counter()
-df_fairness_base = build_df_fairness(all_imgs, df_test, gen_base, 20, device, model_base, threshold_base)
+df_fairness_base = build_df_fairness(all_imgs, df_test, gen_base, 20, device, model_base, threshold_base) #20
 toc = perf_counter()
 print(f"DataFrame creation: {((toc - tic)/60):.1f} min")
 
 gen_margin1 = TripletGenerator(df_test, all_imgs, BATCH_TEST_SIZE, device, model_margin1, 1., return_id=True)
-threshold_margin1  = build_threshold(df_valid, all_imgs, device, model_margin1, 1.)
+threshold_margin1  = build_threshold(df_valid, all_imgs, device, model_margin1, 1., True)
 tic = perf_counter()
 df_fairness_margin1 = build_df_fairness(all_imgs, df_test, gen_margin1, 20, device, model_margin1, threshold_margin1)
 toc = perf_counter()
 print(f"DataFrame creation: {((toc - tic)/60):.1f} min")
 
 gen_margin05 = TripletGenerator(df_test, all_imgs, BATCH_TEST_SIZE, device, model_margin05, 0.5, return_id=True)
-threshold_margin05  = build_threshold(df_valid, all_imgs, device, model_margin05, 0.5)
+threshold_margin05  = build_threshold(df_valid, all_imgs, device, model_margin05, 0.5, True)
 tic = perf_counter()
 df_fairness_margin05 = build_df_fairness(all_imgs, df_test, gen_margin05, 20, device, model_margin05, threshold_margin05)
 toc = perf_counter()
 print(f"DataFrame creation: {((toc - tic)/60):.1f} min")
 
 gen_margin01 = TripletGenerator(df_test, all_imgs, BATCH_TEST_SIZE, device, model_margin01, 0.1, return_id=True)
-threshold_margin01  = build_threshold(df_valid, all_imgs, device, model_margin01, 0.1)
+threshold_margin01  = build_threshold(df_valid, all_imgs, device, model_margin01, 0.1, True)
 tic = perf_counter()
 df_fairness_margin01 = build_df_fairness(all_imgs, df_test, gen_margin01, 20, device, model_margin01, threshold_margin01)
 toc = perf_counter()
 print(f"DataFrame creation: {((toc - tic)/60):.1f} min")
+
+gen_jitterbrightness = TripletGenerator(df_test, all_imgs, BATCH_TEST_SIZE, device, model_jitterbrightness, margin, return_id=True)
+threshold_jitterbrightness  = build_threshold(df_valid, all_imgs, device, model_jitterbrightness, margin, True)
+tic = perf_counter()
+df_fairness_jitterbrightness = build_df_fairness(all_imgs, df_test, gen_jitterbrightness, 20, device, model_jitterbrightness, threshold_jitterbrightness) #20
+toc = perf_counter()
+print(f"DataFrame creation: {((toc - tic)/60):.1f} min")
+
+
 
 # RESULTS
 
@@ -197,87 +214,176 @@ def results(df_fairness, analysis):
     if analysis == "gender":
 
         b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_Male']==1)&(df_fairness['B_Male']==1)], \
-            agg_func=lambda df: df['correct_predict'].mean(), num_bootstraps=10000, percentiles=[5,50,95]), 3)
+            agg_func=lambda df: df['correct_predict'].mean(), num_bootstraps=1000, percentiles=[5,50,95]), 3)
         print(f"Male - accuracy: {a} ({b}-{c})")
         b,a,c = np.round_(bootstrap_by_pairs(df_fairness[(df_fairness['A_Male']==1)&(df_fairness['B_Male']==1)], \
-            agg_func=lambda df: triplet_acc_fairness(df), num_bootstraps=100, percentiles=[5,50,95]), 3)
+            agg_func=lambda df: triplet_acc_fairness(df), num_bootstraps=1000, percentiles=[5,50,95]), 3)
         print(f"Male - triplet accuracy: {a} ({b}-{c})")
         b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_Male']==1)&(df_fairness['B_Male']==1)], \
             agg_func=lambda df: df[(df['y_pred']==1)&(df['y_true']==0)]['id_A'].count()/df[df['y_pred']==1]['id_A'].count(), \
-            num_bootstraps=10000, percentiles=[5,50,95]),3)
+            num_bootstraps=1000, percentiles=[5,50,95]),3)
         print(f"Male - FPR: {a} ({b}-{c})")
         b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_Male']==1)&(df_fairness['B_Male']==1)], \
             agg_func=lambda df: df[(df['y_pred']==0)&(df['y_true']==1)]['id_A'].count()/df[df['y_pred']==0]['id_A'].count(), \
-            num_bootstraps=10000, percentiles=[5,50,95]),3)
+            num_bootstraps=1000, percentiles=[5,50,95]),3)
         print(f"Male - FNR: {a} ({b}-{c})")
         print("\n")
         b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_Male']==0)&(df_fairness['B_Male']==0)], \
-            agg_func=lambda df: df['correct_predict'].mean(), num_bootstraps=10000, percentiles=[5,50,95]),3)
+            agg_func=lambda df: df['correct_predict'].mean(), num_bootstraps=1000, percentiles=[5,50,95]),3)
         print(f"Non Male - accuracy: {a} ({b}-{c})")
         b,a,c = np.round_(bootstrap_by_pairs(df_fairness[(df_fairness['A_Male']==0)&(df_fairness['B_Male']==0)], \
-            agg_func=lambda df: triplet_acc_fairness(df), num_bootstraps=100, percentiles=[5,50,95]), 3)
+            agg_func=lambda df: triplet_acc_fairness(df), num_bootstraps=1000, percentiles=[5,50,95]), 3)
         print(f"Non Male - triplet accuracy: {a} ({b}-{c})")
         b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_Male']==0)&(df_fairness['B_Male']==0)], \
             agg_func=lambda df: df[(df['y_pred']==1)&(df['y_true']==0)]['id_A'].count()/df[df['y_pred']==1]['id_A'].count(), \
-            num_bootstraps=10000, percentiles=[5,50,95]),3)
+            num_bootstraps=1000, percentiles=[5,50,95]),3)
         print(f"Non Male - FPR: {a} ({b}-{c})")
         b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_Male']==0)&(df_fairness['B_Male']==0)], \
             agg_func=lambda df: df[(df['y_pred']==0)&(df['y_true']==1)]['id_A'].count()/df[df['y_pred']==0]['id_A'].count(), \
-            num_bootstraps=10000, percentiles=[5,50,95]),3)
+            num_bootstraps=1000, percentiles=[5,50,95]),3)
         print(f"Non Male - FNR: {a} ({b}-{c})")
         print("\n")
         
     elif analysis == "color":
         
-        print("White - accuracy: ", np.round_(bootstrap(df_fairness[(df_fairness['A_White']==1)&(df_fairness['B_White']==1)], \
-            agg_func=lambda df: df['correct_predict'].mean(), num_bootstraps=10000, percentiles=[5,50,95]), 3))
-        print("White - triplet accuracy: ", np.round_(bootstrap_by_pairs(df_fairness[(df_fairness['A_White']==1)&(df_fairness['B_White']==1)], \
-            agg_func=lambda df: triplet_acc_fairness(df), num_bootstraps=100, percentiles=[5,50,95]), 3))
-        print("White - FPR: ", np.round_(bootstrap(df_fairness[(df_fairness['A_White']==1)&(df_fairness['B_White']==1)], \
+        b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_White']==1)&(df_fairness['B_White']==1)], \
+            agg_func=lambda df: df['correct_predict'].mean(), num_bootstraps=1000, percentiles=[5,50,95]), 3)
+        print(f"White - accuracy: {a} ({b}-{c})")
+        b,a,c = np.round_(bootstrap_by_pairs(df_fairness[(df_fairness['A_White']==1)&(df_fairness['B_White']==1)], \
+            agg_func=lambda df: triplet_acc_fairness(df), num_bootstraps=1000, percentiles=[5,50,95]), 3)
+        print(f"White - triplet accuracy: {a} ({b}-{c})")
+        b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_White']==1)&(df_fairness['B_White']==1)], \
             agg_func=lambda df: df[(df['y_pred']==1)&(df['y_true']==0)]['id_A'].count()/df[df['y_pred']==1]['id_A'].count(), \
-            num_bootstraps=10000, percentiles=[5,50,95]),3))
-        print("White - FNR: ", np.round_(bootstrap(df_fairness[(df_fairness['A_White']==1)&(df_fairness['B_White']==1)], \
+            num_bootstraps=1000, percentiles=[5,50,95]),3)
+        print(f"White - FPR: {a} ({b}-{c})")
+        b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_White']==1)&(df_fairness['B_White']==1)], \
             agg_func=lambda df: df[(df['y_pred']==0)&(df['y_true']==1)]['id_A'].count()/df[df['y_pred']==0]['id_A'].count(), \
-            num_bootstraps=10000, percentiles=[5,50,95]),3))
+            num_bootstraps=1000, percentiles=[5,50,95]),3)
+        print(f"White - FNR: {a} ({b}-{c})")
         print("\n")
-        print("Black - accuracy: ", np.round_(bootstrap(df_fairness[(df_fairness['A_Black']==1)&(df_fairness['B_Black']==1)], \
-            agg_func=lambda df: df['correct_predict'].mean(), num_bootstraps=10000, percentiles=[5,50,95]),3))
-        print("Black - triplet accuracy: ", np.round_(bootstrap_by_pairs(df_fairness[(df_fairness['A_Black']==1)&(df_fairness['B_Black']==1)], \
-            agg_func=lambda df: triplet_acc_fairness(df), num_bootstraps=100, percentiles=[5,50,95]), 3))
-        print("Black - FPR: ", np.round_(bootstrap(df_fairness[(df_fairness['A_Black']==1)&(df_fairness['B_Black']==1)], \
+        b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_White']==0)&(df_fairness['B_White']==0)], \
+            agg_func=lambda df: df['correct_predict'].mean(), num_bootstraps=1000, percentiles=[5,50,95]), 3)
+        print(f"Non-White - accuracy: {a} ({b}-{c})")
+        b,a,c = np.round_(bootstrap_by_pairs(df_fairness[(df_fairness['A_White']==0)&(df_fairness['B_White']==0)], \
+            agg_func=lambda df: triplet_acc_fairness(df), num_bootstraps=1000, percentiles=[5,50,95]), 3)
+        print(f"Non-White - triplet accuracy: {a} ({b}-{c})")
+        b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_White']==0)&(df_fairness['B_White']==0)], \
             agg_func=lambda df: df[(df['y_pred']==1)&(df['y_true']==0)]['id_A'].count()/df[df['y_pred']==1]['id_A'].count(), \
-            num_bootstraps=10000, percentiles=[5,50,95]),3))
-        print("Black - FNR: ", np.round_(bootstrap(df_fairness[(df_fairness['A_Black']==1)&(df_fairness['B_Black']==1)], \
+            num_bootstraps=1000, percentiles=[5,50,95]),3)
+        print(f"Non-White - FPR: {a} ({b}-{c})")
+        b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_White']==0)&(df_fairness['B_White']==0)], \
             agg_func=lambda df: df[(df['y_pred']==0)&(df['y_true']==1)]['id_A'].count()/df[df['y_pred']==0]['id_A'].count(), \
-            num_bootstraps=10000, percentiles=[5,50,95]),3))
+            num_bootstraps=1000, percentiles=[5,50,95]),3)
+        print(f"Non-White - FNR: {a} ({b}-{c})")
         print("\n")
-        print("Asian - accuracy: ", np.round_(bootstrap(df_fairness[(df_fairness['A_Asian']==1)&(df_fairness['B_Asian']==1)], \
-            agg_func=lambda df: df['correct_predict'].mean(), num_bootstraps=10000, percentiles=[5,50,95]), 3))
-        print("Asian - triplet accuracy: ", np.round_(bootstrap_by_pairs(df_fairness[(df_fairness['A_Asian']==1)&(df_fairness['B_Asian']==1)], \
-            agg_func=lambda df: triplet_acc_fairness(df), num_bootstraps=100, percentiles=[5,50,95]), 3))
-        print("Asian - FPR: ", np.round_(bootstrap(df_fairness[(df_fairness['A_Asian']==1)&(df_fairness['B_Asian']==1)], \
+        b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_Black']==1)&(df_fairness['B_Black']==1)], \
+            agg_func=lambda df: df['correct_predict'].mean(), num_bootstraps=1000, percentiles=[5,50,95]),3)
+        print(f"Black - accuracy: {a} ({b}-{c})")
+        b,a,c = np.round_(bootstrap_by_pairs(df_fairness[(df_fairness['A_Black']==1)&(df_fairness['B_Black']==1)], \
+            agg_func=lambda df: triplet_acc_fairness(df), num_bootstraps=1000, percentiles=[5,50,95]), 3)
+        print(f"Black - triplet accuracy: {a} ({b}-{c})")
+        b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_Black']==1)&(df_fairness['B_Black']==1)], \
             agg_func=lambda df: df[(df['y_pred']==1)&(df['y_true']==0)]['id_A'].count()/df[df['y_pred']==1]['id_A'].count(), \
-            num_bootstraps=10000, percentiles=[5,50,95]),3))
-        print("Asian - FNR: ", np.round_(bootstrap(df_fairness[(df_fairness['A_Asian']==1)&(df_fairness['B_Asian']==1)], \
+            num_bootstraps=1000, percentiles=[5,50,95]),3)
+        print(f"Black - FPR: {a} ({b}-{c})")
+        b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_Black']==1)&(df_fairness['B_Black']==1)], \
             agg_func=lambda df: df[(df['y_pred']==0)&(df['y_true']==1)]['id_A'].count()/df[df['y_pred']==0]['id_A'].count(), \
-            num_bootstraps=10000, percentiles=[5,50,95]),3))
+            num_bootstraps=1000, percentiles=[5,50,95]),3)
+        print(f"Black - FNR: {a} ({b}-{c})")
+        # print("\n")
+        # b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_Asian']==1)&(df_fairness['B_Asian']==1)], \
+        #     agg_func=lambda df: df['correct_predict'].mean(), num_bootstraps=10000, percentiles=[5,50,95]), 3)
+        # print(f"Asian - accuracy: {a} ({b}-{c})")
+        # b,a,c = np.round_(bootstrap_by_pairs(df_fairness[(df_fairness['A_Asian']==1)&(df_fairness['B_Asian']==1)], \
+        #     agg_func=lambda df: triplet_acc_fairness(df), num_bootstraps=100, percentiles=[5,50,95]), 3)
+        # print(f"Asian - triplet accuracy: {a} ({b}-{c})")
+        # b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_Asian']==1)&(df_fairness['B_Asian']==1)], \
+        #     agg_func=lambda df: df[(df['y_pred']==1)&(df['y_true']==0)]['id_A'].count()/df[df['y_pred']==1]['id_A'].count(), \
+        #     num_bootstraps=10000, percentiles=[5,50,95]),3)
+        # print(f"Asian - FPR: {a} ({b}-{c})")
+        # b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_Asian']==1)&(df_fairness['B_Asian']==1)], \
+        #     agg_func=lambda df: df[(df['y_pred']==0)&(df['y_true']==1)]['id_A'].count()/df[df['y_pred']==0]['id_A'].count(), \
+        #     num_bootstraps=10000, percentiles=[5,50,95]),3)
+        # print(f"Asian - FNR: {a} ({b}-{c})")
+        # print("\n")
+        # b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_Indian']==1)&(df_fairness['B_Indian']==1)], \
+        #     agg_func=lambda df: df['correct_predict'].mean(), num_bootstraps=10000, percentiles=[5,50,95]),3)
+        # print(f"Indian - accuracy: {a} ({b}-{c})")
+        # b,a,c = np.round_(bootstrap_by_pairs(df_fairness[(df_fairness['A_Indian']==1)&(df_fairness['B_Indian']==1)], \
+        #     agg_func=lambda df: triplet_acc_fairness(df), num_bootstraps=100, percentiles=[5,50,95]), 3)
+        # print(f"Indian - triplet accuracy: {a} ({b}-{c})")
+        # b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_Indian']==1)&(df_fairness['B_Indian']==1)], \
+        #     agg_func=lambda df: df[(df['y_pred']==1)&(df['y_true']==0)]['id_A'].count()/df[df['y_pred']==1]['id_A'].count(), \
+        #     num_bootstraps=10000, percentiles=[5,50,95]),3)
+        # print(f"Indian - FPR: {a} ({b}-{c})")
+        # b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_Indian']==1)&(df_fairness['B_Indian']==1)], \
+        #     agg_func=lambda df: df[(df['y_pred']==0)&(df['y_true']==1)]['id_A'].count()/df[df['y_pred']==0]['id_A'].count(), \
+        #     num_bootstraps=10000, percentiles=[5,50,95]),3)
+        # print(f"Indian - FNR: {a} ({b}-{c})")
         print("\n")
-        print("Indian - accuracy: ", np.round_(bootstrap(df_fairness[(df_fairness['A_Indian']==1)&(df_fairness['B_Indian']==1)], \
-            agg_func=lambda df: df['correct_predict'].mean(), num_bootstraps=10000, percentiles=[5,50,95]),3))
-        print("Indian - triplet accuracy: ", np.round_(bootstrap_by_pairs(df_fairness[(df_fairness['A_Indian']==1)&(df_fairness['B_Indian']==1)], \
-            agg_func=lambda df: triplet_acc_fairness(df), num_bootstraps=100, percentiles=[5,50,95]), 3))
-        print("Indian - FPR: ", np.round_(bootstrap(df_fairness[(df_fairness['A_Indian']==1)&(df_fairness['B_Indian']==1)], \
+        
+    elif analysis == "intersectional":
+    
+        b,a,c = np.round_(bootstrap(df_fairness[df_fairness['AB_WhiteMale']==1], \
+        agg_func=lambda df: df['correct_predict'].mean(), num_bootstraps=1000, percentiles=[5,50,95]), 3)
+        print(f"White Male - accuracy: {a} (90% CI: {b}-{c})")
+        b,a,c = np.round_(bootstrap_by_pairs(df_fairness[df_fairness['AB_WhiteMale']==1], \
+            agg_func=lambda df: triplet_acc_fairness(df), num_bootstraps=1000, percentiles=[5,50,95]), 3)
+        print(f"White Male - triplet accuracy: {a} (90% CI: {b}-{c})")
+        b,a,c = np.round_(bootstrap(df_fairness[df_fairness['AB_WhiteMale']==1], \
             agg_func=lambda df: df[(df['y_pred']==1)&(df['y_true']==0)]['id_A'].count()/df[df['y_pred']==1]['id_A'].count(), \
-            num_bootstraps=10000, percentiles=[5,50,95]),3))
-        print("Indian - FNR: ", np.round_(bootstrap(df_fairness[(df_fairness['A_Indian']==1)&(df_fairness['B_Indian']==1)], \
+            num_bootstraps=1000, percentiles=[5,50,95]),3)
+        print(f"White Male - FPR: {a} (90% CI: {b}-{c})")
+        b,a,c = np.round_(bootstrap(df_fairness[df_fairness['AB_WhiteMale']==1], \
             agg_func=lambda df: df[(df['y_pred']==0)&(df['y_true']==1)]['id_A'].count()/df[df['y_pred']==0]['id_A'].count(), \
-            num_bootstraps=10000, percentiles=[5,50,95]),3))
+            num_bootstraps=1000, percentiles=[5,50,95]),3)
+        print(f"White Male - FNR: {a} (90% CI: {b}-{c})")
         print("\n")
+        b,a,c = np.round_(bootstrap(df_fairness[df_fairness['AB_NoWhiteMale']==1], \
+            agg_func=lambda df: df['correct_predict'].mean(), num_bootstraps=1000, percentiles=[5,50,95]),3)
+        print(f"Non-White Female - accuracy: {a} (90% CI: {b}-{c})")
+        b,a,c = np.round_(bootstrap_by_pairs(df_fairness[df_fairness['AB_NoWhiteMale']==1], \
+            agg_func=lambda df: triplet_acc_fairness(df), num_bootstraps=1000, percentiles=[5,50,95]), 3)
+        print(f"Non-White Female - triplet accuracy: {a} (90% CI: {b}-{c})")
+        b,a,c = np.round_(bootstrap(df_fairness[df_fairness['AB_NoWhiteMale']==1], \
+            agg_func=lambda df: df[(df['y_pred']==1)&(df['y_true']==0)]['id_A'].count()/df[df['y_pred']==1]['id_A'].count(), \
+            num_bootstraps=1000, percentiles=[5,50,95]),3)
+        print(f"Non-White Female - FPR: {a} (90% CI: {b}-{c})")
+        b,a,c = np.round_(bootstrap(df_fairness[df_fairness['AB_NoWhiteMale']==1], \
+            agg_func=lambda df: df[(df['y_pred']==0)&(df['y_true']==1)]['id_A'].count()/df[df['y_pred']==0]['id_A'].count(), \
+            num_bootstraps=1000, percentiles=[5,50,95]),3)
+        print(f"Non-White Female - FNR: {a} (90% CI: {b}-{c})")
+        print("\n")
+        b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_Black']==1)&(df_fairness['B_Black']==1)&(df_fairness['A_Male']==0)&(df_fairness['B_Male']==0)], \
+            agg_func=lambda df: df['correct_predict'].mean(), num_bootstraps=1000, percentiles=[5,50,95]),3)
+        print(f"Black Female - accuracy: {a} (90% CI: {b}-{c})")
+        b,a,c = np.round_(bootstrap_by_pairs(df_fairness[(df_fairness['A_Black']==1)&(df_fairness['B_Black']==1)&(df_fairness['A_Male']==0)&(df_fairness['B_Male']==0)], \
+            agg_func=lambda df: triplet_acc_fairness(df), num_bootstraps=1000, percentiles=[5,50,95]), 3)
+        print(f"Black Female - triplet accuracy: {a} (90% CI: {b}-{c})")
+        b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_Black']==1)&(df_fairness['B_Black']==1)&(df_fairness['A_Male']==0)&(df_fairness['B_Male']==0)], \
+            agg_func=lambda df: df[(df['y_pred']==1)&(df['y_true']==0)]['id_A'].count()/df[df['y_pred']==1]['id_A'].count(), \
+            num_bootstraps=1000, percentiles=[5,50,95]),3)
+        print(f"Black Female - FPR: {a} (90% CI: {b}-{c})")
+        b,a,c = np.round_(bootstrap(df_fairness[(df_fairness['A_Black']==1)&(df_fairness['B_Black']==1)&(df_fairness['A_Male']==0)&(df_fairness['B_Male']==0)], \
+            agg_func=lambda df: df[(df['y_pred']==0)&(df['y_true']==1)]['id_A'].count()/df[df['y_pred']==0]['id_A'].count(), \
+            num_bootstraps=1000, percentiles=[5,50,95]),3)
+        print(f"Black Female - FNR: {a} (90% CI: {b}-{c})")
+        print("\n")
+
         
     else:
         print("Please select a correct analysis")
 
-print("\n")   
+        
+print("\n") 
+
+
+print("------------------------------------------------")
+print("GENDER ANALYSIS")
+print("------------------------------------------------")
+print("\n")
+
+
 # print("Margin 1")
 # results(df_fairness_margin1, "gender")
 
@@ -290,6 +396,14 @@ results(df_fairness_base, "gender")
 # print("Margin 0.1")
 # results(df_fairness_margin01, "gender")
 
+print("High brightness")
+results(df_fairness_jitterbrightness, "gender")
+                                                
+print("------------------------------------------------")
+print("SKIN COLOR ANALYSIS")
+print("------------------------------------------------")
+print("\n")                                               
+
 # print("Margin 1")
 # results(df_fairness_margin1, "color")
 
@@ -301,3 +415,30 @@ results(df_fairness_base, "color")
 
 # print("Margin 0.1")
 # results(df_fairness_margin01, "color")
+
+print("High brightness")
+results(df_fairness_jitterbrightness, "color")
+
+print("------------------------------------------------")
+print("INTERSECTIONAL ANALYSIS")
+print("------------------------------------------------")
+print("\n")
+                                                
+# print("Margin 1")
+# results(df_fairness_margin1, "intersectional")
+
+# print("Margin 0.5")
+# results(df_fairness_margin05, "intersectional")
+
+print("Margin 0.2")
+results(df_fairness_base, "intersectional")
+
+# print("Margin 0.1")
+# results(df_fairness_margin01, "intersectional")
+
+print("High brightness")
+results(df_fairness_jitterbrightness, "intersectional")
+
+
+torch.cuda.empty_cache()
+print("Cleared cache")

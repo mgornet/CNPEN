@@ -1,0 +1,1803 @@
+Starting training...
+Epochs:   0%|          | 0/600 [00:00<?, ?it/s]
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 1/600 - Loss: 0.5112
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 2/600 - Loss: 0.4950
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 3/600 - Loss: 0.5000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 4/600 - Loss: 0.4981
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 5/600 - Loss: 0.5019
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 6/600 - Loss: 0.4942
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 7/600 - Loss: 0.4902
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 8/600 - Loss: 0.5000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 9/600 - Loss: 0.5000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 10/600 - Loss: 0.5000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 11/600 - Loss: 0.4992
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 12/600 - Loss: 0.6765
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 13/600 - Loss: 0.4999
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 14/600 - Loss: 0.4931
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 15/600 - Loss: 0.4649
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 16/600 - Loss: 0.4956
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 17/600 - Loss: 0.4922
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 18/600 - Loss: 0.5000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 19/600 - Loss: 0.5000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 20/600 - Loss: 0.5000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 21/600 - Loss: 0.5000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 22/600 - Loss: 0.5000
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 23/600 - Loss: 0.4997
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 24/600 - Loss: 0.4974
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 25/600 - Loss: 0.4903
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 26/600 - Loss: 0.4694
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 27/600 - Loss: 0.4379
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 28/600 - Loss: 0.4400
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 29/600 - Loss: 0.4044
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 30/600 - Loss: 0.3680
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 31/600 - Loss: 0.3414
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 32/600 - Loss: 0.3268
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 33/600 - Loss: 0.3298
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 34/600 - Loss: 0.3384
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 35/600 - Loss: 0.3507
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 36/600 - Loss: 0.3323
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 37/600 - Loss: 0.3091
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 38/600 - Loss: 0.3193
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 39/600 - Loss: 0.3319
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 40/600 - Loss: 0.3309
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 41/600 - Loss: 0.3127
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 42/600 - Loss: 0.3083
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 43/600 - Loss: 0.3019
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 44/600 - Loss: 0.3259
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 45/600 - Loss: 0.2967
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 46/600 - Loss: 0.3152
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 47/600 - Loss: 0.3048
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 48/600 - Loss: 0.3028
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 49/600 - Loss: 0.3049
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 50/600 - Loss: 0.3165
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 51/600 - Loss: 0.2855
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 52/600 - Loss: 0.3029
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 53/600 - Loss: 0.2951
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 54/600 - Loss: 0.3016
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 55/600 - Loss: 0.3112
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 56/600 - Loss: 0.2743
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 57/600 - Loss: 0.2812
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 58/600 - Loss: 0.2842
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 59/600 - Loss: 0.2764
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 60/600 - Loss: 0.2639
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 61/600 - Loss: 0.2534
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 62/600 - Loss: 0.2895
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 63/600 - Loss: 0.2722
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 64/600 - Loss: 0.2579
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 65/600 - Loss: 0.2310
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 66/600 - Loss: 0.2590
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 67/600 - Loss: 0.2629
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 68/600 - Loss: 0.2585
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 69/600 - Loss: 0.2748
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 70/600 - Loss: 0.2396
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 71/600 - Loss: 0.2591
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 72/600 - Loss: 0.2549
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 73/600 - Loss: 0.2377
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 74/600 - Loss: 0.2458
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 75/600 - Loss: 0.2263
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 76/600 - Loss: 0.2362
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 77/600 - Loss: 0.2237
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 78/600 - Loss: 0.2334
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 79/600 - Loss: 0.2333
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 80/600 - Loss: 0.2202
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 81/600 - Loss: 0.2305
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 82/600 - Loss: 0.2337
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 83/600 - Loss: 0.2383
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 84/600 - Loss: 0.2225
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 85/600 - Loss: 0.2281
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 86/600 - Loss: 0.2017
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 87/600 - Loss: 0.2064
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 88/600 - Loss: 0.2205
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 89/600 - Loss: 0.2155
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 90/600 - Loss: 0.2187
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 91/600 - Loss: 0.2187
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 92/600 - Loss: 0.2163
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 93/600 - Loss: 0.1942
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 94/600 - Loss: 0.2013
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 95/600 - Loss: 0.2093
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 96/600 - Loss: 0.1971
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 97/600 - Loss: 0.1810
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 98/600 - Loss: 0.2054
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 99/600 - Loss: 0.1834
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 100/600 - Loss: 0.1879
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 101/600 - Loss: 0.1925
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 102/600 - Loss: 0.1911
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 103/600 - Loss: 0.1780
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 104/600 - Loss: 0.1986
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 105/600 - Loss: 0.1880
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 106/600 - Loss: 0.1923
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 107/600 - Loss: 0.1693
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 108/600 - Loss: 0.1830
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 109/600 - Loss: 0.1676
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 110/600 - Loss: 0.1573
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 111/600 - Loss: 0.1509
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 112/600 - Loss: 0.1648
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 113/600 - Loss: 0.1507
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 114/600 - Loss: 0.1636
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 115/600 - Loss: 0.1671
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 116/600 - Loss: 0.1584
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 117/600 - Loss: 0.1618
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 118/600 - Loss: 0.1380
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 119/600 - Loss: 0.1832
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 120/600 - Loss: 0.1617
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 121/600 - Loss: 0.1559
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 122/600 - Loss: 0.1655
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 123/600 - Loss: 0.1538
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 124/600 - Loss: 0.1334
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 125/600 - Loss: 0.1621
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 126/600 - Loss: 0.1655
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 127/600 - Loss: 0.1555
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 128/600 - Loss: 0.1527
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 129/600 - Loss: 0.1393
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 130/600 - Loss: 0.1583
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 131/600 - Loss: 0.1424
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 132/600 - Loss: 0.1664
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 133/600 - Loss: 0.1435
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 134/600 - Loss: 0.1356
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 135/600 - Loss: 0.1644
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 136/600 - Loss: 0.1485
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 137/600 - Loss: 0.1478
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 138/600 - Loss: 0.1418
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 139/600 - Loss: 0.1271
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 140/600 - Loss: 0.1285
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 141/600 - Loss: 0.1463
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 142/600 - Loss: 0.1495
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 143/600 - Loss: 0.1243
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 144/600 - Loss: 0.1261
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 145/600 - Loss: 0.1525
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 146/600 - Loss: 0.1201
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 147/600 - Loss: 0.1375
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 148/600 - Loss: 0.1416
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 149/600 - Loss: 0.1311
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 150/600 - Loss: 0.1344
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 151/600 - Loss: 0.1282
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 152/600 - Loss: 0.1305
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 153/600 - Loss: 0.1219
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 154/600 - Loss: 0.1134
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 155/600 - Loss: 0.1238
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 156/600 - Loss: 0.1333
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 157/600 - Loss: 0.1160
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 158/600 - Loss: 0.1305
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 159/600 - Loss: 0.1421
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 160/600 - Loss: 0.1298
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 161/600 - Loss: 0.1250
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 162/600 - Loss: 0.1177
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 163/600 - Loss: 0.1401
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 164/600 - Loss: 0.1221
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 165/600 - Loss: 0.1213
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 166/600 - Loss: 0.1275
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 167/600 - Loss: 0.1285
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 168/600 - Loss: 0.1121
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 169/600 - Loss: 0.1034
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 170/600 - Loss: 0.1056
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 171/600 - Loss: 0.1193
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 172/600 - Loss: 0.1251
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 173/600 - Loss: 0.1106
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 174/600 - Loss: 0.1260
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 175/600 - Loss: 0.1154
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 176/600 - Loss: 0.1043
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 177/600 - Loss: 0.1095
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 178/600 - Loss: 0.1244
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 179/600 - Loss: 0.1264
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 180/600 - Loss: 0.1285
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 181/600 - Loss: 0.1264
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 182/600 - Loss: 0.1026
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 183/600 - Loss: 0.1053
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 184/600 - Loss: 0.1101
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 185/600 - Loss: 0.1151
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 186/600 - Loss: 0.1176
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 187/600 - Loss: 0.1151
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 188/600 - Loss: 0.1249
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 189/600 - Loss: 0.1115
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 190/600 - Loss: 0.1155
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 191/600 - Loss: 0.0988
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 192/600 - Loss: 0.1001
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 193/600 - Loss: 0.1062
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 194/600 - Loss: 0.0946
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 195/600 - Loss: 0.1215
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 196/600 - Loss: 0.1031
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 197/600 - Loss: 0.1133
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 198/600 - Loss: 0.0961
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 199/600 - Loss: 0.1110
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 200/600 - Loss: 0.0922
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 201/600 - Loss: 0.0998
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 202/600 - Loss: 0.0836
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 203/600 - Loss: 0.0942
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 204/600 - Loss: 0.0925
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 205/600 - Loss: 0.0821
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 206/600 - Loss: 0.0705
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 207/600 - Loss: 0.0792
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 208/600 - Loss: 0.0871
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 209/600 - Loss: 0.0808
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 210/600 - Loss: 0.0804
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 211/600 - Loss: 0.0852
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 212/600 - Loss: 0.0720
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 213/600 - Loss: 0.0834
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 214/600 - Loss: 0.0775
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 215/600 - Loss: 0.0783
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 216/600 - Loss: 0.0901
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 217/600 - Loss: 0.0777
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 218/600 - Loss: 0.0777
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 219/600 - Loss: 0.0752
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 220/600 - Loss: 0.0688
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 221/600 - Loss: 0.0686
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 222/600 - Loss: 0.0827
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 223/600 - Loss: 0.0632
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 224/600 - Loss: 0.0834
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 225/600 - Loss: 0.0760
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 226/600 - Loss: 0.0770
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 227/600 - Loss: 0.0656
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 228/600 - Loss: 0.0687
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 229/600 - Loss: 0.0838
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 230/600 - Loss: 0.0762
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 231/600 - Loss: 0.0749
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 232/600 - Loss: 0.0742
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 233/600 - Loss: 0.0595
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 234/600 - Loss: 0.0807
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 235/600 - Loss: 0.0699
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 236/600 - Loss: 0.0797
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 237/600 - Loss: 0.0776
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 238/600 - Loss: 0.0793
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 239/600 - Loss: 0.0611
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 240/600 - Loss: 0.0717
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 241/600 - Loss: 0.0669
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 242/600 - Loss: 0.0543
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 243/600 - Loss: 0.0677
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 244/600 - Loss: 0.0649
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 245/600 - Loss: 0.0598
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 246/600 - Loss: 0.0759
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 247/600 - Loss: 0.0679
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 248/600 - Loss: 0.0801
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 249/600 - Loss: 0.0810
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 250/600 - Loss: 0.0911
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 251/600 - Loss: 0.0782
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 252/600 - Loss: 0.0819
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 253/600 - Loss: 0.0645
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 254/600 - Loss: 0.0552
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 255/600 - Loss: 0.0659
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 256/600 - Loss: 0.0848
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 257/600 - Loss: 0.0705
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 258/600 - Loss: 0.0713
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 259/600 - Loss: 0.0871
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 260/600 - Loss: 0.0614
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 261/600 - Loss: 0.0783
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 262/600 - Loss: 0.0682
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 263/600 - Loss: 0.0611
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 264/600 - Loss: 0.0683
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 265/600 - Loss: 0.0649
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 266/600 - Loss: 0.0790
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 267/600 - Loss: 0.0711
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 268/600 - Loss: 0.0599
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 269/600 - Loss: 0.0732
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 270/600 - Loss: 0.0651
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 271/600 - Loss: 0.0645
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 272/600 - Loss: 0.0760
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 273/600 - Loss: 0.0629
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 274/600 - Loss: 0.0667
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 275/600 - Loss: 0.0730
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 276/600 - Loss: 0.0638
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 277/600 - Loss: 0.0778
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 278/600 - Loss: 0.0659
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 279/600 - Loss: 0.0657
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 280/600 - Loss: 0.0620
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 281/600 - Loss: 0.0521
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 282/600 - Loss: 0.0605
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 283/600 - Loss: 0.0623
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 284/600 - Loss: 0.0587
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 285/600 - Loss: 0.0572
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 286/600 - Loss: 0.0586
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 287/600 - Loss: 0.0558
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 288/600 - Loss: 0.0646
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 289/600 - Loss: 0.0588
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 290/600 - Loss: 0.0680
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 291/600 - Loss: 0.0657
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 292/600 - Loss: 0.0649
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 293/600 - Loss: 0.0592
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 294/600 - Loss: 0.0573
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 295/600 - Loss: 0.0513
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 296/600 - Loss: 0.0715
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 297/600 - Loss: 0.0752
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 298/600 - Loss: 0.0715
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 299/600 - Loss: 0.0716
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 300/600 - Loss: 0.0567
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 301/600 - Loss: 0.0691
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 302/600 - Loss: 0.0635
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 303/600 - Loss: 0.0506
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 304/600 - Loss: 0.0566
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 305/600 - Loss: 0.0430
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 306/600 - Loss: 0.0585
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 307/600 - Loss: 0.0645
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 308/600 - Loss: 0.0511
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 309/600 - Loss: 0.0621
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 310/600 - Loss: 0.0434
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 311/600 - Loss: 0.0526
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 312/600 - Loss: 0.0420
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 313/600 - Loss: 0.0558
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 314/600 - Loss: 0.0407
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 315/600 - Loss: 0.0534
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 316/600 - Loss: 0.0455
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 317/600 - Loss: 0.0582
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 318/600 - Loss: 0.0553
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 319/600 - Loss: 0.0547
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 320/600 - Loss: 0.0503
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 321/600 - Loss: 0.0449
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 322/600 - Loss: 0.0472
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 323/600 - Loss: 0.0486
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 324/600 - Loss: 0.0578
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 325/600 - Loss: 0.0506
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 326/600 - Loss: 0.0414
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 327/600 - Loss: 0.0476
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 328/600 - Loss: 0.0458
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 329/600 - Loss: 0.0506
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 330/600 - Loss: 0.0555
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 331/600 - Loss: 0.0526
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 332/600 - Loss: 0.0414
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 333/600 - Loss: 0.0573
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 334/600 - Loss: 0.0572
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 335/600 - Loss: 0.0527
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 336/600 - Loss: 0.0550
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 337/600 - Loss: 0.0465
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 338/600 - Loss: 0.0489
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 339/600 - Loss: 0.0523
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 340/600 - Loss: 0.0499
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 341/600 - Loss: 0.0566
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 342/600 - Loss: 0.0505
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 343/600 - Loss: 0.0533
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 344/600 - Loss: 0.0644
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 345/600 - Loss: 0.0656
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 346/600 - Loss: 0.0500
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 347/600 - Loss: 0.0507
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 348/600 - Loss: 0.0552
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 349/600 - Loss: 0.0529
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 350/600 - Loss: 0.0469
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 351/600 - Loss: 0.0483
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 352/600 - Loss: 0.0550
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 353/600 - Loss: 0.0502
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 354/600 - Loss: 0.0419
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 355/600 - Loss: 0.0579
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 356/600 - Loss: 0.0430
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 357/600 - Loss: 0.0498
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 358/600 - Loss: 0.0551
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 359/600 - Loss: 0.0528
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 360/600 - Loss: 0.0555
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 361/600 - Loss: 0.0506
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 362/600 - Loss: 0.0530
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 363/600 - Loss: 0.0388
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 364/600 - Loss: 0.0550
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 365/600 - Loss: 0.0465
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 366/600 - Loss: 0.0573
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 367/600 - Loss: 0.0509
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 368/600 - Loss: 0.0457
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 369/600 - Loss: 0.0400
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 370/600 - Loss: 0.0449
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 371/600 - Loss: 0.0520
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 372/600 - Loss: 0.0563
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 373/600 - Loss: 0.0379
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 374/600 - Loss: 0.0495
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 375/600 - Loss: 0.0490
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 376/600 - Loss: 0.0407
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 377/600 - Loss: 0.0426
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 378/600 - Loss: 0.0438
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 379/600 - Loss: 0.0462
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 380/600 - Loss: 0.0474
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 381/600 - Loss: 0.0416
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 382/600 - Loss: 0.0432
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 383/600 - Loss: 0.0402
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 384/600 - Loss: 0.0514
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 385/600 - Loss: 0.0364
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 386/600 - Loss: 0.0457
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 387/600 - Loss: 0.0393
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 388/600 - Loss: 0.0444
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 389/600 - Loss: 0.0500
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 390/600 - Loss: 0.0553
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 391/600 - Loss: 0.0504
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 392/600 - Loss: 0.0613
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 393/600 - Loss: 0.0515
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 394/600 - Loss: 0.0444
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 395/600 - Loss: 0.0429
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 396/600 - Loss: 0.0442
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 397/600 - Loss: 0.0438
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 398/600 - Loss: 0.0474
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 399/600 - Loss: 0.0391
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 400/600 - Loss: 0.0447
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 401/600 - Loss: 0.0503
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 402/600 - Loss: 0.0429
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 403/600 - Loss: 0.0463
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 404/600 - Loss: 0.0480
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 405/600 - Loss: 0.0497
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 406/600 - Loss: 0.0369
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 407/600 - Loss: 0.0350
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 408/600 - Loss: 0.0542
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 409/600 - Loss: 0.0527
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 410/600 - Loss: 0.0448
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 411/600 - Loss: 0.0538
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 412/600 - Loss: 0.0436
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 413/600 - Loss: 0.0354
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 414/600 - Loss: 0.0340
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 415/600 - Loss: 0.0445
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 416/600 - Loss: 0.0391
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 417/600 - Loss: 0.0473
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 418/600 - Loss: 0.0531
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 419/600 - Loss: 0.0395
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 420/600 - Loss: 0.0372
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 421/600 - Loss: 0.0314
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 422/600 - Loss: 0.0358
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 423/600 - Loss: 0.0403
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 424/600 - Loss: 0.0415
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 425/600 - Loss: 0.0432
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 426/600 - Loss: 0.0487
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 427/600 - Loss: 0.0382
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 428/600 - Loss: 0.0386
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 429/600 - Loss: 0.0514
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 430/600 - Loss: 0.0397
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 431/600 - Loss: 0.0364
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 432/600 - Loss: 0.0358
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 433/600 - Loss: 0.0354
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 434/600 - Loss: 0.0376
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 435/600 - Loss: 0.0391
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 436/600 - Loss: 0.0344
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 437/600 - Loss: 0.0359
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 438/600 - Loss: 0.0483
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 439/600 - Loss: 0.0446
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 440/600 - Loss: 0.0376
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 441/600 - Loss: 0.0349
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 442/600 - Loss: 0.0414
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 443/600 - Loss: 0.0399
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 444/600 - Loss: 0.0318
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 445/600 - Loss: 0.0374
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 446/600 - Loss: 0.0435
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 447/600 - Loss: 0.0406
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 448/600 - Loss: 0.0374
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 449/600 - Loss: 0.0518
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 450/600 - Loss: 0.0359
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 451/600 - Loss: 0.0287
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 452/600 - Loss: 0.0400
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 453/600 - Loss: 0.0448
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 454/600 - Loss: 0.0424
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 455/600 - Loss: 0.0382
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 456/600 - Loss: 0.0316
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 457/600 - Loss: 0.0358
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 458/600 - Loss: 0.0536
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 459/600 - Loss: 0.0483
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 460/600 - Loss: 0.0408
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 461/600 - Loss: 0.0453
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 462/600 - Loss: 0.0360
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 463/600 - Loss: 0.0388
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 464/600 - Loss: 0.0401
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 465/600 - Loss: 0.0365
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 466/600 - Loss: 0.0395
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 467/600 - Loss: 0.0518
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 468/600 - Loss: 0.0389
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 469/600 - Loss: 0.0420
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 470/600 - Loss: 0.0493
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 471/600 - Loss: 0.0377
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 472/600 - Loss: 0.0376
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 473/600 - Loss: 0.0452
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 474/600 - Loss: 0.0336
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 475/600 - Loss: 0.0376
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 476/600 - Loss: 0.0471
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 477/600 - Loss: 0.0390
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 478/600 - Loss: 0.0258
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 479/600 - Loss: 0.0356
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 480/600 - Loss: 0.0372
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 481/600 - Loss: 0.0437
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 482/600 - Loss: 0.0352
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 483/600 - Loss: 0.0400
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 484/600 - Loss: 0.0360
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 485/600 - Loss: 0.0293
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 486/600 - Loss: 0.0314
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 487/600 - Loss: 0.0430
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 488/600 - Loss: 0.0370
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 489/600 - Loss: 0.0348
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 490/600 - Loss: 0.0365
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 491/600 - Loss: 0.0461
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 492/600 - Loss: 0.0340
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 493/600 - Loss: 0.0477
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 494/600 - Loss: 0.0367
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 495/600 - Loss: 0.0345
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 496/600 - Loss: 0.0348
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 497/600 - Loss: 0.0339
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 498/600 - Loss: 0.0321
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 499/600 - Loss: 0.0431
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 500/600 - Loss: 0.0375
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 501/600 - Loss: 0.0296
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 502/600 - Loss: 0.0421
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 503/600 - Loss: 0.0391
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 504/600 - Loss: 0.0319
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 505/600 - Loss: 0.0278
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 506/600 - Loss: 0.0254
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 507/600 - Loss: 0.0348
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 508/600 - Loss: 0.0326
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 509/600 - Loss: 0.0395
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 510/600 - Loss: 0.0391
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 511/600 - Loss: 0.0368
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 512/600 - Loss: 0.0329
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 513/600 - Loss: 0.0338
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 514/600 - Loss: 0.0300
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 515/600 - Loss: 0.0289
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 516/600 - Loss: 0.0438
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 517/600 - Loss: 0.0427
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 518/600 - Loss: 0.0345
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 519/600 - Loss: 0.0402
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 520/600 - Loss: 0.0455
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 521/600 - Loss: 0.0372
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 522/600 - Loss: 0.0404
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 523/600 - Loss: 0.0303
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 524/600 - Loss: 0.0260
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 525/600 - Loss: 0.0519
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 526/600 - Loss: 0.0373
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 527/600 - Loss: 0.0314
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 528/600 - Loss: 0.0352
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 529/600 - Loss: 0.0429
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 530/600 - Loss: 0.0396
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 531/600 - Loss: 0.0367
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 532/600 - Loss: 0.0281
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 533/600 - Loss: 0.0384
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 534/600 - Loss: 0.0360
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 535/600 - Loss: 0.0319
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 536/600 - Loss: 0.0373
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 537/600 - Loss: 0.0421
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 538/600 - Loss: 0.0290
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 539/600 - Loss: 0.0478
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 540/600 - Loss: 0.0442
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 541/600 - Loss: 0.0349
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 542/600 - Loss: 0.0373
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 543/600 - Loss: 0.0329
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 544/600 - Loss: 0.0322
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 545/600 - Loss: 0.0446
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 546/600 - Loss: 0.0410
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 547/600 - Loss: 0.0334
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 548/600 - Loss: 0.0411
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 549/600 - Loss: 0.0311
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 550/600 - Loss: 0.0279
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 551/600 - Loss: 0.0406
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 552/600 - Loss: 0.0342
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 553/600 - Loss: 0.0359
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 554/600 - Loss: 0.0488
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 555/600 - Loss: 0.0283
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 556/600 - Loss: 0.0306
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 557/600 - Loss: 0.0266
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 558/600 - Loss: 0.0322
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 559/600 - Loss: 0.0343
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 560/600 - Loss: 0.0326
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 561/600 - Loss: 0.0327
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 562/600 - Loss: 0.0327
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 563/600 - Loss: 0.0292
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 564/600 - Loss: 0.0269
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 565/600 - Loss: 0.0334
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 566/600 - Loss: 0.0313
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 567/600 - Loss: 0.0403
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 568/600 - Loss: 0.0369
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 569/600 - Loss: 0.0339
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 570/600 - Loss: 0.0372
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 571/600 - Loss: 0.0335
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 572/600 - Loss: 0.0284
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 573/600 - Loss: 0.0328
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 574/600 - Loss: 0.0411
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 575/600 - Loss: 0.0295
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 576/600 - Loss: 0.0278
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 577/600 - Loss: 0.0360
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 578/600 - Loss: 0.0339
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 579/600 - Loss: 0.0353
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 580/600 - Loss: 0.0303
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 581/600 - Loss: 0.0323
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 582/600 - Loss: 0.0284
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 583/600 - Loss: 0.0352
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 584/600 - Loss: 0.0297
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 585/600 - Loss: 0.0426
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 586/600 - Loss: 0.0332
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 587/600 - Loss: 0.0325
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 588/600 - Loss: 0.0314
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 589/600 - Loss: 0.0288
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 590/600 - Loss: 0.0291
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 591/600 - Loss: 0.0250
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 592/600 - Loss: 0.0324
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 593/600 - Loss: 0.0356
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 594/600 - Loss: 0.0193
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 595/600 - Loss: 0.0397
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 596/600 - Loss: 0.0282
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 597/600 - Loss: 0.0400
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 598/600 - Loss: 0.0323
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 599/600 - Loss: 0.0369
+Training:   0%|          | 0/9 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/90 [00:00<?, ?it/s]
+Epochs: 600/600 - Loss: 0.0370
+Model saved
