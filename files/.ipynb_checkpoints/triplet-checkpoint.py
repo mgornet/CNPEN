@@ -164,29 +164,10 @@ def compute_distances(all_imgs, device, model, Xa, Xp, Xn):
 # TRIPLET GENERATOR
 ###############################################################################
 
-# AUGMENT = transforms.Compose([
-#     transforms.RandomHorizontalFlip(p=0.5),
-#     transforms.RandomApply([
-#         transforms.RandomResizedCrop(size=60, scale=(0.8,1.), \
-#             ratio=(0.95,1.05))],
-#     p=0.9),
-#     transforms.RandomApply([
-#         transforms.Compose([
-#             transforms.Normalize(mean=[0,0,0],std=[255,255,255]),
-#             transforms.ColorJitter(brightness=0.1, contrast=0.1, \
-#                 saturation=0.1),
-#             transforms.Normalize(mean=[0,0,0],std=[1/255,1/255,1/255])
-#         ]),],
-#     p=0.1),
-#     transforms.RandomApply([
-#         transforms.RandomRotation((-5,5))],
-#     p=0.7),
-# ])
-
 AUGMENT = transforms.Compose([
     transforms.RandomHorizontalFlip(p=0.5),
     transforms.RandomApply([
-        transforms.RandomResizedCrop(size=60, scale=(0.7,0.9), \
+        transforms.RandomResizedCrop(size=60, scale=(0.8,1.), \
             ratio=(0.95,1.05))],
     p=0.9),
     transforms.RandomApply([
@@ -201,6 +182,25 @@ AUGMENT = transforms.Compose([
         transforms.RandomRotation((-5,5))],
     p=0.7),
 ])
+
+# AUGMENT = transforms.Compose([
+#     transforms.RandomHorizontalFlip(p=0.5),
+#     transforms.RandomApply([
+#         transforms.RandomResizedCrop(size=60, scale=(0.7,0.9), \
+#             ratio=(0.95,1.05))],
+#     p=0.9),
+#     transforms.RandomApply([
+#         transforms.Compose([
+#             transforms.Normalize(mean=[0,0,0],std=[255,255,255]),
+#             transforms.ColorJitter(brightness=0.1, contrast=0.1, \
+#                 saturation=0.1),
+#             transforms.Normalize(mean=[0,0,0],std=[1/255,1/255,1/255])
+#         ]),],
+#     p=0.1),
+#     transforms.RandomApply([
+#         transforms.RandomRotation((-5,5))],
+#     p=0.7),
+# ])
 
 class TripletGenerator(nn.Module):
 
@@ -345,61 +345,31 @@ class TripletGenerator(nn.Module):
 
         return (imgs_a, imgs_p, imgs_n)
     
-    
+
 class RandomTripletGenerator(nn.Module):
-
+    
     """
-    A class to represent the triplet generator.
-    Here the images are sampled randomly and not for all classid
-
-    Attributes
-    ----------
-    batch_size: int. Size of the batch
-    df: pandas dataframe
-    imgs: tensor of images
-    num_samples: number of classid with more than one image
-    device: cpu or gpu
-    model: TripletLearner model
-    margin: float 
-    tranform: bool. If true, apply augmentation
-    mining: str. "standard", "semi" or "hard"
-    apply augmentation: transform function
-
-    Methods
-    -------
+     A class to represent the triplet generator.
+     Here the images are sampled randomly and not for all classid
     """
 
-    def __init__(
-        self, df, all_imgs, batch_size, device, model, margin,
-        transform=False, apply_augmentation=AUGMENT, mining="standard", return_id=False):
+
+    def __init__(self, all_imgs, Xa_train, Xp_train, batch_size, df, neg_imgs_idx, 
+                 device, model, margin, transform=False, apply_augmentation=AUGMENT, mining="standard"):
         
-        super(TripletGenerator, self).__init__()
+        super(RandomTripletGenerator, self).__init__()
+        
+        self.cur_img_index = 0
+        self.cur_img_pos_index = 0
+        self.batch_size = batch_size
         
         self.df = df
-
         self.imgs = all_imgs
-
-        value_count = df.Classid.value_counts()
-        self.id_list = list(value_count[value_count.values>1].index)
-
-        self.num_samples = len(self.id_list)
-
-        if self.num_samples<batch_size :
-            warnings.warn(
-                f'Batch size number was changed from {batch_size} to '
-                f'{self.num_samples} because there are only {self.num_samples}'
-                f' individuals with more than 2 pictures.'
-            )
-            batch_size=self.num_samples
-
-        self.batch_size = batch_size
-
-        if self.num_samples % batch_size != 0:
-            warnings.warn(
-                f'Number of unique identities with more than 2 pictures '
-                f'({self.num_samples}) is not divisible by batch_size '
-                f'({batch_size}). Remainder: {self.num_samples % batch_size}'
-            )
+        self.Xa = Xa_train  # Anchors
+        self.Xp = Xp_train  # Positives
+        self.cur_train_index = 0
+        self.num_samples = Xa_train.shape[0]
+        self.neg_imgs_idx = neg_imgs_idx
 
         self.device = device
         self.model = model
@@ -407,39 +377,145 @@ class RandomTripletGenerator(nn.Module):
 
         self.transform = transform
         self.mining = mining
-        self.return_id = return_id
-
         self.apply_augmentation = apply_augmentation
-
-        random.shuffle(self.id_list)
-        self.last_batch_index = len(self)-1
-
+        
     def __len__(self):
         return self.num_samples // self.batch_size
         
     def __getitem__(self, batch_index):
 
-        low_index = batch_index * self.batch_size
-        high_index = (batch_index + 1) * self.batch_size
+    	low_index = batch_index * self.batch_size
+    	high_index = (batch_index + 1) * self.batch_size
 
-        imgs_a = self.Xa[low_index:high_index]  # Anchors
-        imgs_p = self.Xp[low_index:high_index]  # Positives
-        imgs_n = random.sample(self.neg_imgs_idx, imgs_a.shape[0])  # Negatives
+    	imgs_a = self.Xa[low_index:high_index]  # Anchors
+    	imgs_p = self.Xp[low_index:high_index]  # Positives
+    	imgs_n = random.sample(self.neg_imgs_idx, imgs_a.shape[0])  # Negatives
 
-        imgs_a = self.imgs[imgs_a]
-        imgs_p = self.imgs[imgs_p]
-        imgs_n = self.imgs[imgs_n]
+    	imgs_a = self.imgs[imgs_a]
+    	imgs_p = self.imgs[imgs_p]
+    	imgs_n = self.imgs[imgs_n]
 
-        anchors = torch.zeros((self.batch_size,3,60,60))
-        positives = torch.zeros((self.batch_size,3,60,60))
-        negatives = torch.zeros((self.batch_size,3,60,60))
+    	anchors = torch.zeros((self.batch_size,3,60,60))
+    	positives = torch.zeros((self.batch_size,3,60,60))
+    	negatives = torch.zeros((self.batch_size,3,60,60))
 
-        for batch in range(self.batch_size):
-            anchors[batch] = self.apply_augmentation(imgs_a[batch])
-            positives[batch] = self.apply_augmentation(imgs_p[batch])
-            negatives[batch] = self.apply_augmentation(imgs_n[batch])
+    	for batch in range(self.batch_size):
+    		if self.transform == True:
+	    		anchors[batch] = self.apply_augmentation(imgs_a[batch])
+	    		positives[batch] = self.apply_augmentation(imgs_p[batch])
+	    		negatives[batch] = self.apply_augmentation(imgs_n[batch])
+	    	else :
+	    		anchors[batch] = imgs_a[batch]
+	    		positives[batch] = imgs_p[batch]
+	    		negatives[batch] = imgs_n[batch]
             
-        return (anchors, positives, negatives)
+    	return (anchors, positives, negatives)
+    
+    
+# class RandomTripletGenerator(nn.Module):
+
+#     """
+#     A class to represent the triplet generator.
+#     Here the images are sampled randomly and not for all classid
+
+#     Attributes
+#     ----------
+#     batch_size: int. Size of the batch
+#     df: pandas dataframe
+#     imgs: tensor of images
+#     num_samples: number of classid with more than one image
+#     device: cpu or gpu
+#     model: TripletLearner model
+#     margin: float 
+#     tranform: bool. If true, apply augmentation
+#     mining: str. "standard", "semi" or "hard"
+#     apply augmentation: transform function
+
+#     Methods
+#     -------
+#     """
+
+#     def __init__(
+#         self, df, all_imgs, batch_size, device, model, margin,
+#         transform=False, apply_augmentation=AUGMENT, mining="standard", return_id=False):
+        
+#         super(RandomTripletGenerator, self).__init__()
+        
+#         self.df = df
+
+#         self.imgs = all_imgs
+
+#         value_count = df.Classid.value_counts()
+#         self.id_list = list(value_count[value_count.values>1].index)
+
+#         self.num_samples = len(self.id_list)
+
+#         if self.num_samples<batch_size :
+#             warnings.warn(
+#                 f'Batch size number was changed from {batch_size} to '
+#                 f'{self.num_samples} because there are only {self.num_samples}'
+#                 f' individuals with more than 2 pictures.'
+#             )
+#             batch_size=self.num_samples
+
+#         self.batch_size = batch_size
+
+#         if self.num_samples % batch_size != 0:
+#             warnings.warn(
+#                 f'Number of unique identities with more than 2 pictures '
+#                 f'({self.num_samples}) is not divisible by batch_size '
+#                 f'({batch_size}). Remainder: {self.num_samples % batch_size}'
+#             )
+
+#         self.device = device
+#         self.model = model
+#         self.margin = margin
+
+#         self.transform = transform
+#         self.mining = mining
+#         self.return_id = return_id
+
+#         self.apply_augmentation = apply_augmentation
+
+#         random.shuffle(self.id_list)
+#         self.last_batch_index = len(self)-1
+
+#     def __len__(self):
+#         return self.num_samples // self.batch_size
+        
+#     def __getitem__(self, batch_index):
+        
+#         X_anchor = np.zeros(shape=(self.batch_size, X.shape[1]))
+#         X_pos = np.zeros(shape=(self.batch_size, X.shape[1]))
+#         X_neg = np.zeros(shape=(self.batch_size, X.shape[1]))
+
+#         low_index = batch_index * self.batch_size
+#         high_index = (batch_index + 1) * self.batch_size
+
+#         imgs_a = self.Xa[low_index:high_index]  # Anchors
+#         imgs_p = self.Xp[low_index:high_index]  # Positives
+#         imgs_n = random.sample(self.neg_imgs_idx, imgs_a.shape[0])  # Negatives
+
+#         imgs_a = self.imgs[imgs_a]
+#         imgs_p = self.imgs[imgs_p]
+#         imgs_n = self.imgs[imgs_n]
+
+#         anchors = torch.zeros((self.batch_size,3,60,60))
+#         positives = torch.zeros((self.batch_size,3,60,60))
+#         negatives = torch.zeros((self.batch_size,3,60,60))
+
+#         for batch in range(self.batch_size):
+#             anchors[batch] = self.apply_augmentation(imgs_a[batch])
+#             positives[batch] = self.apply_augmentation(imgs_p[batch])
+#             negatives[batch] = self.apply_augmentation(imgs_n[batch])
+            
+#         if batch_index == self.last_batch_index:
+#             random.shuffle(self.id_list)
+
+#         if self.return_id :
+#             return (Xa, Xp, Xn)
+            
+#         return (anchors, positives, negatives)
 
 # NETWORK
 ###############################################################################

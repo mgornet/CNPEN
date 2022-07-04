@@ -1,0 +1,535 @@
+2022-07-04 10:26:15,128 INFO    MainThread:12917 [internal.py:wandb_internal():92] W&B internal server running at pid: 12917, started at: 2022-07-04 10:26:15.128178
+2022-07-04 10:26:15,130 INFO    WriterThread:12917 [datastore.py:open_for_write():77] open: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/run-v9rmgdkx.wandb
+2022-07-04 10:26:15,132 DEBUG   SenderThread:12917 [sender.py:send():235] send: header
+2022-07-04 10:26:15,132 DEBUG   SenderThread:12917 [sender.py:send():235] send: run
+2022-07-04 10:26:15,548 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: check_version
+2022-07-04 10:26:15,554 INFO    SenderThread:12917 [dir_watcher.py:__init__():169] watching files in: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files
+2022-07-04 10:26:15,555 INFO    SenderThread:12917 [sender.py:_start_run_threads():812] run started: v9rmgdkx with start time 1656923174
+2022-07-04 10:26:15,555 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:15,555 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:15,555 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: check_version
+2022-07-04 10:26:16,538 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: run_start
+2022-07-04 10:26:16,552 DEBUG   HandlerThread:12917 [meta.py:__init__():37] meta init
+2022-07-04 10:26:16,552 DEBUG   HandlerThread:12917 [meta.py:__init__():51] meta init done
+2022-07-04 10:26:16,552 DEBUG   HandlerThread:12917 [meta.py:probe():211] probe
+2022-07-04 10:26:16,557 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_created():217] file/dir created: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:16,559 DEBUG   HandlerThread:12917 [meta.py:_setup_git():201] setup git
+2022-07-04 10:26:16,577 DEBUG   HandlerThread:12917 [meta.py:_setup_git():208] setup git done
+2022-07-04 10:26:16,577 DEBUG   HandlerThread:12917 [meta.py:_save_pip():55] save pip
+2022-07-04 10:26:16,577 DEBUG   HandlerThread:12917 [meta.py:_save_pip():69] save pip done
+2022-07-04 10:26:16,577 DEBUG   HandlerThread:12917 [meta.py:_save_conda():76] save conda
+2022-07-04 10:26:17,555 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_created():217] file/dir created: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/conda-environment.yaml
+2022-07-04 10:26:17,555 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_created():217] file/dir created: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/requirements.txt
+2022-07-04 10:26:19,240 DEBUG   HandlerThread:12917 [meta.py:_save_conda():86] save conda done
+2022-07-04 10:26:19,240 DEBUG   HandlerThread:12917 [meta.py:probe():249] probe done
+2022-07-04 10:26:19,244 DEBUG   SenderThread:12917 [sender.py:send():235] send: files
+2022-07-04 10:26:19,244 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-metadata.json with policy now
+2022-07-04 10:26:19,248 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-04 10:26:19,248 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: stop_status
+2022-07-04 10:26:19,405 DEBUG   SenderThread:12917 [sender.py:send():235] send: telemetry
+2022-07-04 10:26:19,556 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/conda-environment.yaml
+2022-07-04 10:26:19,556 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_created():217] file/dir created: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/output.log
+2022-07-04 10:26:19,556 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_created():217] file/dir created: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-metadata.json
+2022-07-04 10:26:19,969 INFO    Thread-11 :12917 [upload_job.py:push():137] Uploaded file /tmp/tmpl8os5wl4wandb/34wnmjj6-wandb-metadata.json
+2022-07-04 10:26:20,710 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:20,711 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:20,712 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:20,714 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:21,021 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:21,022 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:21,022 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:21,023 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:21,317 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:21,318 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:21,318 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:21,319 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:21,557 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/output.log
+2022-07-04 10:26:21,557 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:21,605 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:21,606 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:21,607 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:21,608 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:21,921 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:21,922 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:21,923 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:21,923 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:22,212 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:22,213 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:22,213 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:22,214 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:22,509 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:22,510 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:22,510 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:22,511 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:22,557 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:22,802 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:22,803 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:22,804 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:22,806 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:23,087 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:23,088 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:23,088 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:23,088 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:23,394 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:23,395 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:23,395 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:23,396 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:23,557 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:23,687 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:23,688 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:23,689 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:23,689 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:23,976 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:23,977 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:23,978 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:23,979 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:24,286 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:24,287 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:24,288 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:24,288 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:24,557 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:24,586 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:24,586 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:24,587 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:24,587 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:24,886 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:24,887 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:24,887 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:24,890 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:25,170 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:25,171 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:25,172 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:25,172 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:25,461 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:25,461 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:25,462 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:25,462 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:25,558 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:25,755 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:25,756 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:25,756 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:25,757 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:26,041 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:26,042 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:26,042 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:26,043 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:26,346 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:26,346 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:26,347 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:26,347 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:26,558 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:26,644 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:26,644 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:26,645 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:26,645 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:26,949 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:26,950 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:26,950 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:26,952 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:27,240 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:27,241 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:27,241 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:27,241 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:27,520 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:27,521 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:27,521 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:27,522 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:27,559 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:27,824 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:27,825 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:27,825 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:27,826 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:28,111 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:28,111 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:28,112 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:28,113 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:28,393 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:28,394 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:28,394 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:28,395 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:28,559 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:28,685 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:28,685 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:28,686 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:28,686 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:28,986 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:28,987 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:28,988 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:28,990 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:29,276 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:29,276 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:29,276 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:29,277 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:29,559 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:29,582 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:29,583 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:29,583 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:29,584 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:29,861 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:29,861 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:29,862 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:29,863 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:30,136 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:30,137 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:30,137 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:30,138 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:30,426 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:30,427 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:30,427 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:30,428 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:30,560 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:30,711 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:30,712 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:30,712 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:30,713 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:30,987 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:30,988 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:30,989 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:30,990 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:31,276 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:31,276 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:31,277 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:31,278 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:31,558 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:31,558 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:31,559 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:31,559 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:31,560 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:31,847 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:31,848 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:31,848 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:31,849 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:32,139 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:32,140 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:32,140 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:32,141 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:32,437 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:32,438 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:32,438 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:32,439 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:32,561 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:32,741 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:32,742 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:32,750 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:32,750 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:33,047 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:33,047 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:33,048 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:33,050 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:33,344 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:33,345 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:33,346 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:33,347 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:33,561 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:33,644 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:33,645 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:33,645 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:33,646 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:33,941 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:33,942 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:33,943 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:33,944 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:34,235 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:34,236 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:34,236 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:34,237 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:34,407 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-04 10:26:34,407 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: stop_status
+2022-07-04 10:26:34,520 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:34,561 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:34,711 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:34,712 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:34,712 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:34,808 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:34,810 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:34,810 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:34,810 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:35,088 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:35,089 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:35,090 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:35,092 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:35,372 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:35,372 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:35,373 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:35,374 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:35,562 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:35,653 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:35,654 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:35,654 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:35,655 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:35,941 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:35,942 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:35,943 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:35,943 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:36,228 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:36,230 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:36,231 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:36,231 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:36,517 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:36,518 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:36,519 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:36,520 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:36,562 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:36,809 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:36,810 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:36,811 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:36,812 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:37,097 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:37,098 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:37,099 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:37,101 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:37,380 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:37,381 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:37,382 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:37,383 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:37,562 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:37,674 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:37,675 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:37,675 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:37,676 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:37,962 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:37,963 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:37,964 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:37,965 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:38,252 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:38,253 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:38,255 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:38,255 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:38,538 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:38,539 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:38,540 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:38,541 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:38,563 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:38,826 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:38,827 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:38,827 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:38,828 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:39,100 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:39,101 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:39,102 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:39,104 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:39,388 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:39,388 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:39,389 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:39,390 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:39,563 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:39,678 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:39,679 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:39,680 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:39,680 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:39,961 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:39,962 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:39,963 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:39,963 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:40,237 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:40,238 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:40,239 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:40,240 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:40,516 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:40,517 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:40,518 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:40,519 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:40,563 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:40,796 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:40,797 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:40,798 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:40,799 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:41,076 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:41,077 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:41,079 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:41,079 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:41,365 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:41,366 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:41,367 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:41,369 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:41,564 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:41,653 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:41,654 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:41,655 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:41,655 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:41,933 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:41,934 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:41,935 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:41,936 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:42,218 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:42,219 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:42,220 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:42,221 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:42,506 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:42,507 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:42,508 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:42,509 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:42,564 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:42,796 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:42,797 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:42,798 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:42,799 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:43,077 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:43,078 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:43,079 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:43,080 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:43,355 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:43,356 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:43,358 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:43,358 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:43,565 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:43,645 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:43,646 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:43,646 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:43,649 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:43,932 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:43,933 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:43,934 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:43,934 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:44,211 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:44,212 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:44,213 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:44,213 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:44,498 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:44,500 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:44,501 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:44,501 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:44,565 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:44,788 DEBUG   SenderThread:12917 [sender.py:send():235] send: stats
+2022-07-04 10:26:44,792 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:44,793 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:44,793 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:44,794 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:45,081 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:45,082 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:45,083 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:45,083 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:45,357 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:45,357 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:45,565 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:45,645 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:45,673 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:45,675 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:45,675 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:45,675 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:45,681 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:45,917 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-04 10:26:45,918 DEBUG   SenderThread:12917 [sender.py:send():235] send: history
+2022-07-04 10:26:45,918 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:45,918 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:45,922 DEBUG   SenderThread:12917 [sender.py:send():235] send: telemetry
+2022-07-04 10:26:46,566 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:46,566 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/config.yaml
+2022-07-04 10:26:47,567 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/output.log
+2022-07-04 10:26:48,294 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: poll_exit
+2022-07-04 10:26:48,295 DEBUG   SenderThread:12917 [sender.py:send():235] send: exit
+2022-07-04 10:26:48,295 INFO    SenderThread:12917 [sender.py:send_exit():371] handling exit code: 1
+2022-07-04 10:26:48,295 INFO    SenderThread:12917 [sender.py:send_exit():373] handling runtime: 31
+2022-07-04 10:26:48,298 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:48,298 INFO    SenderThread:12917 [sender.py:send_exit():379] send defer
+2022-07-04 10:26:48,298 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: poll_exit
+2022-07-04 10:26:48,299 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: defer
+2022-07-04 10:26:48,299 INFO    HandlerThread:12917 [handler.py:handle_request_defer():164] handle defer: 0
+2022-07-04 10:26:48,299 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: defer
+2022-07-04 10:26:48,300 INFO    SenderThread:12917 [sender.py:send_request_defer():388] handle sender defer: 0
+2022-07-04 10:26:48,300 INFO    SenderThread:12917 [sender.py:transition_state():392] send defer: 1
+2022-07-04 10:26:48,300 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: defer
+2022-07-04 10:26:48,300 INFO    HandlerThread:12917 [handler.py:handle_request_defer():164] handle defer: 1
+2022-07-04 10:26:48,328 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: defer
+2022-07-04 10:26:48,328 INFO    SenderThread:12917 [sender.py:send_request_defer():388] handle sender defer: 1
+2022-07-04 10:26:48,329 INFO    SenderThread:12917 [sender.py:transition_state():392] send defer: 2
+2022-07-04 10:26:48,329 DEBUG   SenderThread:12917 [sender.py:send():235] send: stats
+2022-07-04 10:26:48,330 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: defer
+2022-07-04 10:26:48,330 INFO    HandlerThread:12917 [handler.py:handle_request_defer():164] handle defer: 2
+2022-07-04 10:26:48,331 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: defer
+2022-07-04 10:26:48,331 INFO    SenderThread:12917 [sender.py:send_request_defer():388] handle sender defer: 2
+2022-07-04 10:26:48,331 INFO    SenderThread:12917 [sender.py:transition_state():392] send defer: 3
+2022-07-04 10:26:48,331 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: defer
+2022-07-04 10:26:48,332 INFO    HandlerThread:12917 [handler.py:handle_request_defer():164] handle defer: 3
+2022-07-04 10:26:48,332 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: defer
+2022-07-04 10:26:48,332 INFO    SenderThread:12917 [sender.py:send_request_defer():388] handle sender defer: 3
+2022-07-04 10:26:48,332 INFO    SenderThread:12917 [sender.py:transition_state():392] send defer: 4
+2022-07-04 10:26:48,332 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: defer
+2022-07-04 10:26:48,332 INFO    HandlerThread:12917 [handler.py:handle_request_defer():164] handle defer: 4
+2022-07-04 10:26:48,333 DEBUG   SenderThread:12917 [sender.py:send():235] send: summary
+2022-07-04 10:26:48,333 INFO    SenderThread:12917 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-07-04 10:26:48,334 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: defer
+2022-07-04 10:26:48,334 INFO    SenderThread:12917 [sender.py:send_request_defer():388] handle sender defer: 4
+2022-07-04 10:26:48,334 INFO    SenderThread:12917 [sender.py:transition_state():392] send defer: 5
+2022-07-04 10:26:48,334 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: defer
+2022-07-04 10:26:48,335 INFO    HandlerThread:12917 [handler.py:handle_request_defer():164] handle defer: 5
+2022-07-04 10:26:48,335 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: defer
+2022-07-04 10:26:48,335 INFO    SenderThread:12917 [sender.py:send_request_defer():388] handle sender defer: 5
+2022-07-04 10:26:48,401 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: poll_exit
+2022-07-04 10:26:48,540 INFO    SenderThread:12917 [sender.py:transition_state():392] send defer: 6
+2022-07-04 10:26:48,540 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: poll_exit
+2022-07-04 10:26:48,541 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: defer
+2022-07-04 10:26:48,541 INFO    HandlerThread:12917 [handler.py:handle_request_defer():164] handle defer: 6
+2022-07-04 10:26:48,541 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: defer
+2022-07-04 10:26:48,541 INFO    SenderThread:12917 [sender.py:send_request_defer():388] handle sender defer: 6
+2022-07-04 10:26:48,541 INFO    SenderThread:12917 [dir_watcher.py:finish():283] shutting down directory watcher
+2022-07-04 10:26:48,567 INFO    Thread-7  :12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/output.log
+2022-07-04 10:26:48,568 INFO    SenderThread:12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/config.yaml
+2022-07-04 10:26:48,568 INFO    SenderThread:12917 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:48,569 INFO    SenderThread:12917 [dir_watcher.py:finish():313] scan: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files
+2022-07-04 10:26:48,569 INFO    SenderThread:12917 [dir_watcher.py:finish():327] scan save: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/conda-environment.yaml conda-environment.yaml
+2022-07-04 10:26:48,569 INFO    SenderThread:12917 [dir_watcher.py:finish():327] scan save: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/requirements.txt requirements.txt
+2022-07-04 10:26:48,570 INFO    SenderThread:12917 [dir_watcher.py:finish():327] scan save: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/output.log output.log
+2022-07-04 10:26:48,570 INFO    SenderThread:12917 [dir_watcher.py:finish():327] scan save: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/config.yaml config.yaml
+2022-07-04 10:26:48,570 INFO    SenderThread:12917 [dir_watcher.py:finish():327] scan save: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-metadata.json wandb-metadata.json
+2022-07-04 10:26:48,570 INFO    SenderThread:12917 [dir_watcher.py:finish():327] scan save: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json wandb-summary.json
+2022-07-04 10:26:48,570 INFO    SenderThread:12917 [sender.py:transition_state():392] send defer: 7
+2022-07-04 10:26:48,571 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: defer
+2022-07-04 10:26:48,572 INFO    HandlerThread:12917 [handler.py:handle_request_defer():164] handle defer: 7
+2022-07-04 10:26:48,572 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: defer
+2022-07-04 10:26:48,572 INFO    SenderThread:12917 [sender.py:send_request_defer():388] handle sender defer: 7
+2022-07-04 10:26:48,572 INFO    SenderThread:12917 [file_pusher.py:finish():145] shutting down file pusher
+2022-07-04 10:26:48,642 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: poll_exit
+2022-07-04 10:26:48,643 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: poll_exit
+2022-07-04 10:26:48,745 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: poll_exit
+2022-07-04 10:26:48,746 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: poll_exit
+2022-07-04 10:26:48,852 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: poll_exit
+2022-07-04 10:26:48,859 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: poll_exit
+2022-07-04 10:26:48,961 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: poll_exit
+2022-07-04 10:26:48,961 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: poll_exit
+2022-07-04 10:26:49,063 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: poll_exit
+2022-07-04 10:26:49,064 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: poll_exit
+2022-07-04 10:26:49,166 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: poll_exit
+2022-07-04 10:26:49,167 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: poll_exit
+2022-07-04 10:26:49,176 INFO    Thread-14 :12917 [upload_job.py:push():137] Uploaded file /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/output.log
+2022-07-04 10:26:49,189 INFO    Thread-13 :12917 [upload_job.py:push():137] Uploaded file /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/requirements.txt
+2022-07-04 10:26:49,192 INFO    Thread-12 :12917 [upload_job.py:push():137] Uploaded file /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/conda-environment.yaml
+2022-07-04 10:26:49,269 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: poll_exit
+2022-07-04 10:26:49,270 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: poll_exit
+2022-07-04 10:26:49,282 INFO    Thread-15 :12917 [upload_job.py:push():137] Uploaded file /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/config.yaml
+2022-07-04 10:26:49,335 INFO    Thread-16 :12917 [upload_job.py:push():137] Uploaded file /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/files/wandb-summary.json
+2022-07-04 10:26:49,372 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: poll_exit
+2022-07-04 10:26:49,373 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: poll_exit
+2022-07-04 10:26:49,475 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: poll_exit
+2022-07-04 10:26:49,476 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: poll_exit
+2022-07-04 10:26:49,537 INFO    Thread-6  :12917 [sender.py:transition_state():392] send defer: 8
+2022-07-04 10:26:49,538 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: defer
+2022-07-04 10:26:49,538 INFO    HandlerThread:12917 [handler.py:handle_request_defer():164] handle defer: 8
+2022-07-04 10:26:49,538 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: defer
+2022-07-04 10:26:49,539 INFO    SenderThread:12917 [sender.py:send_request_defer():388] handle sender defer: 8
+2022-07-04 10:26:49,578 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: poll_exit
+2022-07-04 10:26:50,070 INFO    SenderThread:12917 [sender.py:transition_state():392] send defer: 9
+2022-07-04 10:26:50,071 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: poll_exit
+2022-07-04 10:26:50,072 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: defer
+2022-07-04 10:26:50,072 INFO    HandlerThread:12917 [handler.py:handle_request_defer():164] handle defer: 9
+2022-07-04 10:26:50,072 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: defer
+2022-07-04 10:26:50,072 INFO    SenderThread:12917 [sender.py:send_request_defer():388] handle sender defer: 9
+2022-07-04 10:26:50,073 INFO    SenderThread:12917 [sender.py:transition_state():392] send defer: 10
+2022-07-04 10:26:50,073 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: defer
+2022-07-04 10:26:50,074 INFO    HandlerThread:12917 [handler.py:handle_request_defer():164] handle defer: 10
+2022-07-04 10:26:50,074 DEBUG   SenderThread:12917 [sender.py:send():235] send: final
+2022-07-04 10:26:50,074 DEBUG   SenderThread:12917 [sender.py:send():235] send: footer
+2022-07-04 10:26:50,074 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: defer
+2022-07-04 10:26:50,074 INFO    SenderThread:12917 [sender.py:send_request_defer():388] handle sender defer: 10
+2022-07-04 10:26:50,173 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: poll_exit
+2022-07-04 10:26:50,174 DEBUG   SenderThread:12917 [sender.py:send_request():249] send_request: poll_exit
+2022-07-04 10:26:50,174 INFO    SenderThread:12917 [file_pusher.py:join():150] waiting for file pusher
+2022-07-04 10:26:50,687 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: sampled_history
+2022-07-04 10:26:50,690 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: get_summary
+2022-07-04 10:26:50,692 DEBUG   HandlerThread:12917 [handler.py:handle_request():141] handle_request: shutdown
+2022-07-04 10:26:50,692 INFO    HandlerThread:12917 [handler.py:finish():790] shutting down handler
+2022-07-04 10:26:51,074 INFO    WriterThread:12917 [datastore.py:close():281] close: /home/mgornet/Bureau/Code/CNPEN/files/wandb/run-20220704_102614-v9rmgdkx/run-v9rmgdkx.wandb
+2022-07-04 10:26:51,585 INFO    SenderThread:12917 [sender.py:finish():1107] shutting down sender
+2022-07-04 10:26:51,585 INFO    SenderThread:12917 [file_pusher.py:finish():145] shutting down file pusher
+2022-07-04 10:26:51,585 INFO    SenderThread:12917 [file_pusher.py:join():150] waiting for file pusher
+2022-07-04 10:26:51,587 INFO    MainThread:12917 [internal.py:handle_exit():82] Internal process exited

@@ -1,0 +1,19 @@
+Starting training...
+Epochs:   0%|          | 0/600 [00:00<?, ?it/s]
+Training:   0%|          | 0/88 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/mgornet/Bureau/Code/CNPEN/train.py", line 213, in <module>
+    model = training(model, device, optimizer, scheduler, criterion, epochs, train_loader, valid_loader, save_epoch=False)
+  File "/home/mgornet/Bureau/Code/CNPEN/files/test_train_loops.py", line 123, in training
+    valid_list.extend(list(valid_loader))
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 530, in __next__
+    data = self._next_data()
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 570, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = self.dataset[possibly_batched_index]
+  File "/home/mgornet/Bureau/Code/CNPEN/files/triplet.py", line 408, in __getitem__
+    anchors[batch] = self.imgs_a[batch]
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1185, in __getattr__
+    raise AttributeError("'{}' object has no attribute '{}'".format(
+AttributeError: 'RandomTripletGenerator' object has no attribute 'imgs_a'

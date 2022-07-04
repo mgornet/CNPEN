@@ -1,0 +1,21 @@
+Starting training...
+Epochs:   0%|          | 0/600 [00:00<?, ?it/s]
+Training:   0%|          | 0/88 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/mgornet/Bureau/Code/CNPEN/train.py", line 213, in <module>
+    model = training(model, device, optimizer, scheduler, criterion, epochs, train_loader, valid_loader, save_epoch=False)
+  File "/home/mgornet/Bureau/Code/CNPEN/files/test_train_loops.py", line 98, in training
+    for step, (anchor_img, positive_img, negative_img) \
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/tqdm/notebook.py", line 257, in __iter__
+    for obj in super(tqdm_notebook, self).__iter__():
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/tqdm/std.py", line 1195, in __iter__
+    for obj in iterable:
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 530, in __next__
+    data = self._next_data()
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 570, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/mgornet/anaconda3/envs/face_reco/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = self.dataset[possibly_batched_index]
+  File "/home/mgornet/Bureau/Code/CNPEN/files/triplet.py", line 404, in __getitem__
+    anchors[batch]=apply_augmentation(imgs_a[batch])
+NameError: name 'apply_augmentation' is not defined
