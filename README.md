@@ -6,7 +6,7 @@ With Claude Kirchner and Catherine Tessier, we developped a simple program to tr
 
 A technical report of my time at the CNPEN can be found in this repository.
 
-We shared our first results in a short [article|https://ercim-news.ercim.eu/en131/special/operational-fairness-for-facial-authentication-systems] of ERCIM News.
+We shared our first results in a short [article](https://ercim-news.ercim.eu/en131/special/operational-fairness-for-facial-authentication-systems) of ERCIM News.
 
 An academic article is currently being written.
 
