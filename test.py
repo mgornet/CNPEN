@@ -51,7 +51,7 @@ print_hist_dist, print_hist_dist_zoom, print_img_category, \
 print_roc, print_logistic_regression, print_prec_recall
 from test_train_loops import training, testing, adaptative_train, compute_distances
 from classification import authentification_img, predict, triplet_acc,\
-build_df_fairness, triplet_acc_fairness, bootstrap, bootstrap_by_pairs
+build_df_fairness, triplet_acc_fairness, bootstrap, bootstrap_by_pairs, build_threshold
 
 # import warnings
 # warnings.filterwarnings("ignore")
@@ -111,35 +111,6 @@ margin = 0.2
 # criterion = TripletLoss(margin)
 # criterion_test = TripletLossRaw(margin)
 
-# Build THRESHOLD (for details, see the notebook "determine_threshold")
-def build_threshold(df_valid, all_imgs, device, model, margin, verbose=False):
-    
-    gen = TripletGenerator(df_valid, all_imgs, BATCH_VALID_SIZE, device, model, margin)
-    loader = DataLoader(gen, batch_size=None, shuffle=True)
-
-    list_loader = []
-    for _ in range(10):
-        list_loader.extend(list(loader))
-
-    pos_dist, neg_dist, _ = compute_distances(list_loader, device, model) #loader
-
-    y_pos = [1 for _ in range(len(pos_dist))]
-    y_neg = [0 for _ in range(len(neg_dist))]
-
-    y = y_pos + y_neg
-    X = pos_dist + neg_dist
-    Xmoins = np.array(X)*(-1)
-    Xlogistic = np.array(Xmoins).reshape(-1,1)
-
-    clf = LogisticRegression(random_state=0).fit(Xlogistic, y)
-
-    threshold = (clf.intercept_/clf.coef_)[0,0]
-    
-    if verbose:
-        print("Threshold with logistic regression:", threshold)
-
-    return threshold
-
 # Load models
 
 model_base = TripletLearner(base_channels=32)
@@ -158,7 +129,7 @@ toc = perf_counter()
 print(f"DataFrame creation: {((toc - tic)/60):.1f} min")
 
 # RESULTS
-
+print("\n")
 b,a,c = np.round_(bootstrap(df_fairness, agg_func=lambda df: df['correct_predict'].mean(), num_bootstraps=1000, percentiles=[5,50,95]), 3)
 print(f"Accuracy: {a} ({b}-{c})")
 b,a,c = np.round_(bootstrap_by_pairs(df_fairness, agg_func=lambda df: triplet_acc_fairness(df), num_bootstraps=1000, percentiles=[5,50,95]), 3)

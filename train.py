@@ -50,7 +50,7 @@ torch.cuda.manual_seed(seed)
 torch.backends.cudnn.deterministic = True
 print ('Seeds set for training phase')
 
-random_sample = True
+random_sample = False
 print(f'Set random sampling to: {random_sample}')
 
 # class cd:
@@ -192,7 +192,7 @@ print("Dataloaders initialized")
 wandb.login()
 
 wandb.init(project="triplet_faces",
-           name="random_sample_600",
+           name="normalized_600",
            config={"seed" : seed,
                   "batch_size": BATCH_SIZE,
                   "margin": margin,

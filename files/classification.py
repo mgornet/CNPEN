@@ -2,7 +2,12 @@ import numpy as np
 import pandas as pd
 from tqdm.notebook import tqdm
 import torch
-from triplet import distance, distance_vectors
+from torch.utils.data import DataLoader
+from sklearn.linear_model import LogisticRegression
+
+from triplet import distance, distance_vectors, TripletGenerator
+from test_train_loops import compute_distances
+
 
 seed = 121
 np.random.seed(seed)
@@ -237,3 +242,35 @@ def triplet_acc_fairness(df):
 #             total_count+=1
 
 #     return count_satisfy_condition/total_count
+
+
+# BUILD THRESHOLD
+############################################################################
+
+def build_threshold(df_valid, all_imgs, device, model, margin, BATCH_VALID_SIZE, verbose=False):
+    
+    gen = TripletGenerator(df_valid, all_imgs, BATCH_VALID_SIZE, device, model, margin)
+    loader = DataLoader(gen, batch_size=None, shuffle=True)
+
+    list_loader = []
+    for _ in range(10):
+        list_loader.extend(list(loader))
+
+    pos_dist, neg_dist, _ = compute_distances(list_loader, device, model) #loader
+
+    y_pos = [1 for _ in range(len(pos_dist))]
+    y_neg = [0 for _ in range(len(neg_dist))]
+
+    y = y_pos + y_neg
+    X = pos_dist + neg_dist
+    Xmoins = np.array(X)*(-1)
+    Xlogistic = np.array(Xmoins).reshape(-1,1)
+
+    clf = LogisticRegression(random_state=0).fit(Xlogistic, y)
+
+    threshold = (clf.intercept_/clf.coef_)[0,0]
+    
+    if verbose:
+        print("Threshold with logistic regression:", threshold)
+
+    return threshold

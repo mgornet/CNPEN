@@ -60,8 +60,9 @@ def resize_and_crop(img):
 
 def open_one_image_tensor(path, PATH=PATH):
     """Open an image from its path and return the image in form of a tensor.
-    Image values are in (0,1)."""
-    image_transforms = transforms.Compose([transforms.ToTensor(),])
+    Image values are in (0,1).
+    If the model includes normalization, replace the transform function accordingly"""
+    image_transforms = transforms.Compose([transforms.ToTensor(),])#transforms.Compose([transforms.ToTensor(),]) # transforms.Compose([transforms.ToTensor(),transforms.Normalize(mean=[0,0,0],std=[255,255,255]),])
     return (image_transforms(
             resize_and_crop(imread(PATH+path).astype("float32"))).unsqueeze(0))
 
